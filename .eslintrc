@@ -12,9 +12,6 @@
   "extends": [
     "plugin:vue/essential"
   ],
-  "env": {
-    "jest/globals": true
-  },
   "rules": {
     "semi": ["warn", "never"],
     "space-before-function-paren": ["warn"],

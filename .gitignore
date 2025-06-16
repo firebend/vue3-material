@@ -8,3 +8,10 @@ yarn-debug.log
 npm-debug.log
 .vscode
 .idea
+
+
+
+.nx/cache
+.nx/workspace-data
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
