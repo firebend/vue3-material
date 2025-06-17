@@ -1,9 +1,10 @@
-import './base/index.scss'
-import MdReactive from 'core/utils/MdReactive'
-import MdTheme from 'core/MdTheme'
+import  './base/index.scss'
+import MdReactive from './core/utils/MdReactive'
+import MdTheme from './core/MdTheme'
+import {App} from "vue";
 
 const init = () => {
-  let material = new MdReactive({
+  const material = MdReactive({
     ripple: true,
     theming: {},
     locale: {
@@ -49,9 +50,9 @@ const init = () => {
   return material
 }
 
-export default Vue => {
-  if (!Vue.material) {
-    Vue.material = init()
-    Vue.prototype.$material = Vue.material
+export default (app: App) => {
+  if (!app.config.globalProperties.$material) {
+    // TODO use composition API
+    app.config.globalProperties.$material = init()
   }
 }
