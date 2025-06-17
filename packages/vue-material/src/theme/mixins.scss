@@ -1,4 +1,8 @@
-@import '../base/theme.scss';
+@use "sass:color";
+@use "sass:map";
+@use "functions";
+@use "variables";
+@use "palette";
 
 /**
  * Override extending the default palette giving new values. It will extend
@@ -17,46 +21,8 @@
  */
 
 @mixin md-override-palette ($palette) {
-  $md-default-palette: map-merge($md-default-palette, $palette) !global;
+  $md-default-palette: map.merge(palette.$md-default-palette, $palette) !global;
 }
-
-
-/**
- * Create a new theme based on a given palette. It will extend the default
- * values of the palette if has a property missing.
- * ---
- * Usage example:
- *
- * @include md-register-theme("alternative", (
- *   primary: #212121,
- *   accent: #CDDC39,
- *   theme: dark
- * ));
- *
- * ---
- * @access public
- * @param {string} $name —  The theme name to be used with the Vue Material
- * @param {map} $palette [$md-default-palette] —  The theme palette
- */
-
-@mixin md-register-theme ($name, $palette: $md-default-palette) {
-  $palette: map-merge($md-default-palette, $palette);
-  $theme: map-merge($md-themes, (
-    #{$name}: $palette
-  ));
-
-  :root {
-    @each $type, $value in $palette {
-      --md-theme-#{$name}-#{$type}: #{$value}
-    }
-  }
-
-  $md-themes: $theme !global;
-  $md-theme-name: $name !global;
-
-  @include md-base-theme;
-}
-
 
 /**
  * Theme pieces of a given scss code for all pre registered themes.
@@ -85,11 +51,11 @@
  */
 
 @mixin md-theme-component () {
-  @each $theme, $palette in $md-themes {
-    $md-theme-palette: map-merge($md-theme-palette, $palette) !global;
+  @each $theme, $palette in variables.$md-themes {
+    $md-theme-palette: map.merge(variables.$md-theme-palette, $palette) !global;
     $md-current-theme: $theme !global;
 
-    @if( $theme == $md-theme-name or $md-theme-name == 'all' ) {
+    @if( $theme == variables.$md-theme-name or variables.$md-theme-name == 'all' ) {
       &.md-theme-#{$theme} {
         @content;
       }
@@ -111,11 +77,11 @@
  */
 
 @mixin md-theme-component-relative () {
-  @each $theme, $palette in $md-themes {
-    $md-theme-palette: map-merge($md-theme-palette, $palette) !global;
+  @each $theme, $palette in variables.$md-themes {
+    $md-theme-palette: map.merge(variables.$md-theme-palette, $palette) !global;
     $md-current-theme: $theme !global;
 
-    @if( $theme == $md-theme-name or $md-theme-name == 'all' ) {
+    @if( $theme == variables.$md-theme-name or variables.$md-theme-name == 'all' ) {
       .md-theme-#{$theme} & {
         @content;
       }
@@ -158,7 +124,7 @@
  */
 
 @mixin md-theme-property ($property, $type, $background: "", $opacity: "") {
-  $value: md-theme($type, $background);
+  $value: functions.md-theme($type, $background);
   $variant: null;
 
   @if $background != "" {
@@ -170,7 +136,7 @@
   }
 
   #{$property}: $value;
-  #{$property}: var(--md-theme-#{$md-current-theme}-#{$type}#{$variant}, $value);
+  #{$property}: var(--md-theme-#{variables.$md-current-theme}-#{$type}#{$variant}, $value);
 }
 
 /**
@@ -200,7 +166,7 @@
  */
 
 @mixin md-theme-property-darken ($property, $type, $background: "", $darken: "") {
-  $value: md-theme($type, $background);
+  $value: functions.md-theme($type, $background);
   $variant: null;
 
   @if $background != "" {
@@ -208,11 +174,11 @@
   }
 
   @if $darken != "" {
-    $value: darken($value, $darken);
+    $value: color.adjust($value, $lightness: -$darken);
   }
 
   #{$property}: $value;
-  #{$property}: var(--md-theme-#{$md-current-theme}-#{$type}#{$variant}, $value);
+  #{$property}: var(--md-theme-#{variables.$md-current-theme}-#{$type}#{$variant}, $value);
 }
 
 /**
@@ -243,7 +209,7 @@
  */
 
 @mixin md-theme-property-by-hue ($property, $color, $hue, $type, $secondary) {
-  $hex: md-get-palette-color($color, $hue);
+  $hex: palette.md-get-palette-color($color, $hue);
   $variant: null;
 
   @if $secondary != "" {
@@ -251,5 +217,5 @@
   }
 
   #{$property}: $hex;
-  #{$property}: var(--md-theme-#{$md-current-theme}-#{$type}#{variant}, $hex);
+  #{$property}: var(--md-theme-#{variables.$md-current-theme}-#{$type}#{variant}, $hex);
 }

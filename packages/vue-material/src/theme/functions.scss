@@ -1,25 +1,7 @@
-/**
- * Theme any css property based on the current palette, accepting a themable
- * value that will give an contrasted
- * ---
- * Usage example:
- *
- * $foo-palette: (
- *   primary: md-get-palette-color(indigo, 500),
- *   accent: md-get-palette-color(pink, 500),
- *   theme: "light"
- * );
- *
- * ---
- * @access public
- * ---
- * @param {color} $type —  The desired color based on material palette
- * @param {string} $type —  A valid hue
- */
-
-@function md-get-palette-color($color, $hue) {
-  @return map-get(map-get($md-palette, $color), $hue);
-}
+@use "sass:map";
+@use "color-contrast";
+@use "palette";
+@use "variables";
 
 
 /**
@@ -34,7 +16,7 @@
  */
 
 @function md-get-theme-mode() {
-  @return map-get($md-theme-palette, theme);
+  @return map.get(variables.$md-theme-palette, theme);
 }
 
 
@@ -62,10 +44,10 @@
   @if $type == "primary" or $type == "accent" {
     @return md-get-color-by-type($type, null);
   } @else {
-    $color-theme: map-get($md-theme-palette, theme);
+    $color-theme: map.get(variables.$md-theme-palette, theme);
 
     @if $background != "" {
-      $color-theme: md-pick-contrast(md-get-color-by-type($background, $color-theme));
+      $color-theme: color-contrast.md-pick-contrast(md-get-color-by-type($background, $color-theme));
     }
 
     @return md-get-color-by-theme($color-theme, $type);
@@ -88,9 +70,9 @@
  */
 
 @function md-get-color-by-theme($color-theme, $type) {
-  $theme: map-get($md-color-levels, $color-theme);
+  $theme: map.get(variables.$md-color-levels, $color-theme);
 
-  @return map-get($theme, $type);
+  @return map.get($theme, $type);
 }
 
 
@@ -110,7 +92,7 @@
  */
 
 @function md-get-color-by-type($type, $theme) {
-  $newColor: map-get($md-theme-palette, $type);
+  $newColor: map.get(variables.$md-theme-palette, $type);
 
   @if $newColor == null {
     $newColor: md-get-color-by-theme($theme, $type);

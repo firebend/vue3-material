@@ -1,22 +1,4 @@
-/**
- * The default theme palette
- * primary: indigo 500 #3f51b5
- * accent: pink 500 #e91e63
- * theme: light
- *
- * It can be used just before importing the Vue Material stylesheet
- *
- * ---
- * @access public
- * @type colormap
- * @group themes
- */
-
-$md-default-palette: (
-  primary: md-get-palette-color(blue, A200),
-  accent: md-get-palette-color(red, A200),
-  theme: "light"
-) !default;
+@use "sass:color";
 
 
 /**
@@ -83,7 +65,7 @@ $md-color-levels: (
     icon-disabled: rgba(#000, .38),
     divider: rgba(#000, .12),
     scrollbar: #757575,
-    scrollbar-background: darken(#eee, 5%),
+    scrollbar-background: color.adjust(#eee, $lightness: -5%),
     tooltip: #616161
   ),
   dark: (

@@ -1,5 +1,41 @@
-@import "./palette";
-@import "./functions";
-@import "./variables";
-@import "./color-contrast";
-@import "./mixins";
+@use "sass:map";
+@use "palette";
+@use "variables";
+@use '../base/theme.scss';
+
+
+/**
+ * Create a new theme based on a given palette. It will extend the default
+ * values of the palette if has a property missing.
+ * ---
+ * Usage example:
+ *
+ * @include md-register-theme("alternative", (
+ *   primary: #212121,
+ *   accent: #CDDC39,
+ *   theme: dark
+ * ));
+ *
+ * ---
+ * @access public
+ * @param {string} $name —  The theme name to be used with the Vue Material
+ * @param {map} $palette [$md-default-palette] —  The theme palette
+ */
+
+@mixin md-register-theme ($name, $palette: palette.$md-default-palette) {
+  $palette: map.merge(palette.$md-default-palette, $palette);
+  $theme: map.merge(variables.$md-themes, (
+    #{$name}: $palette
+  ));
+
+  :root {
+    @each $type, $value in $palette {
+      --md-theme-#{$name}-#{$type}: #{$value}
+    }
+  }
+
+  $md-themes: $theme !global;
+  $md-theme-name: $name !global;
+
+  @include theme.md-base-theme;
+}

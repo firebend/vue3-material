@@ -1,3 +1,8 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use "variables";
+
 /**
  * Hightly based on: "Using Sass to automatically pick text colors"
  * https://medium.com/dev-channel/using-sass-to-automatically-pick-text-colors-4ba7645d2796
@@ -290,9 +295,9 @@ $md-linear-channel-values:
  */
 
 @function md-check-luminance($color) {
-  $red: nth($md-linear-channel-values, red($color) + 1);
-  $green: nth($md-linear-channel-values, green($color) + 1);
-  $blue: nth($md-linear-channel-values, blue($color) + 1);
+  $red: list.nth($md-linear-channel-values, color.red($color) + 1);
+  $green: list.nth($md-linear-channel-values, color.green($color) + 1);
+  $blue: list.nth($md-linear-channel-values, color.blue($color) + 1);
 
   @return .2126 * $red + .7152 * $green + .0722 * $blue;
 }
@@ -325,9 +330,9 @@ $md-linear-channel-values:
  */
 
 @function md-pick-contrast($color) {
-  $lightColor: map-get(map-get($md-color-levels, dark), text-primary);
+  $lightColor: map.get(map.get(variables.$md-color-levels, dark), text-primary);
   $lightContrast: md-calculate-contrast($color, $lightColor);
-  $darkColor: map-get(map-get($md-color-levels, light), text-primary);
+  $darkColor: map.get(map.get(variables.$md-color-levels, light), text-primary);
   $darkContrast: md-calculate-contrast($color, $darkColor);
 
   @if ($lightContrast > $darkContrast) {

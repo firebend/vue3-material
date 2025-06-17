@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /**
  * The complete material palette
  * ---
@@ -344,3 +346,47 @@ $md-palette: (
     A700: #000
   )
 );
+
+/**
+ * The default theme palette
+ * primary: indigo 500 #3f51b5
+ * accent: pink 500 #e91e63
+ * theme: light
+ *
+ * It can be used just before importing the Vue Material stylesheet
+ *
+ * ---
+ * @access public
+ * @type colormap
+ * @group themes
+ */
+
+$md-default-palette: (
+  primary: md-get-palette-color(blue, A200),
+  accent: md-get-palette-color(red, A200),
+  theme: "light"
+) !default;
+
+/**
+ * Theme any css property based on the current palette, accepting a themable
+ * value that will give an contrasted
+ * ---
+ * Usage example:
+ *
+ * $foo-palette: (
+ *   primary: md-get-palette-color(indigo, 500),
+ *   accent: md-get-palette-color(pink, 500),
+ *   theme: "light"
+ * );
+ *
+ * ---
+ * @access public
+ * ---
+ * @param {color} $type —  The desired color based on material palette
+ * @param {string} $type —  A valid hue
+ */
+
+@function md-get-palette-color($color, $hue) {
+  @return map.get(map.get($md-palette, $color), $hue);
+}
+
