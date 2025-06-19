@@ -19,8 +19,8 @@
 </template>
 
 <script>
-  import MdUpwardIcon from 'core/icons/MdUpwardIcon'
-  import MdResizeObserver from 'core/utils/MdResizeObserver'
+  import MdUpwardIcon from '../../core/icons/MdUpwardIcon.vue'
+  import MdResizeObserver from '../../core/utils/MdResizeObserver'
 
   export default {
     name: 'MdTableHead',
@@ -122,7 +122,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-table-head {
     padding: 0;
@@ -208,7 +208,7 @@
     position: absolute;
     top: 50%;
     left: 0;
-    transition: .3s $md-transition-default-timing;
+    transition: .3s variables.$md-transition-default-timing;
     transform: translateY(-50%);
     opacity: 0;
     color: rgba(#000, .38);

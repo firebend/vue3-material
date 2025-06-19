@@ -17,11 +17,11 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdFocused from 'core/mixins/MdFocused/MdFocused'
-  import MdRipple from 'core/mixins/MdRipple/MdRipple'
-  import MdClearIcon from 'core/icons/MdClearIcon'
-  import MdButton from 'components/MdButton/MdButton'
+  import MdComponent from '../../core/MdComponent'
+  import MdFocused from '../../core/mixins/MdFocused/MdFocused'
+  import MdRipple from '../../core/mixins/MdRipple/MdRipple'
+  import MdClearIcon from '../../core/icons/MdClearIcon.vue'
+  import MdButton from '../MdButton/MdButton.vue'
 
   export default new MdComponent({
     name: 'MdChip',
@@ -57,8 +57,8 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdElevation/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdElevation/mixins" as elevationMixins;
 
   $md-chips-height: 32px;
 
@@ -68,7 +68,7 @@
     display: inline-block;
     cursor: default;
     border-radius: $md-chips-height;
-    transition: .3s $md-transition-stand-timing;
+    transition: .3s variables.$md-transition-stand-timing;
     transition-property: background-color, color, opacity, transform, box-shadow;
     will-change: background-color, color, opacity, transform, box-shadow;
     font-size: 13px;
@@ -94,12 +94,12 @@
     &.md-clickable,
     &.md-deletable {
       &:not(.md-disabled):active {
-        @include md-elevation(3);
+        @include elevationMixins.md-elevation(3);
       }
     }
 
     &.md-focused {
-      @include md-elevation(3);
+      @include elevationMixins.md-elevation(3);
     }
 
     &.md-clickable {
@@ -143,7 +143,7 @@
       z-index: 11;
       transform: translate3D(0, -50%, 0);
       transition-duration: .3s;
-      transition-timing-function: $md-transition-stand-timing;
+      transition-timing-function: variables.$md-transition-stand-timing;
       font-size: 18px;
 
       .md-ripple {
@@ -163,7 +163,7 @@
 
         svg {
           transition-duration: .3s;
-          transition-timing-function: $md-transition-stand-timing;
+          transition-timing-function: variables.$md-transition-stand-timing;
         }
       }
     }

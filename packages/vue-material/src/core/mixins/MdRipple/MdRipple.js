@@ -1,4 +1,4 @@
-import MdRipple from 'components/MdRipple/MdRipple'
+import MdRipple from '../MdRipple/MdRipple'
 
 export default {
   components: {

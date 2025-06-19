@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdCheckbox from './MdCheckbox'
+import material from '../../material'
+import MdCheckbox from './MdCheckbox.vue'
 
 export default Vue => {
   material(Vue)

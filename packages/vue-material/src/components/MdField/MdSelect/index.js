@@ -1,7 +1,7 @@
-import material from 'vue-material/material'
-import MdSelect from './MdSelect'
-import MdOption from './MdOption'
-import MdOptgroup from './MdOptgroup'
+import material from '../../../material'
+import MdSelect from './MdSelect.vue'
+import MdOption from './MdOption.vue'
+import MdOptgroup from './MdOptgroup.vue'
 
 export default Vue => {
   material(Vue)

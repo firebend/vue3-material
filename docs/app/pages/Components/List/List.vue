@@ -71,7 +71,7 @@
 
 <script>
   import examples from 'docs-mixins/docsExample'
-  import MdInteractionEvents from 'core/utils/MdInteractionEvents'
+  import MdInteractionEvents from '../../core/utils/MdInteractionEvents'
 
   export default {
     name: 'DocList',

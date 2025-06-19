@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdIcon from './MdIcon'
+import material from '../../material'
+import MdIcon from './MdIcon.vue'
 
 export default Vue => {
   material(Vue)

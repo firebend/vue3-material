@@ -19,10 +19,10 @@
 </template>
 
 <script>
-  import MdAssetIcon from 'core/mixins/MdAssetIcon/MdAssetIcon'
-  import MdRouterLink from 'core/mixins/MdRouterLink/MdRouterLink'
-  import MdUuid from 'core/utils/MdUuid'
-  import MdRouterLinkProps from 'core/utils/MdRouterLinkProps'
+  import MdAssetIcon from '../../core/mixins/MdAssetIcon/MdAssetIcon'
+  import MdRouterLink from '../../core/mixins/MdRouterLink/MdRouterLink'
+  import MdUuid from '../../core/utils/MdUuid'
+  import MdRouterLinkProps from '../../core/utils/MdRouterLinkProps'
 
   const ignoredProps = ['id', 'mdLabel', 'mdIcon', 'mdDisabled']
 

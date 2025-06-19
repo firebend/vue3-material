@@ -1,6 +1,6 @@
-import material from 'vue-material/material'
-import MdDialog from '../MdDialog'
-import MdDialogAlert from './MdDialogAlert'
+import material from '../../../material'
+import MdDialog from '../MdDialog.vue'
+import MdDialogAlert from './MdDialogAlert.vue'
 
 export default Vue => {
   material(Vue)

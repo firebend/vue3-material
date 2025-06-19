@@ -1,10 +1,10 @@
-import material from 'vue-material/material'
-import MdIcon from 'components/MdIcon'
+import material from '../../material'
+import MdIcon from '../MdIcon'
 import MdSelect from './MdSelect'
-import MdField from './MdField'
-import MdFile from './MdFile/MdFile'
-import MdInput from './MdInput/MdInput'
-import MdTextarea from './MdTextarea/MdTextarea'
+import MdField from './MdField.vue'
+import MdFile from './MdFile/MdFile.vue'
+import MdInput from './MdInput/MdInput.vue'
+import MdTextarea from './MdTextarea/MdTextarea.vue'
 
 export default Vue => {
   material(Vue)

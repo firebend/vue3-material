@@ -1,6 +1,6 @@
-import material from 'vue-material/material'
-import MdBottomBar from './MdBottomBar'
-import MdBottomBarItem from './MdBottomBarItem'
+import material from '../../material'
+import MdBottomBar from './MdBottomBar.vue'
+import MdBottomBarItem from './MdBottomBarItem.vue'
 
 export default Vue => {
   material(Vue)

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
+  import MdComponent from '../../core/MdComponent'
 
   export default new MdComponent({
     name: 'MdAvatar'
@@ -13,7 +13,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   $md-avatar-size: 40px;
   $md-avatar-large-size: 64px;
@@ -33,7 +33,7 @@
     user-select: none;
     position: relative;
     border-radius: $md-avatar-size;
-    transition: $md-transition-default;
+    transition: variables.$md-transition-default;
     transition-property: color, background-color;
     will-change: color, background-color;
     font-size: 24px;

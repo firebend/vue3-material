@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdBadge from './MdBadge'
+import material from '../../material'
+import MdBadge from './MdBadge.vue'
 
 export default Vue => {
   material(Vue)

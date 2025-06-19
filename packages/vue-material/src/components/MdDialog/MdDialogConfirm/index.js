@@ -1,6 +1,6 @@
-import material from 'vue-material/material'
-import MdDialog from '../MdDialog'
-import MdDialogConfirm from './MdDialogConfirm'
+import material from '../../../material'
+import MdDialog from '../MdDialog.vue'
+import MdDialogConfirm from './MdDialogConfirm.vue'
 
 export default Vue => {
   material(Vue)

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
+  import MdComponent from '../../core/MdComponent'
 
   export default new MdComponent({
     name: 'MdCard',
@@ -34,24 +34,24 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdElevation/mixins";
-  @import "./base";
+  @use "../MdAnimation/variables";
+  @use "../MdElevation/mixins" as elevationMixins;
+  @use "./base";
 
   $md-card-radius: 2px;
 
   .md-card {
-    @include md-card;
+    @include base.md-card;
 
     &.md-with-hover {
       cursor: pointer;
-      transition: background-color .3s $md-transition-default-timing,
-                  box-shadow .4s $md-transition-stand-timing;
+      transition: background-color .3s variables.$md-transition-default-timing,
+                  box-shadow .4s variables.$md-transition-stand-timing;
       will-change: background-color, box-shadow;
 
       &:hover {
         z-index: 2;
-        @include md-elevation(8);
+        @include elevationMixins.md-elevation(8);
       }
     }
 

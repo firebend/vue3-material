@@ -4,7 +4,7 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
+  import MdComponent from '../../core/MdComponent'
 
   export default new MdComponent({
     name: 'MdDivider',
@@ -17,7 +17,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-divider {
     height: 1px;
@@ -25,7 +25,7 @@
     padding: 0;
     display: block;
     border: 0;
-    transition: margin-left .3s $md-transition-default-timing;
+    transition: margin-left .3s variables.$md-transition-default-timing;
     will-change: margin-left;
 
     &.md-inset {

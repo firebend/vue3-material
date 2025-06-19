@@ -17,9 +17,9 @@
 </template>
 
 <script>
-  import MdWarningIcon from 'core/icons/MdWarningIcon'
-  import MdCheckIcon from 'core/icons/MdCheckIcon'
-  import MdEditIcon from 'core/icons/MdEditIcon'
+  import MdWarningIcon from '../../core/icons/MdWarningIcon.vue'
+  import MdCheckIcon from '../../core/icons/MdCheckIcon.vue'
+  import MdEditIcon from '../../core/icons/MdEditIcon.vue'
 
   export default {
     name: 'MdStepperHeader',

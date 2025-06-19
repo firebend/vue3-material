@@ -7,11 +7,11 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdOverlay from 'components/MdOverlay/MdOverlay'
-  import MdPropValidator from 'core/utils/MdPropValidator'
+  import MdComponent from '../../core/MdComponent'
+  import MdOverlay from '../MdOverlay/MdOverlay.vue'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
 
-  import MdSwipeable from 'core/mixins/MdSwipeable/MdSwipeable'
+  import MdSwipeable from '../../core/mixins/MdSwipeable/MdSwipeable'
 
   export default new MdComponent({
     name: 'MdDrawer',
@@ -111,10 +111,10 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdLayout/mixins";
-  @import "~components/MdElevation/mixins";
-  @import "~components/MdCard/base";
+  @use "../MdAnimation/variables";
+  @use "../MdLayout/mixins" as layoutMixins;
+  @use "../MdElevation/mixins" as elevationMixins;
+  @use "../MdCard/base";
 
   @mixin md-drawer-base () {
     position: absolute;
@@ -127,16 +127,16 @@
     @include md-drawer-base;
     z-index: 30;
     transform: translate3D(-100%, 0, 0);
-    transition: transform .4s $md-transition-stand-timing;
+    transition: transform .4s variables.$md-transition-stand-timing;
     will-change: transform, box-shadow;
   }
 
   @mixin md-drawer-temporary-active () {
     transform: translate3D(0, 0, 0);
-    transition-timing-function: $md-transition-default-timing;
+    transition-timing-function: variables.$md-transition-default-timing;
 
-    @include md-layout-xsmall {
-      @include md-elevation(16);
+    @include layoutMixins.md-layout-xsmall {
+      @include elevationMixins.md-elevation(16);
     }
   }
 
@@ -147,7 +147,7 @@
     overflow-x: hidden;
     overflow-y: auto;
 
-    @include md-layout-xsmall {
+    @include layoutMixins.md-layout-xsmall {
       width: 320px;
     }
 
@@ -167,7 +167,7 @@
 
     &:not(.md-temporary) {
       ~ .md-overlay {
-        @include md-layout-small-and-up {
+        @include layoutMixins.md-layout-small-and-up {
           background: none;
           pointer-events: none;
         }
@@ -188,19 +188,19 @@
       }
 
       &.md-active {
-        @include md-elevation(16);
+        @include elevationMixins.md-elevation(16);
       }
     }
 
     &.md-permanent {
-      @include md-layout-small-and-up {
+      @include layoutMixins.md-layout-small-and-up {
         position: relative;
         transform: translate3D(0, 0, 0);
       }
     }
 
     &.md-permanent-full {
-      @include md-layout-small-and-up {
+      @include layoutMixins.md-layout-small-and-up {
         z-index: 3;
 
         .md-list {
@@ -211,23 +211,23 @@
 
     &.md-permanent-clipped,
     &.md-permanent-card {
-      @include md-layout-small-and-up {
+      @include layoutMixins.md-layout-small-and-up {
         z-index: 1;
       }
     }
 
     &.md-permanent-card {
-      @include md-layout-small-and-up {
-        @include md-card;
+      @include layoutMixins.md-layout-small-and-up {
+        @include base.md-card;
         margin: 8px;
         z-index: 1;
       }
 
-      @include md-layout-medium-and-up {
+      @include layoutMixins.md-layout-medium-and-up {
         margin: 16px;
       }
 
-      @include md-layout-large-and-up {
+      @include layoutMixins.md-layout-large-and-up {
         margin: 24px;
       }
     }
@@ -250,7 +250,7 @@
 
     &.md-persistent-mini {
       transform: translate3D(0, 64px, 0);
-      transition: .3s $md-transition-stand-timing;
+      transition: .3s variables.$md-transition-stand-timing;
       transition-property: transform, width;
       will-change: transform, box-shadow;
 

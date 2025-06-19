@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdRadio from './MdRadio'
+import material from '../../material'
+import MdRadio from './MdRadio.vue'
 
 export default Vue => {
   material(Vue)

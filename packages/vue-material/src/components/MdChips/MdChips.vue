@@ -31,11 +31,11 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdField from 'components/MdField/MdField'
-  import MdInput from 'components/MdField/MdInput/MdInput'
-  import MdUuid from 'core/utils/MdUuid'
-  import MdPropValidator from 'core/utils/MdPropValidator'
+  import MdComponent from '../../core/MdComponent'
+  import MdField from '../MdField/MdField.vue'
+  import MdInput from '../MdField/MdInput/MdInput.vue'
+  import MdUuid from '../../core/utils/MdUuid'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
 
   export default new MdComponent({
     name: 'MdChips',
@@ -159,7 +159,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-chips.md-field {
     padding-top: 12px;

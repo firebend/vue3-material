@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdDrawer from './MdDrawer'
+import material from '../../material'
+import MdDrawer from './MdDrawer.vue'
 
 export default Vue => {
   material(Vue)

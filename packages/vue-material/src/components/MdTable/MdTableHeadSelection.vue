@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import MdTableHead from './MdTableHead'
+  import MdTableHead from './MdTableHead.vue'
 
   export default {
     name: 'MdTableHeadSelection',

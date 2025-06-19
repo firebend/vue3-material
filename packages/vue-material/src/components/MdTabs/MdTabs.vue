@@ -37,14 +37,14 @@
 
 <script>
   import raf from 'raf'
-  import MdComponent from 'core/MdComponent'
-  import MdAssetIcon from 'core/mixins/MdAssetIcon/MdAssetIcon'
-  import MdPropValidator from 'core/utils/MdPropValidator'
-  import MdObserveElement from 'core/utils/MdObserveElement'
-  import MdThrottling from 'core/utils/MdThrottling'
-  import MdButton from '../MdButton/MdButton'
-  import MdContent from 'components/MdContent/MdContent'
-  import MdSwipeable from 'core/mixins/MdSwipeable/MdSwipeable'
+  import MdComponent from '../../core/MdComponent'
+  import MdAssetIcon from '../../core/mixins/MdAssetIcon/MdAssetIcon'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
+  import MdObserveElement from '../../core/utils/MdObserveElement'
+  import MdThrottling from '../../core/utils/MdThrottling'
+  import MdButton from '../MdButton/MdButton.vue'
+  import MdContent from '../MdContent/MdContent.vue'
+  import MdSwipeable from '../../core/mixins/MdSwipeable/MdSwipeable'
 
   function areEqual (array1, array2) {
     if (array1.length !== array2.length) {
@@ -328,9 +328,9 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdElevation/mixins";
-  @import "~components/MdLayout/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdElevation/mixins" as elevationMixins;
+  @use "../MdLayout/mixins" as layoutMixins;
 
   .md-tabs {
     display: flex;
@@ -341,7 +341,7 @@
     }
 
     &.md-dynamic-height .md-tabs-content {
-      transition: height .3s $md-transition-default-timing;
+      transition: height .3s variables.$md-transition-default-timing;
       will-change: height;
     }
 
@@ -353,7 +353,7 @@
     }
 
     &.md-dynamic-height .md-tabs-content {
-      transition: height .35s $md-transition-stand-timing;
+      transition: height .35s variables.$md-transition-stand-timing;
     }
 
     &.md-alignment-left .md-tabs-navigation {
@@ -376,7 +376,7 @@
         min-width: 160px;
         flex: 1;
 
-        @include md-layout-small {
+        @include layoutMixins.md-layout-small {
           min-width: 72px;
         }
       }
@@ -385,7 +385,7 @@
     .md-toolbar & {
       padding-left: 48px;
 
-      @include md-layout-small {
+      @include layoutMixins.md-layout-small {
         margin: 0 -8px;
         padding-left: 0px;
       }
@@ -427,7 +427,7 @@
     .md-ripple {
       padding: 0 24px;
 
-      @include md-layout-small {
+      @include layoutMixins.md-layout-small {
         padding: 0 12px;
       }
     }
@@ -442,13 +442,13 @@
     will-change: left, right;
 
     &.md-tabs-indicator-left {
-      transition: left .3s $md-transition-default-timing,
-                  right .35s $md-transition-default-timing;
+      transition: left .3s variables.$md-transition-default-timing,
+                  right .35s variables.$md-transition-default-timing;
     }
 
     &.md-tabs-indicator-right {
-      transition: right .3s $md-transition-default-timing,
-                  left .35s $md-transition-default-timing;
+      transition: right .3s variables.$md-transition-default-timing,
+                  left .35s variables.$md-transition-default-timing;
     }
   }
 
@@ -463,7 +463,7 @@
     align-items: flex-start;
     flex-wrap: nowrap;
     transform: translateZ(0);
-    transition: transform .35s $md-transition-default-timing;
+    transition: transform .35s variables.$md-transition-default-timing;
     will-change: transform;
   }
 
@@ -472,7 +472,7 @@
     flex: 1 0 100%;
     padding: 16px;
 
-    @include md-layout-small {
+    @include layoutMixins.md-layout-small {
       padding: 8px;
     }
   }

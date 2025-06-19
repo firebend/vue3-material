@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdHighlightText from './MdHighlightText'
+import material from '../../material'
+import MdHighlightText from './MdHighlightText.vue'
 
 export default Vue => {
   material(Vue)

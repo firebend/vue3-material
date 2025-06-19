@@ -136,7 +136,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-table-pagination {
     height: 56px;

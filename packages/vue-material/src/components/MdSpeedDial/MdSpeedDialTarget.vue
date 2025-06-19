@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import MdButton from 'components/MdButton/MdButton'
+  import MdButton from '../MdButton/MdButton.vue'
 
   export default {
     name: 'MdSpeedDialTarget',
@@ -24,7 +24,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-speed-dial-target {
     z-index: 1;

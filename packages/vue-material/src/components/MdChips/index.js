@@ -1,6 +1,6 @@
-import material from 'vue-material/material'
-import MdChips from './MdChips'
-import MdChip from './MdChip'
+import material from '../../material'
+import MdChips from './MdChips.vue'
+import MdChip from './MdChip.vue'
 
 export default Vue => {
   material(Vue)

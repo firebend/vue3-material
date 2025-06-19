@@ -1,13 +1,13 @@
 <script>
-  import MdInteractionEvents from 'core/utils/MdInteractionEvents'
-  import MdRouterLinkProps from 'core/utils/MdRouterLinkProps'
-  import MdListItemDefault from './MdListItemDefault'
-  import MdListItemFakeButton from './MdListItemFakeButton'
-  import MdListItemButton from './MdListItemButton'
-  import MdListItemLink from './MdListItemLink'
-  import MdListItemRouter from './MdListItemRouter'
-  import MdListItemExpand from './MdListItemExpand'
-  import MdButton from 'components/MdButton/MdButton'
+  import MdInteractionEvents from '../../../core/utils/MdInteractionEvents'
+  import MdRouterLinkProps from '../../../core/utils/MdRouterLinkProps'
+  import MdListItemDefault from './MdListItemDefault.vue'
+  import MdListItemFakeButton from './MdListItemFakeButton.vue'
+  import MdListItemButton from './MdListItemButton.vue'
+  import MdListItemLink from './MdListItemLink.vue'
+  import MdListItemRouter from './MdListItemRouter.vue'
+  import MdListItemExpand from './MdListItemExpand.vue'
+  import MdButton from '../../MdButton/MdButton.vue'
 
   function hasExpansion (props) {
     return props.hasOwnProperty('mdExpand') && props.mdExpand !== false
@@ -112,7 +112,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../../MdAnimation/variables";
 
   .md-list-item {
     height: auto;
@@ -157,7 +157,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: padding .4s $md-transition-stand-timing;
+    transition: padding .4s variables.$md-transition-stand-timing;
     will-change: padding;
 
     .md-list.md-dense & {

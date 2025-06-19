@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
+  import MdComponent from '../../core/MdComponent'
 
   export default new MdComponent({
     name: 'MdList',
@@ -55,7 +55,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-list {
     margin: 0;

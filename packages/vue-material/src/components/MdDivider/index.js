@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdDivider from './MdDivider'
+import material from '../../material'
+import MdDivider from './MdDivider.vue'
 
 export default Vue => {
   material(Vue)

@@ -1,6 +1,6 @@
-import material from 'vue-material/material'
-import MdProgressBar from './MdProgressBar/MdProgressBar'
-import MdProgressSpinner from './MdProgressSpinner/MdProgressSpinner'
+import material from '../../material'
+import MdProgressBar from './MdProgressBar/MdProgressBar.vue'
+import MdProgressSpinner from './MdProgressSpinner/MdProgressSpinner.vue'
 
 export default Vue => {
   material(Vue)

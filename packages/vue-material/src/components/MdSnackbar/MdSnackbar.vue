@@ -15,10 +15,10 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdPropValidator from 'core/utils/MdPropValidator'
-  import MdPortal from 'components/MdPortal/MdPortal'
-  import MdSnackbarContent from './MdSnackbarContent'
+  import MdComponent from '../../core/MdComponent'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
+  import MdPortal from '../MdPortal/MdPortal'
+  import MdSnackbarContent from './MdSnackbarContent.vue'
   import { createSnackbar, destroySnackbar } from './MdSnackbarQueue'
 
   export default new MdComponent({
@@ -64,12 +64,12 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdLayout/mixins";
-  @import "~components/MdElevation/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdLayout/mixins" as layoutMixins;
+  @use "../MdElevation/mixins" as elevationMixins;
 
   .md-snackbar {
-    @include md-elevation(6);
+    @include elevationMixins.md-elevation(6);
     min-width: 288px;
     max-width: 568px;
     min-height: 48px;
@@ -80,7 +80,7 @@
     position: fixed;
     z-index: 1000;
     border-radius: 2px;
-    transition: .4s $md-transition-default-timing;
+    transition: .4s variables.$md-transition-default-timing;
     will-change: background-color, color, opacity, transform;
 
     &.md-position-center {
@@ -105,7 +105,7 @@
       }
     }
 
-    @include md-layout-xsmall {
+    @include layoutMixins.md-layout-xsmall {
       left: 0;
       transform: none;
       border-radius: 0;
@@ -126,13 +126,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: opacity .38s $md-transition-drop-timing;
+    transition: opacity .38s variables.$md-transition-drop-timing;
 
     .md-button {
       min-width: 0;
       margin: -8px -8px -8px 36px;
 
-      @include md-layout-xsmall {
+      @include layoutMixins.md-layout-xsmall {
         margin-left: 12px;
       }
 

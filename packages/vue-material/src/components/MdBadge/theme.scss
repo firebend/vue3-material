@@ -1,11 +1,13 @@
+@use "../../theme/mixins";
+
 .md-badge {
-  @include md-theme-component() {
-    @include md-theme-property(color, text-primary, accent);
-    @include md-theme-property(background-color, accent);
+  @include mixins.md-theme-component() {
+    @include mixins.md-theme-property(color, text-primary, accent);
+    @include mixins.md-theme-property(background-color, accent);
 
     &.md-primary {
-      @include md-theme-property(color, text-primary, primary);
-      @include md-theme-property(background-color, primary);
+      @include mixins.md-theme-property(color, text-primary, primary);
+      @include mixins.md-theme-property(background-color, primary);
     }
   }
 }

@@ -9,8 +9,8 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdPropValidator from 'core/utils/MdPropValidator'
+  import MdComponent from '../../../core/MdComponent'
+  import MdPropValidator from '../../../core/utils/MdPropValidator'
 
   export default new MdComponent({
     name: 'MdProgressBar',
@@ -67,7 +67,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../../MdAnimation/variables";
 
   @keyframes md-progress-bar-indeterminate-track {
     0% {
@@ -163,8 +163,8 @@
     position: relative;
     transform: translateZ(0) scaleY(1);
     transform-origin: center center;
-    transition: opacity .3s $md-transition-default-timing,
-                transform .4s $md-transition-default-timing;
+    transition: opacity .3s variables.$md-transition-default-timing,
+                transform .4s variables.$md-transition-default-timing;
     will-change: opacity, transform;
 
     &.md-indeterminate,
@@ -193,7 +193,7 @@
       .md-progress-bar-fill,
       .md-progress-bar-track,
       .md-progress-bar-buffer {
-        transition: .25s $md-transition-stand-timing;
+        transition: .25s variables.$md-transition-stand-timing;
       }
     }
 

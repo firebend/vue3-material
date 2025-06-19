@@ -47,12 +47,10 @@
 </template>
 
 <script>
-  import raf from 'raf'
-  import MdComponent from 'core/MdComponent'
-  import MdDropDownIcon from 'core/icons/MdDropDownIcon'
-  import MdMenu from 'components/MdMenu/MdMenu'
-  import MdMenuContent from 'components/MdMenu/MdMenuContent'
-  import MdInput from '../MdInput/MdInput'
+  import MdDropDownIcon from '../../../core/icons/MdDropDownIcon.vue'
+  import MdMenu from '../../MdMenu/MdMenu.vue'
+  import MdMenuContent from '../../MdMenu/MdMenuContent.vue'
+  import MdInput from '../MdInput/MdInput.vue'
   import MdFieldMixin from '../MdFieldMixin'
 
   const defaultOffset = {
@@ -310,7 +308,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../../MdAnimation/variables";
 
   .md-menu.md-select {
     display: flex;
@@ -351,7 +349,7 @@
     }
 
     .md-list {
-      transition: opacity .3s $md-transition-drop-timing;
+      transition: opacity .3s variables.$md-transition-drop-timing;
     }
   }
 </style>

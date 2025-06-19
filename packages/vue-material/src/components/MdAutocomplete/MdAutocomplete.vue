@@ -40,7 +40,7 @@
 <script>
   import fuzzy from 'fuzzysearch'
   import isPromise from 'is-promise'
-  import MdPropValidator from 'core/utils/MdPropValidator'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
 
   export default {
     name: 'MdAutocomplete',
@@ -88,7 +88,7 @@
       isBoxLayout () {
         return this.mdLayout === 'box'
       },
-      fieldClasses () : string {
+      fieldClasses () {
         if (this.isBoxLayout) {
           return 'md-autocomplete-box'
         }
@@ -228,9 +228,9 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdElevation/mixins";
-  @import "~components/MdLayout/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdElevation/mixins" as elevationMixins;
+  @use "../MdLayout/mixins" as layoutMixins;
 
   .md-autocomplete {
     .md-menu {
@@ -252,7 +252,7 @@
   }
 
   .md-field.md-inline.md-autocomplete-box {
-    @include md-elevation(2);
+    @include elevationMixins.md-elevation(2);
     padding-top: 2px;
     border-radius: 2px;
 

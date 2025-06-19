@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
+  import MdComponent from '../../core/MdComponent'
 
   export default new MdComponent({
     name: 'MdDialogContent'
@@ -13,7 +13,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-dialog-content {
     padding: 0 24px 24px;

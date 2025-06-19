@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import MdPropValidator from 'core/utils/MdPropValidator'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
 
   export default {
     name: 'MdMenu',
@@ -140,8 +140,8 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdLayout/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdLayout/mixins";
 
   .md-menu {
     display: inline-block;

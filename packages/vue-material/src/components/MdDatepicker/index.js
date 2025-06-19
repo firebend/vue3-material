@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdDatepicker from './MdDatepicker'
+import material from '../../material'
+import MdDatepicker from './MdDatepicker.vue'
 
 export default Vue => {
   material(Vue)

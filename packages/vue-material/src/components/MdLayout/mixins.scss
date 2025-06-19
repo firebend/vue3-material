@@ -1,36 +1,35 @@
-@import "./variables.scss";
-
+@use "./variables.scss";
 
 /**
  * Breakpoint
  */
 
 @mixin md-layout-xsmall {
-  @media (max-width: #{$md-breakpoint-xsmall}) {
+  @media (max-width: #{variables.$md-breakpoint-xsmall}) {
     @content;
   }
 }
 
 @mixin md-layout-small {
-  @media (max-width: #{$md-breakpoint-small}) {
+  @media (max-width: #{variables.$md-breakpoint-small}) {
     @content;
   }
 }
 
 @mixin md-layout-medium {
-  @media (max-width: #{$md-breakpoint-medium}) {
+  @media (max-width: #{variables.$md-breakpoint-medium}) {
     @content;
   }
 }
 
 @mixin md-layout-large {
-  @media (max-width: #{$md-breakpoint-large - 16px}) {
+  @media (max-width: #{variables.$md-breakpoint-large - 16px}) {
     @content;
   }
 }
 
 @mixin md-layout-xlarge {
-  @media (min-width: #{$md-breakpoint-large - 16px}) {
+  @media (min-width: #{variables.$md-breakpoint-large - 16px}) {
     @content;
   }
 }
@@ -42,19 +41,19 @@
 }
 
 @mixin md-layout-small-and-up {
-  @media (min-width: #{$md-breakpoint-xsmall}) {
+  @media (min-width: #{variables.$md-breakpoint-xsmall}) {
     @content;
   }
 }
 
 @mixin md-layout-medium-and-up {
-  @media (min-width: #{$md-breakpoint-small}) {
+  @media (min-width: #{variables.$md-breakpoint-small}) {
     @content;
   }
 }
 
 @mixin md-layout-large-and-up {
-  @media (min-width: #{$md-breakpoint-medium}) {
+  @media (min-width: #{variables.$md-breakpoint-medium}) {
     @content;
   }
 }
@@ -76,8 +75,8 @@
   }
 }
 
-@mixin md-layout-gutter($size: $md-gutter-large) {
-  $spacing: $size / 2;
+@mixin md-layout-gutter($size: variables.$md-gutter-large) {
+  $spacing: calc($size / 2);
 
   &.md-gutter {
     margin-right: -$spacing;

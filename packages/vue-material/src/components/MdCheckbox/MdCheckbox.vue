@@ -13,9 +13,9 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdCheckboxMixin from 'components/MdCheckbox/MdCheckboxMixin'
-  import MdUuid from 'core/utils/MdUuid'
+  import MdComponent from '../../core/MdComponent'
+  import MdCheckboxMixin from '../MdCheckbox/MdCheckboxMixin'
+  import MdUuid from '../../core/utils/MdUuid'
 
   export default new MdComponent({
     name: 'MdCheckbox',
@@ -30,7 +30,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   $md-checkbox-size: 20px;
   $md-checkbox-touch-size: 48px;
@@ -56,7 +56,7 @@
       position: relative;
       border-radius: 2px;
       border: 2px solid transparent;
-      transition: $md-transition-stand;
+      transition: variables.$md-transition-stand;
 
       &:focus {
         outline: none;
@@ -65,7 +65,7 @@
       &:before,
       &:after {
         position: absolute;
-        transition: $md-transition-drop;
+        transition: variables.$md-transition-drop;
         content: " ";
       }
 
@@ -136,7 +136,7 @@
       &:after {
         opacity: 1;
         transform: rotate(45deg) scale3D(1, 1, 1);
-        transition: $md-transition-stand;
+        transition: variables.$md-transition-stand;
       }
     }
   }

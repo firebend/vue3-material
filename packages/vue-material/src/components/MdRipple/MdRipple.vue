@@ -13,9 +13,9 @@
 
 <script>
   import raf from 'raf'
-  import MdComponent from 'core/MdComponent'
-  import uuid from 'core/utils/MdUuid'
-  import MdWave from './MdWave'
+  import MdComponent from '../../core/MdComponent'
+  import uuid from '../../core/utils/MdUuid'
+  import MdWave from './MdWave.vue'
 
   export default new MdComponent({
     name: 'MdRipple',
@@ -143,7 +143,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-ripple {
     width: 100%;

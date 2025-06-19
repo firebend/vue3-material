@@ -1,7 +1,7 @@
-import material from 'vue-material/material'
-import MdMenu from './MdMenu'
-import MdMenuContent from './MdMenuContent'
-import MdMenuItem from './MdMenuItem'
+import material from '../../material'
+import MdMenu from './MdMenu.vue'
+import MdMenuContent from './MdMenuContent.vue'
+import MdMenuItem from './MdMenuItem.vue'
 
 export default Vue => {
   material(Vue)

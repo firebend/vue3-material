@@ -1,8 +1,8 @@
 <script>
   import Vue from 'vue'
-  import MdAppSideDrawer from './MdAppSideDrawer'
-  import MdAppInternalDrawer from './MdAppInternalDrawer'
-  import MdDrawerRightPrevious from '../MdDrawer/MdDrawerRightPrevious'
+  import MdAppSideDrawer from './MdAppSideDrawer.vue'
+  import MdAppInternalDrawer from './MdAppInternalDrawer.vue'
+  import MdDrawerRightPrevious from '../MdDrawer/MdDrawerRightPrevious.vue'
 
   const componentTypes = [
     'md-app-toolbar',
@@ -128,8 +128,8 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdLayout/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdLayout/mixins" as layoutMixins;
 
   .md-app {
     display: flex;
@@ -189,11 +189,11 @@
         position: relative;
         z-index: 2;
 
-        @include md-layout-small {
+        @include layoutMixins.md-layout-small {
           margin: -64px 16px 16px;
         }
 
-        @include md-layout-xsmall {
+        @include layoutMixins.md-layout-xsmall {
           margin: -64px 8px 8px;
         }
       }
@@ -202,7 +202,7 @@
 
   .md-app-drawer {
     &.md-permanent-card + .md-app-scroller .md-content {
-      @include md-layout-small-and-up {
+      @include layoutMixins.md-layout-small-and-up {
         padding-left: 0;
         padding-right: 0;
         border-left: none;
@@ -214,7 +214,7 @@
   .md-app-content {
     padding: 16px;
 
-    @include md-layout-small-and-up {
+    @include layoutMixins.md-layout-small-and-up {
       border-left: 1px solid transparent;
       border-right: 1px solid transparent;
     }
@@ -235,8 +235,8 @@
     display: flex;
     overflow: auto;
     transform: translate3D(0, 0, 0);
-    transition: padding-left .4s $md-transition-default-timing,
-                padding-right .4s $md-transition-default-timing;
+    transition: padding-left .4s variables.$md-transition-default-timing,
+                padding-right .4s variables.$md-transition-default-timing;
     will-change: padding-left, padding-right;
   }
 

@@ -12,8 +12,8 @@
 </template>
 
 <script>
-  import MdPropValidator from 'core/utils/MdPropValidator'
-  import MdTableCellSelection from './MdTableCellSelection'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
+  import MdTableCellSelection from './MdTableCellSelection.vue'
 
   export default {
     name: 'MdTableRow',
@@ -146,10 +146,10 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-table-row {
-    transition: .3s $md-transition-default-timing;
+    transition: .3s variables.$md-transition-default-timing;
     transition-property: background-color, font-weight;
     will-change: background-color, font-weight;
 

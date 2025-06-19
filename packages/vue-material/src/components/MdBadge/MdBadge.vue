@@ -13,10 +13,10 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdPropValidator from 'core/utils/MdPropValidator'
+  import MdComponent from '../../core/MdComponent'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
 
-  import MdBadgeStandalone from './MdBadgeStandalone'
+  import MdBadgeStandalone from './MdBadgeStandalone.vue'
 
   export default new MdComponent({
     name: 'MdBadge',
@@ -77,7 +77,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-badge-content {
     position: relative;

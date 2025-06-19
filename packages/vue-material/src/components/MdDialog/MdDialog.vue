@@ -19,10 +19,10 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdPortal from 'components/MdPortal/MdPortal'
-  import MdOverlay from 'components/MdOverlay/MdOverlay'
-  import MdFocusTrap from 'components/MdFocusTrap/MdFocusTrap'
+  import MdComponent from '../../core/MdComponent'
+  import MdPortal from '../MdPortal/MdPortal'
+  import MdOverlay from '../MdOverlay/MdOverlay.vue'
+  import MdFocusTrap from '../MdFocusTrap/MdFocusTrap'
   import MdDialogRender from './MdDialogRender'
 
   export default new MdComponent({
@@ -104,9 +104,9 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdLayout/mixins";
-  @import "~components/MdElevation/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdLayout/mixins" as layoutMixins;
+  @use "../MdElevation/mixins" as elevationMixins;
 
   $opacity-transition-duration: .15s;
   $transform-transition-duration: .20s;
@@ -133,7 +133,7 @@
       }
 
       .md-dialog-fullscreen {
-        @include md-layout-xsmall {
+        @include layoutMixins.md-layout-xsmall {
           opacity: 0;
           transform: translate(0, 30%);
         }
@@ -148,7 +148,7 @@
       }
 
       .md-dialog-fullscreen {
-        @include md-layout-xsmall {
+        @include layoutMixins.md-layout-xsmall {
           opacity: 1;
           transform: translate(0, 0);
         }
@@ -158,7 +158,7 @@
   }
 
   .md-dialog-container {
-    @include md-elevation(24);
+    @include elevationMixins.md-elevation(24);
     min-width: 280px;
     max-width: 80%;
     max-height: 80%;
@@ -171,7 +171,7 @@
     pointer-events: auto;
     opacity: 1;
     transform-origin: center center;
-    transition: opacity $opacity-transition-duration $md-transition-stand-timing, transform $transform-transition-duration $md-transition-stand-timing;
+    transition: opacity $opacity-transition-duration variables.$md-transition-stand-timing, transform $transform-transition-duration variables.$md-transition-stand-timing;
     will-change: opacity, transform;
 
     &.md-dialog-leave,
@@ -198,14 +198,14 @@
     }
 
     .md-tab {
-      @include md-layout-xsmall {
+      @include layoutMixins.md-layout-xsmall {
         padding: 12px;
       }
     }
   }
 
   .md-dialog-fullscreen {
-    @include md-layout-xsmall {
+    @include layoutMixins.md-layout-xsmall {
       width: 100%;
       height: 100%;
       max-width: 100%;

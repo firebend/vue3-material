@@ -14,8 +14,8 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdPropValidator from 'core/utils/MdPropValidator'
+  import MdComponent from '../../../core/MdComponent'
+  import MdPropValidator from '../../../core/utils/MdPropValidator'
 
   const MdProgressSpinner = {
     styleTag: null,
@@ -131,7 +131,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../../MdAnimation/variables";
 
   @keyframes md-progress-spinner-rotate {
     0% {
@@ -280,7 +280,7 @@
       }
 
       .md-progress-spinner-circle {
-        animation: 4s infinite $md-transition-stand-timing;
+        animation: 4s infinite variables.$md-transition-stand-timing;
         animation-name: md-progress-spinner-stroke-rotate;
       }
     }
@@ -290,7 +290,7 @@
         transition-duration: 2s;
 
         .md-progress-spinner-draw {
-          animation: md-progress-spinner-initial-rotate 1.98s $md-transition-stand-timing forwards;
+          animation: md-progress-spinner-initial-rotate 1.98s variables.$md-transition-stand-timing forwards;
         }
       }
 
@@ -298,7 +298,7 @@
         transition-duration: 2s;
 
         .md-progress-spinner-draw {
-          animation: md-progress-spinner-initial-rotate reverse 1.98s $md-transition-stand-timing forwards;
+          animation: md-progress-spinner-initial-rotate reverse 1.98s variables.$md-transition-stand-timing forwards;
         }
       }
 
@@ -312,14 +312,14 @@
     overflow: visible;
     transform: scale(1) rotate(-90deg);
     transform-origin: center;
-    transition: .4s $md-transition-stand-timing;
+    transition: .4s variables.$md-transition-stand-timing;
     will-change: opacity, transform;
   }
 
   .md-progress-spinner-circle {
     fill: none;
     transform-origin: center;
-    transition: stroke-dashoffset .25s $md-transition-stand-timing;
+    transition: stroke-dashoffset .25s variables.$md-transition-stand-timing;
     will-change: stroke-dashoffset, stroke-dasharray, stroke-width, animation-name, r;
   }
 </style>

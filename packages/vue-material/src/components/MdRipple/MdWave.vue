@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
+  import MdComponent from '../../core/MdComponent'
   export default new MdComponent({
     name: 'MdWave',
     data () {
@@ -30,10 +30,10 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-ripple-enter-active {
-    transition: .8s $md-transition-stand-timing;
+    transition: .8s variables.$md-transition-stand-timing;
     transition-property: opacity, transform;
     will-change: opacity, transform;
     &.md-centered {

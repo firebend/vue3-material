@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import MdPropValidator from 'core/utils/MdPropValidator'
+  import MdPropValidator from '../../../core/utils/MdPropValidator'
 
   const alignments = ['left', 'right', 'space-between']
 

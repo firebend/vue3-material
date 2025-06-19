@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdToolbar from './MdToolbar'
+import material from '../../material'
+import MdToolbar from './MdToolbar.vue'
 
 export default Vue => {
   material(Vue)

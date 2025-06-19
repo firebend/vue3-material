@@ -102,11 +102,11 @@
   import setMonth from 'date-fns/setMonth'
   import setYear from 'date-fns/setYear'
 
-  import MdComponent from 'core/MdComponent'
-  import MdPopover from 'components/MdPopover/MdPopover'
-  import MdArrowRightIcon from 'core/icons/MdArrowRightIcon'
-  import MdArrowLeftIcon from 'core/icons/MdArrowLeftIcon'
-  import MdDialog from 'components/MdDialog/MdDialog'
+  import MdComponent from '../../core/MdComponent'
+  import MdPopover from '../MdPopover/MdPopover.vue'
+  import MdArrowRightIcon from '../../core/icons/MdArrowRightIcon.vue'
+  import MdArrowLeftIcon from '../../core/icons/MdArrowLeftIcon.vue'
+  import MdDialog from '../MdDialog/MdDialog.vue'
 
   const daysInAWeek = 7
 
@@ -358,15 +358,15 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdLayout/mixins";
-  @import "~components/MdElevation/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdLayout/mixins" as layoutMixins;
+  @use "../MdElevation/mixins" as elevationMixins;
 
   $md-calendar-width: 320px;
   $md-calendar-mobile-width: 296px;
 
   .md-datepicker-dialog {
-    @include md-elevation(24);
+    @include elevationMixins.md-elevation(24);
     display: flex;
     overflow: hidden;
     z-index: 110;
@@ -375,11 +375,11 @@
     pointer-events: auto;
     transform-origin: top left;
     flex-shrink: 0;
-    transition: opacity .2s $md-transition-stand-timing,
-                transform .35s $md-transition-stand-timing;
+    transition: opacity .2s variables.$md-transition-stand-timing,
+                transform .35s variables.$md-transition-stand-timing;
     will-change: opacity, transform, left, top;
 
-    @include md-layout-xsmall {
+    @include layoutMixins.md-layout-xsmall {
       flex-direction: column;
       top: 50% !important;
       left: 50% !important;
@@ -397,7 +397,7 @@
     opacity: 0;
     transform: scale(.9);
 
-    @include md-layout-xsmall {
+    @include layoutMixins.md-layout-xsmall {
       transform: translate3D(-50%, -50%, 0) scale(.9);
     }
 
@@ -413,7 +413,7 @@
     min-width: 150px;
     padding: 16px;
 
-    @include md-layout-xsmall {
+    @include layoutMixins.md-layout-xsmall {
       min-width: auto;
       padding: 16px 20px;
     }
@@ -421,7 +421,7 @@
     .md-datepicker-year-select {
       cursor: pointer;
       opacity: .54;
-      transition: opacity .3s $md-transition-default-timing;
+      transition: opacity .3s variables.$md-transition-default-timing;
       font-size: 16px;
       font-weight: 700;
       letter-spacing: .01em;
@@ -431,7 +431,7 @@
     .md-datepicker-date-select {
       cursor: pointer;
       opacity: .54;
-      transition: opacity .3s $md-transition-default-timing;
+      transition: opacity .3s variables.$md-transition-default-timing;
       font-size: 32px;
       font-weight: 900;
       letter-spacing: 0;
@@ -441,7 +441,7 @@
     .md-datepicker-dayname {
       display: block;
 
-      @include md-layout-xsmall {
+      @include layoutMixins.md-layout-xsmall {
         display: inline-block;
       }
     }
@@ -455,10 +455,10 @@
     width: $md-calendar-width;
     position: relative;
     overflow: hidden;
-    transition: width .3s $md-transition-stand-timing;
+    transition: width .3s variables.$md-transition-stand-timing;
     will-change: width;
 
-    @include md-layout-xsmall {
+    @include layoutMixins.md-layout-xsmall {
       width: $md-calendar-mobile-width;
     }
 
@@ -516,7 +516,7 @@
 
   .md-datepicker-body-content {
     overflow: hidden;
-    transition: height .35s $md-transition-default-timing;
+    transition: height .35s variables.$md-transition-default-timing;
     will-change: height;
   }
 
@@ -527,7 +527,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    transition: .35s $md-transition-default-timing;
+    transition: .35s variables.$md-transition-default-timing;
     transition-property: transform, opacity;
     will-change: transform, opacity;
   }
@@ -571,11 +571,11 @@
     top: 8px;
     bottom: auto;
     flex-direction: column;
-    transition: .35s $md-transition-default-timing;
+    transition: .35s variables.$md-transition-default-timing;
     transition-property: transform, opacity;
     will-change: transform, opacity;
 
-    @include md-layout-xsmall {
+    @include layoutMixins.md-layout-xsmall {
       padding: 0 6px;
     }
 
@@ -584,7 +584,7 @@
       margin: 0 46px 10px;
       flex: 1;
       border-radius: 0;
-      transition: transform .45s $md-transition-default-timing;
+      transition: transform .45s variables.$md-transition-default-timing;
       will-change: transform;
     }
   }
@@ -612,7 +612,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      flex: 0 1 $md-day-width / 7;
+      flex: 0 1  calc($md-day-width / 7);
     }
 
     .md-datepicker-day-button {
@@ -623,7 +623,7 @@
       height: $width;
       cursor: pointer;
       border-radius: $width;
-      transition: .3s $md-transition-default-timing;
+      transition: .3s variables.$md-transition-default-timing;
       line-height: $width;
       text-align: center;
     }
@@ -645,7 +645,7 @@
     padding: 6px 8px 10px;
     flex-wrap: wrap;
     bottom: auto;
-    transition: .35s $md-transition-default-timing;
+    transition: .35s variables.$md-transition-default-timing;
     transition-property: transform, opacity;
     will-change: transform, opacity;
 
@@ -666,7 +666,7 @@
     height: 36px;
     margin: 3px 0;
     cursor: pointer;
-    transition: .3s $md-transition-default-timing;
+    transition: .3s variables.$md-transition-default-timing;
     line-height: 36px;
     font-weight: 500;
     text-align: center;

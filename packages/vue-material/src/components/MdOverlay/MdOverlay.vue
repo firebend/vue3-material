@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import MdPortal from 'components/MdPortal/MdPortal'
+  import MdPortal from '../MdPortal/MdPortal'
 
   export default {
     name: 'MdOverlay',
@@ -30,7 +30,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-overlay {
     position: absolute;
@@ -41,7 +41,7 @@
     z-index: 10;
     overflow: hidden;
     background: rgba(#000, .6);
-    transition: .35s $md-transition-default-timing;
+    transition: .35s variables.$md-transition-default-timing;
     transition-property: opacity;
     will-change: opacity;
 

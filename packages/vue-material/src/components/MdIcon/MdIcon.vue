@@ -6,8 +6,8 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdSvgLoader from 'components/MdSvgLoader/MdSvgLoader'
+  import MdComponent from '../../core/MdComponent'
+  import MdSvgLoader from '../MdSvgLoader/MdSvgLoader.vue'
 
   export default new MdComponent({
     name: 'MdIcon',
@@ -21,13 +21,13 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "./mixins";
+  @use "../MdAnimation/variables";
+  @use "./mixins";
 
   $icon-size: 24px;
 
   .md-icon {
-    @include md-icon-size($icon-size);
+    @include mixins.md-icon-size($icon-size);
     margin: auto;
     display: inline-flex;
     user-select: none;
@@ -36,19 +36,19 @@
     vertical-align: middle;
 
     &.md-size-2x {
-      @include md-icon-size($icon-size * 2);
+      @include mixins.md-icon-size($icon-size * 2);
     }
 
     &.md-size-3x {
-      @include md-icon-size($icon-size * 3);
+      @include mixins.md-icon-size($icon-size * 3);
     }
 
     &.md-size-4x {
-      @include md-icon-size($icon-size * 4);
+      @include mixins.md-icon-size($icon-size * 4);
     }
 
     &.md-size-5x {
-      @include md-icon-size($icon-size * 5);
+      @include mixins.md-icon-size($icon-size * 5);
     }
   }
 
@@ -56,12 +56,12 @@
     svg {
       height: 100%;
       flex: 1;
-      transition: fill .4s $md-transition-default-timing;
+      transition: fill .4s variables.$md-transition-default-timing;
     }
   }
 
   .md-icon {
-    transition: color .4s $md-transition-default-timing;
+    transition: color .4s variables.$md-transition-default-timing;
     direction: ltr;
     font-family: "Material Icons";
     font-feature-settings: "liga";

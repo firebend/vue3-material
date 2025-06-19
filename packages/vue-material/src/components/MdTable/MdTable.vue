@@ -54,15 +54,15 @@
 <script>
   import raf from 'raf'
 
-  import MdTagSwitcher from 'components/MdTagSwitcher/MdTagSwitcher'
-  import MdUuid from 'core/utils/MdUuid'
-  import MdPropValidator from 'core/utils/MdPropValidator'
-  import MdTableThead from './MdTableThead'
-  import MdTableAlternateHeader from './MdTableAlternateHeader'
-  import MdTableRow from './MdTableRow'
-  import MdTableRowGhost from './MdTableRowGhost'
-  import MdTableCellSelection from './MdTableCellSelection'
-  import MdResizeObserver from 'core/utils/MdResizeObserver'
+  import MdTagSwitcher from '../MdTagSwitcher/MdTagSwitcher.vue'
+  import MdUuid from '../../core/utils/MdUuid'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
+  import MdTableThead from './MdTableThead.vue'
+  import MdTableAlternateHeader from './MdTableAlternateHeader.vue'
+  import MdTableRow from './MdTableRow.vue'
+  import MdTableRowGhost from './MdTableRowGhost.vue'
+  import MdTableCellSelection from './MdTableCellSelection.vue'
+  import MdResizeObserver from '../../core/utils/MdResizeObserver'
 
   const getObjectAttribute = (object, key) => {
     let value = object
@@ -392,7 +392,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-table {
     display: flex;
@@ -422,7 +422,7 @@
     .md-table-content {
       flex: 1;
       overflow-x: auto;
-      transition: height .3s $md-transition-default-timing;
+      transition: height .3s variables.$md-transition-default-timing;
     }
 
     .md-table-empty {

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import MdPropValidator from 'core/utils/MdPropValidator'
+  import MdPropValidator from '../../../core/utils/MdPropValidator'
 
   export default {
     name: 'MdCardMedia',
@@ -75,7 +75,7 @@
 
     &:before{
       width: 100%;
-      padding-top: ($height / $width) * 100%;
+      padding-top: calc($height / $width) * 100%;
       display: block;
       content: " ";
     }

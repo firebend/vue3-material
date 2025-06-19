@@ -9,8 +9,8 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdUuid from 'core/utils/MdUuid'
+  import MdComponent from '../../../core/MdComponent'
+  import MdUuid from '../../../core/utils/MdUuid'
   import MdFieldMixin from '../MdFieldMixin'
 
   export default new MdComponent({

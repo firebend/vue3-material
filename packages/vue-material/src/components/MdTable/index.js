@@ -1,11 +1,11 @@
-import material from 'vue-material/material'
+import material from '../../material'
 import MdTable from './MdTableContainer'
-import MdTableToolbar from './MdTableToolbar'
-import MdTableEmptyState from './MdTableEmptyState'
-import MdTableRow from './MdTableRow'
-import MdTableHead from './MdTableHead'
-import MdTableCell from './MdTableCell'
-import MdTablePagination from './MdTablePagination'
+import MdTableToolbar from './MdTableToolbar.vue'
+import MdTableEmptyState from './MdTableEmptyState.vue'
+import MdTableRow from './MdTableRow.vue'
+import MdTableHead from './MdTableHead.vue'
+import MdTableCell from './MdTableCell.vue'
+import MdTablePagination from './MdTablePagination.vue'
 
 export default Vue => {
   material(Vue)

@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdContent from './MdContent'
+import material from '../../material'
+import MdContent from './MdContent.vue'
 
 export default Vue => {
   material(Vue)

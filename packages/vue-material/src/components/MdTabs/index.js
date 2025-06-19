@@ -1,6 +1,6 @@
-import material from 'vue-material/material'
-import MdTabs from './MdTabs'
-import MdTab from './MdTab'
+import material from '../../material'
+import MdTabs from './MdTabs.vue'
+import MdTab from './MdTab.vue'
 
 export default Vue => {
   material(Vue)

@@ -7,9 +7,9 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdPropValidator from 'core/utils/MdPropValidator'
-  import MdRipple from 'components/MdRipple/MdRipple'
+  import MdComponent from '../../core/MdComponent'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
+  import MdRipple from '../MdRipple/MdRipple.vue'
 
   export default new MdComponent({
     name: 'MdBottomBar',
@@ -95,13 +95,13 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdElevation/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdElevation/mixins" as elevationMixins;
 
   .md-bottom-bar {
-    @include md-elevation(8);
+    @include elevationMixins.md-elevation(8);
     width: 100%;
-    transition: background-color .5s $md-transition-default-timing;
+    transition: background-color .5s variables.$md-transition-default-timing;
 
     > .md-ripple {
       display: flex;
@@ -114,7 +114,7 @@
       .md-bottom-bar-item {
         min-width: 80px;
         max-width: 168px;
-        transition: $md-transition-default;
+        transition: variables.$md-transition-default;
         transition-property: color;
         will-change: color;
 
@@ -155,7 +155,7 @@
         min-width: 56px;
         max-width: 96px;
         flex: 1 1 32px;
-        transition: .3s $md-transition-default-timing;
+        transition: .3s variables.$md-transition-default-timing;
         transition-property: padding, min-width, max-width, flex, color;
         will-change: padding, min-width, max-width, flex, color;
 
@@ -206,7 +206,7 @@
 
       .md-ripple {
         padding: 8px 12px 10px;
-        transition: padding .3s $md-transition-stand-timing;
+        transition: padding .3s variables.$md-transition-stand-timing;
         will-change: padding;
       }
 
@@ -219,7 +219,7 @@
 
       .md-bottom-bar-icon,
       .md-bottom-bar-label {
-        transition: .3s $md-transition-default-timing;
+        transition: .3s variables.$md-transition-default-timing;
         transition-property: transform, opacity;
         will-change: transform, opacity;
       }

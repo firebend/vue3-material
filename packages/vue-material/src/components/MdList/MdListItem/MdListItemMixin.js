@@ -1,5 +1,5 @@
-import MdRipple from 'core/mixins/MdRipple/MdRipple'
-import MdListItemContent from './MdListItemContent'
+import MdRipple from '../../../core/mixins/MdRipple/MdRipple'
+import MdListItemContent from './MdListItemContent.vue'
 
 export default {
   mixins: [MdRipple],

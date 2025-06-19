@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdList from './MdList'
+import material from '../../material'
+import MdList from './MdList.vue'
 import MdListItem from './MdListItem/MdListItem.vue'
 
 export default Vue => {

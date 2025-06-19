@@ -16,13 +16,13 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdObserveEvent from 'core/utils/MdObserveEvent'
-  import MdResizeObserver from 'core/utils/MdResizeObserver'
-  import MdPopover from 'components/MdPopover/MdPopover'
-  import MdFocusTrap from 'components/MdFocusTrap/MdFocusTrap'
-  import MdList from 'components/MdList/MdList'
-  import MdContains from 'core/utils/MdContains'
+  import MdComponent from '../../core/MdComponent'
+  import MdObserveEvent from '../../core/utils/MdObserveEvent'
+  import MdResizeObserver from '../../core/utils/MdResizeObserver'
+  import MdPopover from '../MdPopover/MdPopover.vue'
+  import MdFocusTrap from '../MdFocusTrap/MdFocusTrap'
+  import MdList from '../MdList/MdList.vue'
+  import MdContains from '../../core/utils/MdContains'
 
   export default new MdComponent({
     name: 'MdMenuContent',
@@ -291,14 +291,14 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdElevation/mixins";
-  @import "~components/MdLayout/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdElevation/mixins" as elevationMixins;
+  @use "../MdLayout/mixins" as layoutMixins;
 
   $md-menu-base-width: 56px;
 
   .md-menu-content {
-    @include md-elevation(8);
+    @include elevationMixins.md-elevation(8);
     min-width: $md-menu-base-width * 2;
     max-width: $md-menu-base-width * 5;
     max-height: 35vh;
@@ -307,8 +307,8 @@
     position: absolute;
     z-index: 60;
     border-radius: 2px;
-    transition: transform .2s $md-transition-stand-timing,
-                opacity .3s $md-transition-stand-timing;
+    transition: transform .2s variables.$md-transition-stand-timing,
+                opacity .3s variables.$md-transition-stand-timing;
     will-change: opacity, transform, top, left !important;
 
     &.md-shallow {
@@ -324,7 +324,7 @@
     }
 
     &.md-menu-content-leave-active {
-      transition: opacity .4s $md-transition-default-timing;
+      transition: opacity .4s variables.$md-transition-default-timing;
       opacity: 0;
     }
 
@@ -392,7 +392,7 @@
     overflow: auto;
 
     .md-list {
-      transition: opacity .3s $md-transition-stand-timing;
+      transition: opacity .3s variables.$md-transition-stand-timing;
       will-change: opacity;
       font-family: 'Roboto', sans-serif;
       text-transform: none;
@@ -402,7 +402,7 @@
         height: 100%;
       }
 
-      @include md-layout-small {
+      @include layoutMixins.md-layout-small {
         font-size: 14px;
       }
     }

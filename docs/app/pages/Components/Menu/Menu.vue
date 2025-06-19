@@ -60,7 +60,7 @@
 
 <script>
   import examples from 'docs-mixins/docsExample'
-  import MdInteractionEvents from 'core/utils/MdInteractionEvents'
+  import MdInteractionEvents from '../../core/utils/MdInteractionEvents'
 
   function getEventNames () {
     return MdInteractionEvents.map(event => `<li>${event}</li>`).join('')

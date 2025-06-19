@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <transition name="md-snackbar" appear>
     <div class="md-snackbar" :class="props.mdClasses">
       <div class="md-snackbar-content">

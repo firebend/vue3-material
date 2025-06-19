@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdSnackbar from './MdSnackbar'
+import material from '../../material'
+import MdSnackbar from './MdSnackbar.vue'
 
 export default Vue => {
   material(Vue)

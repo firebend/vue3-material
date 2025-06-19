@@ -27,13 +27,13 @@
   import format from 'date-fns/format'
   import parse from 'date-fns/parse'
   import isValid from 'date-fns/isValid'
-  import MdPropValidator from 'core/utils/MdPropValidator'
-  import MdOverlay from 'components/MdOverlay/MdOverlay'
-  import MdDatepickerDialog from './MdDatepickerDialog'
-  import MdDateIcon from 'core/icons/MdDateIcon'
-  import MdDebounce from 'core/utils/MdDebounce'
-  import MdField from 'components/MdField/MdField'
-  import MdInput from 'components/MdField/MdInput/MdInput'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
+  import MdOverlay from '../MdOverlay/MdOverlay.vue'
+  import MdDatepickerDialog from './MdDatepickerDialog.vue'
+  import MdDateIcon from '../../core/icons/MdDateIcon.vue'
+  import MdDebounce from '../../core/utils/MdDebounce'
+  import MdField from '../MdField/MdField.vue'
+  import MdInput from '../MdField/MdInput/MdInput.vue'
 
   export default {
     name: 'MdDatepicker',
@@ -253,13 +253,13 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdLayout/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdLayout/mixins" as layoutMixins;
 
   .md-datepicker-overlay {
     opacity: 0;
 
-    @include md-layout-xsmall {
+    @include layoutMixins.md-layout-xsmall {
       opacity: 1;
     }
   }

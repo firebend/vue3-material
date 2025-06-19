@@ -52,7 +52,6 @@ const init = () => {
 
 export default (app: App) => {
   if (!app.config.globalProperties.$material) {
-    // TODO use composition API
     app.config.globalProperties.$material = init()
   }
 }

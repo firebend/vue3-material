@@ -5,9 +5,8 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdInteractionEvents from 'core/utils/MdInteractionEvents'
-  import MdListItem from 'components/MdList/MdListItem/MdListItem'
+  import MdComponent from '../../core/MdComponent'
+  import MdInteractionEvents from '../../core/utils/MdInteractionEvents'
 
   export default new MdComponent({
     name: 'MdMenuItem',

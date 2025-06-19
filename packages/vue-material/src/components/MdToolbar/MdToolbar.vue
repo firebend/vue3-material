@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
+  import MdComponent from '../../core/MdComponent'
 
   export default new MdComponent({
     name: 'MdToolbar',
@@ -19,9 +19,9 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdLayout/mixins";
-  @import "~components/MdElevation/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdLayout/mixins" as layoutMixins;
+  @use "../MdElevation/mixins" as elevationMixins;
 
   $md-toolbar-height: 64px;
   $md-toolbar-height-portrait: 56px;
@@ -35,15 +35,15 @@
     display: flex;
     align-items: center;
     align-content: center;
-    transition: .3s $md-transition-default-timing;
+    transition: .3s variables.$md-transition-default-timing;
     transition-property: opacity, background-color, box-shadow, transform, color, min-height;
     will-change: opacity, background-color, box-shadow, transform, color, min-height;
 
-    @include md-layout-small {
+    @include layoutMixins.md-layout-small {
       min-height: $md-toolbar-height-landscape;
     }
 
-    @include md-layout-xsmall {
+    @include layoutMixins.md-layout-xsmall {
       min-height: $md-toolbar-height-portrait;
     }
   }
@@ -54,7 +54,7 @@
     position: relative;
     z-index: 2;
 
-    @include md-layout-small {
+    @include layoutMixins.md-layout-small {
       padding: 0 8px;
     }
 
@@ -89,7 +89,7 @@
     .md-toolbar-offset {
       margin-left: 56px;
 
-      @include md-layout-small {
+      @include layoutMixins.md-layout-small {
         margin-left: 48px;
       }
     }
@@ -101,7 +101,7 @@
       ~ .md-title {
         margin-left: 24px;
 
-        @include md-layout-small {
+        @include layoutMixins.md-layout-small {
           margin-left: 16px;
         }
       }

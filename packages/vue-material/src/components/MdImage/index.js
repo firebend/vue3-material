@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdImage from './MdImage'
+import material from '../../material'
+import MdImage from './MdImage.vue'
 
 export default Vue => {
   material(Vue)

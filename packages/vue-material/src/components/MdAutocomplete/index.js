@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdAutocomplete from './MdAutocomplete'
+import material from '../../material'
+import MdAutocomplete from './MdAutocomplete.vue'
 
 export default Vue => {
   material(Vue)

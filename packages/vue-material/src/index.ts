@@ -1,4 +1,4 @@
-// import * as MdComponents from './components'
+import * as MdComponents from './components'
 import {App} from "vue";
 import material from "./material";
 
@@ -7,8 +7,8 @@ export default {
   install: (app: App) => {
     material(app);
 
-    // Object.values(MdComponents).forEach((MdComponent) => {
-    //   app.use(MdComponent)
-    // })
+    Object.values(MdComponents).forEach((MdComponent) => {
+      app.use(MdComponent)
+    })
   }
 }

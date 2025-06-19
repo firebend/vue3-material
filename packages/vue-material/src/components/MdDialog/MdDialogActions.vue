@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-dialog-actions {
     min-height: 52px;

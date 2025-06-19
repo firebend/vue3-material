@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdButton from './MdButton'
+import material from '../../material'
+import MdButton from './MdButton.vue'
 
 export default Vue => {
   material(Vue)

@@ -16,9 +16,9 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
+  import MdComponent from '../../core/MdComponent'
   import MdEmptyStateProps from './MdEmptyStateProps'
-  import MdAssetIcon from 'core/mixins/MdAssetIcon/MdAssetIcon'
+  import MdAssetIcon from '../../core/mixins/MdAssetIcon/MdAssetIcon'
 
   export default new MdComponent({
     name: 'MdEmptyState',
@@ -45,8 +45,8 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdIcon/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdIcon/mixins";
 
   @mixin md-empty-state-base () {
     display: flex;
@@ -62,8 +62,8 @@
     padding: 36px;
     margin: 0 auto;
     position: relative;
-    transition: opacity .15s $md-transition-enter-timing,
-                transform .3s $md-transition-enter-timing;
+    transition: opacity .15s variables.$md-transition-enter-timing,
+                transform .3s variables.$md-transition-enter-timing;
     will-change: transform, opacity;
 
     &.md-rounded {
@@ -96,12 +96,12 @@
 
   .md-empty-state-container {
     @include md-empty-state-base;
-    transition: opacity .4s $md-transition-default-timing;
+    transition: opacity .4s variables.$md-transition-default-timing;
     will-change: opacity;
   }
 
   .md-empty-state-icon {
-    @include md-icon-size(160px);
+    @include mixins.md-icon-size(160px);
     margin: 0;
   }
 

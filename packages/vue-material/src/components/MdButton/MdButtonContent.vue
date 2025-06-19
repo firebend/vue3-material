@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import MdRipple from 'components/MdRipple/MdRipple'
+  import MdRipple from '../MdRipple/MdRipple.vue'
 
   export default {
     name: 'MdButtonContent',

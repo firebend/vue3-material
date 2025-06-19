@@ -1,6 +1,6 @@
-import material from 'vue-material/material'
-import MdSteppers from './MdSteppers'
-import MdStep from './MdStep'
+import material from '../../material'
+import MdSteppers from './MdSteppers.vue'
+import MdStep from './MdStep.vue'
 
 export default Vue => {
   material(Vue)

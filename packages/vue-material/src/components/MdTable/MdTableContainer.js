@@ -1,4 +1,4 @@
-import MdTable from './MdTable'
+import MdTable from './MdTable.vue'
 
 function processChildren (children, createElement) {
   const slotNames = ['md-table-toolbar', 'md-table-empty-state', 'md-table-pagination']

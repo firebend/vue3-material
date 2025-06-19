@@ -15,9 +15,9 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdCheckboxMixin from 'components/MdCheckbox/MdCheckboxMixin'
-  import MdUuid from 'core/utils/MdUuid'
+  import MdComponent from '../../core/MdComponent'
+  import MdCheckboxMixin from '../MdCheckbox/MdCheckboxMixin'
+  import MdUuid from '../../core/utils/MdUuid'
 
   export default new MdComponent({
     name: 'MdSwitch',
@@ -32,8 +32,8 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
-  @import "~components/MdElevation/mixins";
+  @use "../MdAnimation/variables";
+  @use "../MdElevation/mixins" as elevationMixins;
 
   $md-switch-width: 34px;
   $md-switch-height: 14px;
@@ -63,16 +63,16 @@
       align-items: center;
       position: relative;
       border-radius: $md-switch-height;
-      transition: $md-transition-stand;
+      transition: variables.$md-transition-stand;
     }
 
     .md-switch-thumb {
-      @include md-elevation(1);
+      @include elevationMixins.md-elevation(1);
       width: $md-switch-size;
       height: $md-switch-size;
       position: relative;
       border-radius: 50%;
-      transition: $md-transition-stand;
+      transition: variables.$md-transition-stand;
 
       &:before {
         width: $md-switch-touch-size;

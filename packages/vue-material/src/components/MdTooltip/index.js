@@ -1,5 +1,5 @@
-import material from 'vue-material/material'
-import MdTooltip from './MdTooltip'
+import material from '../../material'
+import MdTooltip from './MdTooltip.vue'
 
 export default Vue => {
   material(Vue)

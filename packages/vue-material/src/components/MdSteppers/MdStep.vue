@@ -9,9 +9,9 @@
 </template>
 
 <script>
-  import MdUuid from 'core/utils/MdUuid'
-  import MdRouterLink from 'core/mixins/MdRouterLink/MdRouterLink'
-  import MdStepHeader from './MdStepHeader'
+  import MdUuid from '../../core/utils/MdUuid'
+  import MdRouterLink from '../../core/mixins/MdRouterLink/MdRouterLink'
+  import MdStepHeader from './MdStepHeader.vue'
 
   export default {
     name: 'MdStep',
@@ -133,7 +133,7 @@
 </script>
 
 <style lang="scss">
-  @import "~components/MdAnimation/variables";
+  @use "../MdAnimation/variables";
 
   .md-steppers.md-vertical .md-stepper-content {
     padding: 0 24px 0 60px;
@@ -141,7 +141,7 @@
     overflow: hidden;
     opacity: 0;
     transform: translate3D(0, -20px, 0);
-    transition: .35s $md-transition-stand-timing;
+    transition: .35s variables.$md-transition-stand-timing;
     transition-property: opacity, transform, height, padding-bottom;
     will-change: opacity, transform, height, padding-bottom;
 

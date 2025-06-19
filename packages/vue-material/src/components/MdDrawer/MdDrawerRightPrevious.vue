@@ -3,8 +3,8 @@
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdPropValidator from 'core/utils/MdPropValidator'
+  import MdComponent from '../../core/MdComponent'
+  import MdPropValidator from '../../core/utils/MdPropValidator'
 
   export default new MdComponent({
     name: 'MdDrawer',

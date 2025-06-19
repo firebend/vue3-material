@@ -1,8 +1,8 @@
-import material from 'vue-material/material'
-import MdApp from './MdApp'
-import MdAppToolbar from './MdAppToolbar'
-import MdAppContent from './MdAppContent'
-import MdAppDrawer from './MdAppDrawer'
+import material from '../../material'
+import MdApp from './MdApp.vue'
+import MdAppToolbar from './MdAppToolbar.vue'
+import MdAppContent from './MdAppContent.vue'
+import MdAppDrawer from './MdAppDrawer.vue'
 
 export default Vue => {
   material(Vue)

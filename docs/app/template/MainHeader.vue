@@ -164,7 +164,7 @@
 <style lang="scss" scoped>
   @import "~vue-material/components/MdAnimation/variables";
   @import "~vue-material/components/MdElevation/mixins";
-  @import "~components/MdLayout/mixins";
+  @import "../MdLayout/mixins";
 
   .align-center >>> .md-list-item-content {
     justify-content: flex-start;
