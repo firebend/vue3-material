@@ -1,30 +1,32 @@
+@use "../../theme/mixins";
+
 .md-switch {
-  @include md-theme-component() {
+  @include mixins.md-theme-component() {
     &.md-checked {
       .md-switch-container {
-        @include md-theme-property(background-color, accent, null, .38);
+        @include mixins.md-theme-property(background-color, accent, null, .38);
       }
 
       .md-switch-thumb {
-        @include md-theme-property(background-color, accent);
+        @include mixins.md-theme-property(background-color, accent);
       }
 
       .md-ripple {
-        @include md-theme-property(color, accent);
+        @include mixins.md-theme-property(color, accent);
       }
     }
 
     &.md-checked.md-primary {
       .md-switch-container {
-        @include md-theme-property(background-color, primary, null, .38);
+        @include mixins.md-theme-property(background-color, primary, null, .38);
       }
 
       .md-switch-thumb {
-        @include md-theme-property(background-color, primary);
+        @include mixins.md-theme-property(background-color, primary);
       }
 
       .md-ripple {
-        @include md-theme-property(color, primary);
+        @include mixins.md-theme-property(color, primary);
       }
     }
 
@@ -34,7 +36,7 @@
       }
 
       .md-switch-thumb {
-        @include md-theme-property-by-hue(background-color, grey, 100, switch, thumb);
+        @include mixins.md-theme-property-by-hue(background-color, grey, 100, switch, thumb);
       }
 
       &.md-disabled {
@@ -43,7 +45,7 @@
         }
 
         .md-switch-thumb {
-          @include md-theme-property-by-hue(background-color, grey, 400, switch, thumb);
+          @include mixins.md-theme-property-by-hue(background-color, grey, 400, switch, thumb);
         }
       }
     } @else {
@@ -52,7 +54,7 @@
       }
 
       .md-switch-thumb {
-        @include md-theme-property-by-hue(background-color, grey, 400, switch, thumb);
+        @include mixins.md-theme-property-by-hue(background-color, grey, 400, switch, thumb);
       }
 
       &.md-disabled {
@@ -61,7 +63,7 @@
         }
 
         .md-switch-thumb {
-          @include md-theme-property-by-hue(background-color, grey, 800, switch, thumb);
+          @include mixins.md-theme-property-by-hue(background-color, grey, 800, switch, thumb);
         }
       }
     }

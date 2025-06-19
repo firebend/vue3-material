@@ -1,28 +1,30 @@
+@use "../../theme/mixins";
+
 .md-icon {
-  @include md-theme-component() {
+  @include mixins.md-theme-component() {
     &.md-icon-image {
       svg {
-        @include md-theme-property(fill, icon, background);
+        @include mixins.md-theme-property(fill, icon, background);
 
         &.md-primary {
-          @include md-theme-property(fill, primary, background);
+          @include mixins.md-theme-property(fill, primary, background);
         }
 
         &.md-accent {
-          @include md-theme-property(fill, accent, background);
+          @include mixins.md-theme-property(fill, accent, background);
         }
       }
     }
 
     &.md-icon-font {
-      @include md-theme-property(color, icon, background);
+      @include mixins.md-theme-property(color, icon, background);
 
       &.md-primary {
-        @include md-theme-property(color, primary, background);
+        @include mixins.md-theme-property(color, primary, background);
       }
 
       &.md-accent {
-        @include md-theme-property(color, accent, background);
+        @include mixins.md-theme-property(color, accent, background);
       }
     }
   }

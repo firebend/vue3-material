@@ -36,13 +36,13 @@
  *   border-radius: 2px;
  *   transition: .3s ease;
  *
- *   @include md-theme-component() {
+ *   @include mixins.md-theme-component() {
  *     background: md-theme(primary);
  *     color: md-theme(text-primary);
  *   }
  *
  *   &.md-accent {
- *     @include md-theme-component() {
+ *     @include mixins.md-theme-component() {
  *       background: md-theme(accent);
  *       color: md-theme(text-accent);
  *     };
@@ -71,7 +71,7 @@
  *
  * .md-foo {
  *   @include md-theme-component-relative() {
- *     @include md-theme-property(background, primary);
+ *     @include mixins.md-theme-property(background, primary);
  *   }
  * }
  */
@@ -102,15 +102,15 @@
  *   border-radius: 2px;
  *   transition: .3s ease;
  *
- *   @include md-theme-component() {
- *     @include md-theme-property(background, primary);
- *     @include md-theme-property(color, text-primary, primary);
+ *   @include mixins.md-theme-component() {
+ *     @include mixins.md-theme-property(background, primary);
+ *     @include mixins.md-theme-property(color, text-primary, primary);
  *   }
  *
  *   &.md-accent {
- *     @include md-theme-component() {
- *       @include md-theme-property(background, accent);
- *       @include md-theme-property(color, text-primary, accent);
+ *     @include mixins.md-theme-component() {
+ *       @include mixins.md-theme-property(background, accent);
+ *       @include mixins.md-theme-property(color, text-primary, accent);
  *     }
  *   }
  * }
@@ -151,9 +151,9 @@
  *   border-radius: 2px;
  *   transition: .3s ease;
  *
- *   @include md-theme-component() {
- *     @include md-theme-property-darken(background, primary, background, 10%);
- *     @include md-theme-property(color, text-primary, primary);
+ *   @include mixins.md-theme-component() {
+ *     @include mixins.md-theme-property-darken(background, primary, background, 10%);
+ *     @include mixins.md-theme-property(color, text-primary, primary);
  *   }
  * }
  *
@@ -193,9 +193,9 @@
  *   border-radius: 2px;
  *   transition: .3s ease;
  *
- *   @include md-theme-component() {
- *     @include md-theme-property-by-hue(background, grey, 100, toolbar, background);
- *     @include md-theme-property(color, text-primary, background);
+ *   @include mixins.md-theme-component() {
+ *     @include mixins.md-theme-property-by-hue(background, grey, 100, toolbar, background);
+ *     @include mixins.md-theme-property(color, text-primary, background);
  *   }
  * }
  *

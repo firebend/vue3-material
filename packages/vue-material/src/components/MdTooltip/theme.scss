@@ -1,6 +1,8 @@
+@use "../../theme/mixins";
+
 .md-tooltip {
-  @include md-theme-component() {
-    @include md-theme-property(color, text-primary, tooltip);
-    @include md-theme-property(background-color, tooltip, background, .9);
+  @include mixins.md-theme-component() {
+    @include mixins.md-theme-property(color, text-primary, tooltip);
+    @include mixins.md-theme-property(background-color, tooltip, background, .9);
   }
 }

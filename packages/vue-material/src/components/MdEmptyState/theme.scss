@@ -1,23 +1,25 @@
+@use "../../theme/mixins";
+
 @mixin md-empty-state-spec ($color) {
   .md-empty-state-icon {
     &.md-icon-image {
       svg {
-        @include md-theme-property(fill, $color, background);
+        @include mixins.md-theme-property(fill, $color, background);
       }
     }
 
     &.md-icon-font {
-      @include md-theme-property(color, $color, background);
+      @include mixins.md-theme-property(color, $color, background);
     }
   }
 }
 
 .md-empty-state {
-  @include md-theme-component() {
+  @include mixins.md-theme-component() {
     @include md-empty-state-spec(disabled);
 
     &.md-rounded {
-      @include md-theme-property(background-color, disabled, "", .06);
+      @include mixins.md-theme-property(background-color, disabled, "", .06);
     }
 
     &.md-primary {

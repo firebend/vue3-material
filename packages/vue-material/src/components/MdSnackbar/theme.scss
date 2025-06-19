@@ -1,6 +1,8 @@
+@use "../../theme/mixins";
+
 .md-snackbar {
-  @include md-theme-component() {
-    @include md-theme-property(color, text-primary, text-primary);
+  @include mixins.md-theme-component() {
+    @include mixins.md-theme-property(color, text-primary, text-primary);
 
     @if md-get-theme-mode() == light {
       background-color: #323232;

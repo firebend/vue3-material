@@ -1,17 +1,19 @@
+@use "../../theme/mixins";
+
 .md-checkbox {
-  @include md-theme-component() {
+  @include mixins.md-theme-component() {
     &.md-checked {
       .md-checkbox-container {
-        @include md-theme-property(background-color, accent);
-        @include md-theme-property(border-color, accent);
+        @include mixins.md-theme-property(background-color, accent);
+        @include mixins.md-theme-property(border-color, accent);
 
         &:after {
-          @include md-theme-property(border-color, background);
+          @include mixins.md-theme-property(border-color, background);
         }
       }
 
       .md-ripple {
-        @include md-theme-property(color, accent);
+        @include mixins.md-theme-property(color, accent);
       }
     }
 
@@ -30,12 +32,12 @@
 
     &.md-checked.md-primary {
       .md-checkbox-container {
-        @include md-theme-property(background-color, primary);
-        @include md-theme-property(border-color, primary);
+        @include mixins.md-theme-property(background-color, primary);
+        @include mixins.md-theme-property(border-color, primary);
       }
 
       .md-ripple {
-        @include md-theme-property(color, primary);
+        @include mixins.md-theme-property(color, primary);
       }
     }
 

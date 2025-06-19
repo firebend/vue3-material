@@ -1,5 +1,7 @@
+@use "../../theme/mixins";
+
 .md-divider {
-  @include md-theme-component() {
-    @include md-theme-property(background-color, divider);
+  @include mixins.md-theme-component() {
+    @include mixins.md-theme-property(background-color, divider);
   }
 }

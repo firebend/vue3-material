@@ -1,20 +1,22 @@
+@use "../../theme/mixins";
+
 @mixin md-card($base) {
-  @include md-theme-property(background-color, $base);
-  @include md-theme-property(color, text-primary, $base);
+  @include mixins.md-theme-property(background-color, $base);
+  @include mixins.md-theme-property(color, text-primary, $base);
 
   .md-card-expand .md-card-actions {
-    @include md-theme-property(background-color, $base);
+    @include mixins.md-theme-property(background-color, $base);
   }
 
   .md-card-header,
   .md-card-actions {
     .md-button:not(.md-primary):not(.md-accent) {
-      @include md-theme-property(color, text-primary, $base);
+      @include mixins.md-theme-property(color, text-primary, $base);
 
       &.md-icon-button {
         .md-icon {
-          @include md-theme-property(color, text-primary, $base, .54);
-          @include md-theme-property(fill, text-primary, $base, .54);
+          @include mixins.md-theme-property(color, text-primary, $base, .54);
+          @include mixins.md-theme-property(fill, text-primary, $base, .54);
         }
       }
     }
@@ -22,13 +24,13 @@
 
   > .md-card-area {
     &:after {
-      @include md-theme-property(background-color, divider, $base);
+      @include mixins.md-theme-property(background-color, divider, $base);
     }
   }
 }
 
 .md-card {
-  @include md-theme-component() {
+  @include mixins.md-theme-component() {
     @include md-card(background);
 
     &.md-primary {

@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "vue-material": ["packages/vue-material/src/index.ts"]
+      "vue-material": ["packages/vue-material/src/index.ts"],
+      "vue-material/*": ["packages/vue-material/src/*"],
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,5 +1,7 @@
+@use "../../theme/mixins";
+
 .md-speed-dial {
-  @include md-theme-component() {
+  @include mixins.md-theme-component() {
 
   }
 }

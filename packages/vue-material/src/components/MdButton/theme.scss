@@ -1,46 +1,48 @@
+@use "../../theme/mixins";
+
 @mixin md-icon-on-buttons ($state, $type) {
   .md-icon-font {
-    @include md-theme-property(color, $state, $type);
+    @include mixins.md-theme-property(color, $state, $type);
   }
 
   .md-icon-image {
-    @include md-theme-property(fill, $state, $type);
+    @include mixins.md-theme-property(fill, $state, $type);
   }
 }
 
 .md-button {
-  @include md-theme-component() {
-    @include md-theme-property(color, text-primary, background);
+  @include mixins.md-theme-component() {
+    @include mixins.md-theme-property(color, text-primary, background);
 
     &.md-primary {
-      @include md-theme-property(color, primary, background);
+      @include mixins.md-theme-property(color, primary, background);
       @include md-icon-on-buttons(primary, background);
     }
 
     &.md-accent {
-      @include md-theme-property(color, accent, background);
+      @include mixins.md-theme-property(color, accent, background);
       @include md-icon-on-buttons(accent, background);
     }
 
     &.md-raised {
       &[disabled] {
-        @include md-theme-property(background-color, disabled-background, background);
-        @include md-theme-property(color, disabled);
+        @include mixins.md-theme-property(background-color, disabled-background, background);
+        @include mixins.md-theme-property(color, disabled);
       }
 
       &:not([disabled]) {
-        @include md-theme-property(background-color, background);
-        @include md-theme-property(color, text-primary, background);
+        @include mixins.md-theme-property(background-color, background);
+        @include mixins.md-theme-property(color, text-primary, background);
 
         &.md-primary {
-          @include md-theme-property(color, text-primary, primary);
-          @include md-theme-property(background-color, primary);
+          @include mixins.md-theme-property(color, text-primary, primary);
+          @include mixins.md-theme-property(background-color, primary);
           @include md-icon-on-buttons(text-primary, primary);
         }
 
         &.md-accent {
-          @include md-theme-property(color, text-primary, accent);
-          @include md-theme-property(background-color, accent);
+          @include mixins.md-theme-property(color, text-primary, accent);
+          @include mixins.md-theme-property(background-color, accent);
           @include md-icon-on-buttons(text-primary, accent);
         }
       }
@@ -48,22 +50,22 @@
 
     &.md-fab {
       &[disabled] {
-        @include md-theme-property(background-color, disabled-background, background);
+        @include mixins.md-theme-property(background-color, disabled-background, background);
       }
 
       &:not([disabled]) {
-        @include md-theme-property(background-color, accent);
+        @include mixins.md-theme-property(background-color, accent);
         @include md-icon-on-buttons(text-primary, accent);
 
         &.md-primary {
-          @include md-theme-property(background-color, primary);
+          @include mixins.md-theme-property(background-color, primary);
           @include md-icon-on-buttons(text-primary, primary);
         }
       }
     }
 
     &[disabled] {
-      @include md-theme-property(color, disabled, background);
+      @include mixins.md-theme-property(color, disabled, background);
       @include md-icon-on-buttons(icon-disabled, background);
     }
   }

@@ -1,12 +1,14 @@
+@use "../../theme/mixins";
+
 .md-field {
-  @include md-theme-component() {
+  @include mixins.md-theme-component() {
     @if md-get-theme-mode() == light {
       &:after {
         background-color: rgba(#000, .42);
       }
 
       &:before {
-        @include md-theme-property(background-color, primary);
+        @include mixins.md-theme-property(background-color, primary);
       }
 
       .md-helper-text,
@@ -40,7 +42,7 @@
         }
 
         &:before {
-          @include md-theme-property(border-color, primary);
+          @include mixins.md-theme-property(border-color, primary);
         }
       }
 
@@ -61,7 +63,7 @@
       }
 
       &:before {
-        @include md-theme-property(background-color, primary);
+        @include mixins.md-theme-property(background-color, primary);
       }
 
       .md-helper-text,
@@ -95,7 +97,7 @@
         }
 
         &:before {
-          @include md-theme-property(border-color, primary);
+          @include mixins.md-theme-property(border-color, primary);
         }
       }
 
@@ -114,33 +116,33 @@
 
     > .md-icon {
       &:after {
-        @include md-theme-property(background-color, background-variant);
+        @include mixins.md-theme-property(background-color, background-variant);
       }
     }
 
     &.md-invalid {
       &:after {
-        @include md-theme-property-by-hue(background-color, red, A400, field, error);
+        @include mixins.md-theme-property-by-hue(background-color, red, A400, field, error);
       }
 
       &.md-has-textarea:not(.md-autogrow) {
         &:before {
-          @include md-theme-property-by-hue(border-color, red, A400, field, error);
+          @include mixins.md-theme-property-by-hue(border-color, red, A400, field, error);
         }
       }
 
       label {
-        @include md-theme-property-by-hue(color, red, A400, field, error);
+        @include mixins.md-theme-property-by-hue(color, red, A400, field, error);
       }
 
       .md-error {
-        @include md-theme-property-by-hue(color, red, A400, field, error);
+        @include mixins.md-theme-property-by-hue(color, red, A400, field, error);
       }
 
       .md-date-icon,
       .md-date-icon svg {
-        @include md-theme-property-by-hue(color, red, A400, field, error);
-        @include md-theme-property-by-hue(fill, red, A400, field, error);
+        @include mixins.md-theme-property-by-hue(color, red, A400, field, error);
+        @include mixins.md-theme-property-by-hue(fill, red, A400, field, error);
       }
     }
 
@@ -148,24 +150,24 @@
     &.md-highlight {
       .md-input,
       .md-textarea {
-        @include md-theme-property(color, primary, background);
+        @include mixins.md-theme-property(color, primary, background);
       }
 
       > .md-icon {
-        @include md-theme-property(color, primary, background);
-        @include md-theme-property(fill, primary, background);
+        @include mixins.md-theme-property(color, primary, background);
+        @include mixins.md-theme-property(fill, primary, background);
       }
     }
 
     &.md-focused {
       label {
-        @include md-theme-property(color, primary, background);
+        @include mixins.md-theme-property(color, primary, background);
       }
     }
 
     &.md-disabled {
       .md-icon svg {
-        @include md-theme-property(fill, disabled, background);
+        @include mixins.md-theme-property(fill, disabled, background);
       }
     }
   }

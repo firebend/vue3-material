@@ -1,0 +1,21 @@
+@use "vue-material/theme/mixins";
+
+.note-block {
+  @include mixins.md-theme-component() {
+    @if md-get-theme-mode() == light {
+      @include mixins.md-theme-property-by-hue(background-color, grey, 200, note-block, background);
+
+      &.warning {
+        @include mixins.md-theme-property-by-hue(background-color, red, 100, note-block-warning, background);
+        @include mixins.md-theme-property-by-hue(border-left-color, red, A200, note-block-warning-border, background);
+      }
+    } @else {
+      @include mixins.md-theme-property-by-hue(background-color, grey, 800, note-block, background);
+
+      &.warning {
+        @include mixins.md-theme-property-by-hue(background-color, red, 400, note-block-warning, background);
+        @include mixins.md-theme-property-by-hue(border-left-color, red, 800, note-block-warning-border, background);
+      }
+    }
+  }
+}

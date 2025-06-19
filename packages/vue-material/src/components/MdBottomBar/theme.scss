@@ -1,47 +1,49 @@
+@use "../../theme/mixins";
+
 @mixin md-bottom-bar-spec ($primary) {
   &.md-type-fixed {
-    @include md-theme-property(background-color, background);
+    @include mixins.md-theme-property(background-color, background);
 
     .md-bottom-bar-item.md-active {
-      @include md-theme-property(color, $primary, background);
+      @include mixins.md-theme-property(color, $primary, background);
 
       .md-icon {
-        @include md-theme-property(color, $primary, background);
+        @include mixins.md-theme-property(color, $primary, background);
 
         svg {
-          @include md-theme-property(fill, $primary, background);
+          @include mixins.md-theme-property(fill, $primary, background);
         }
       }
     }
   }
 
   &.md-type-shift {
-    @include md-theme-property(background-color, $primary);
-    @include md-theme-property(color, text-primary, $primary, .7);
+    @include mixins.md-theme-property(background-color, $primary);
+    @include mixins.md-theme-property(color, text-primary, $primary, .7);
 
     > .md-ripple {
       .md-ripple-wave {
-        @include md-theme-property-darken(background-color, $primary, $primary, 10%);
+        @include mixins.md-theme-property-darken(background-color, $primary, $primary, 10%);
       }
     }
 
     .md-icon {
-      @include md-theme-property(color, icon, $primary);
+      @include mixins.md-theme-property(color, icon, $primary);
 
       svg {
-        @include md-theme-property(fill, icon, $primary);
+        @include mixins.md-theme-property(fill, icon, $primary);
       }
     }
 
     .md-bottom-bar-item {
-      @include md-theme-property(color, text-primary, $primary);
+      @include mixins.md-theme-property(color, text-primary, $primary);
 
       .md-active {
         .md-icon {
-          @include md-theme-property(color, text-primary, $primary);
+          @include mixins.md-theme-property(color, text-primary, $primary);
 
           svg {
-            @include md-theme-property(fill, text-primary, $primary);
+            @include mixins.md-theme-property(fill, text-primary, $primary);
           }
         }
       }
@@ -50,7 +52,7 @@
 }
 
 .md-bottom-bar {
-  @include md-theme-component() {
+  @include mixins.md-theme-component() {
     @include md-bottom-bar-spec(primary);
 
     &.md-accent {
