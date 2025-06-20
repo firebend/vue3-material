@@ -1,7 +1,10 @@
 <template>
   <div>
-    <md-progress-spinner md-mode="indeterminate"></md-progress-spinner>
-    <md-progress-spinner class="md-accent" md-mode="indeterminate"></md-progress-spinner>
+    <md-progress-spinner md-mode="indeterminate" />
+    <md-progress-spinner
+      class="md-accent"
+      md-mode="indeterminate"
+    />
   </div>
 </template>
 

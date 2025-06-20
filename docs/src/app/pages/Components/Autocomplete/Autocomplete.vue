@@ -6,7 +6,10 @@
 <example src="./examples/AutocompleteAsync.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.autocomplete.title')">
+  <page-container
+    centered
+    :title="$t('pages.autocomplete.title')"
+  >
     <div class="page-container-section">
       <p>Input text can be used with autocomplete to help users who have limited literacy or who write in a foreign language. For example, autocomplete can suggest input as it’s typed (refreshing suggestions with each keystroke).</p>
       <p>Vue Material autocomplete is really simple, yet powerfull. With simple options you can create great suggestions with async feedbacks.</p>
@@ -14,39 +17,73 @@
     </div>
 
     <div class="page-container-section">
-      <h2 id="staticData">Static Data</h2>
+      <h2 id="staticData">
+        Static Data
+      </h2>
 
       <p>If you have a small amount of data or if it's static, you can pass the options to <code>md-autocomplete</code> in a simple and intuitive way:</p>
-      <code-example title="Normal and Dense" :component="examples['autocomplete-static']" />
+      <code-example
+        title="Normal and Dense"
+        :component="examples['autocomplete-static']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="trigger">Trigger</h2>
+      <h2 id="trigger">
+        Trigger
+      </h2>
 
       <p>By default the suggestions will appear along with a focus trigger. If you want something less intrusive, you can disable this behaviour by canceling the focus event. If this, the suggestions will appear right after a keystroke:</p>
-      <code-example title="Focus vs Input" :component="examples['autocomplete-trigger']" />
+      <code-example
+        title="Focus vs Input"
+        :component="examples['autocomplete-trigger']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="boxLayout">Box Layout</h2>
+      <h2 id="boxLayout">
+        Box Layout
+      </h2>
 
       <p>Autocomplete have types two layouts: Default with floating labels and a boxed layout with inline labels. The box layout will apply a boxed layout with a small elevation, that also works really great as search bar inside a toolbar. Gorgeous:</p>
-      <code-example title="Works with dense variant too!" :component="examples['autocomplete-box']" />
+      <code-example
+        title="Works with dense variant too!"
+        :component="examples['autocomplete-box']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="customTemplate">Custom Template</h2>
+      <h2 id="customTemplate">
+        Custom Template
+      </h2>
 
-      <note-block alert>This section will assume that you have knowledge of <a href="https://vuejs.org/v2/guide/components.html#Scoped-Slots" target="_blank">Vue Scoped Slots</a>. This will allow you to customize the option list.</note-block>
+      <note-block alert>
+        This section will assume that you have knowledge of <a
+          href="https://vuejs.org/v2/guide/components.html#Scoped-Slots"
+          target="_blank"
+        >Vue Scoped Slots</a>. This will allow you to customize the option list.
+      </note-block>
       <p>Autocomplete also accepts a custom template, flexible to accept any HTML element and with an 'empty state' built in. You can also highlight the search term inside the matches, to give a feedback on why that item has been in the results. Awesome:</p>
-      <code-example title="With highlight text" :component="examples['autocomplete-template']" />
-      <note-block tip>Although the <code>md-highlight-text</code> component is most used with autocomplete, you can use it anywhere.</note-block>
+      <code-example
+        title="With highlight text"
+        :component="examples['autocomplete-template']"
+      />
+      <note-block tip>
+        Although the <code>md-highlight-text</code> component is most used with autocomplete, you can use it anywhere.
+      </note-block>
     </div>
 
     <div class="page-container-section search-algorithms">
-      <h2 id="search-algorithms">Search Algorithms</h2>
+      <h2 id="search-algorithms">
+        Search Algorithms
+      </h2>
 
-      <p>Vue Material autocomplete comes with 2 ways of search: <a href="https://en.wikipedia.org/wiki/Approximate_string_matching" target="_blank">Fuzzy search</a> and search by whole term. The fuzzy search tries to match the results by approximation, finding patterns inside the available options. This will help with accidental type errors and improve the results. If you think that this may be confusing, you can disable this. Example:</p>
+      <p>
+        Vue Material autocomplete comes with 2 ways of search: <a
+          href="https://en.wikipedia.org/wiki/Approximate_string_matching"
+          target="_blank"
+        >Fuzzy search</a> and search by whole term. The fuzzy search tries to match the results by approximation, finding patterns inside the available options. This will help with accidental type errors and improve the results. If you think that this may be confusing, you can disable this. Example:
+      </p>
       <div class="md-layout md-gutter">
         <div class="md-layout-item md-size-40">
           <p>
@@ -56,11 +93,15 @@
             Matches:
             <ul>
               <li>
-                <md-highlight-text md-term="pam">Pam Beesly</md-highlight-text>
+                <md-highlight-text md-term="pam">
+                  Pam Beesly
+                </md-highlight-text>
               </li>
 
               <li>
-                <md-highlight-text md-term="pam">Meredith Palmer</md-highlight-text>
+                <md-highlight-text md-term="pam">
+                  Meredith Palmer
+                </md-highlight-text>
               </li>
             </ul>
           </div>
@@ -74,39 +115,72 @@
             Matches:
             <ul>
               <li>
-                <md-highlight-text md-term="pam" :md-fuzzy-search="false">Pam Beesly</md-highlight-text>
+                <md-highlight-text
+                  md-term="pam"
+                  :md-fuzzy-search="false"
+                >
+                  Pam Beesly
+                </md-highlight-text>
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <code-example title="Fuzzy or Normal" :component="examples['autocomplete-search']" />
+      <code-example
+        title="Fuzzy or Normal"
+        :component="examples['autocomplete-search']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="async-options">Async Options</h2>
+      <h2 id="async-options">
+        Async Options
+      </h2>
 
       <p>Sometimes the options are inside a database in a remote server. Instead of giving a static data, we can provide a <code>Promise</code> that will resolve with the data from a backend servide, for example. This is great to save Bandwidth on the initial load and to improve the performance. Look at this example:</p>
-      <code-example title="Spinner Loading" :component="examples['autocomplete-async']" />
+      <code-example
+        title="Spinner Loading"
+        :component="examples['autocomplete-async']"
+      />
 
       <api-item title="API - md-autocomplete">
         <p>All the following options can be used on any autocomplete:</p>
-        <api-table :headings="autocomplete.props.headings" :props="autocomplete.props.props" slot="props" />
-        <api-table :headings="autocomplete.slots.headings" :props="autocomplete.slots.props" slot="scoped-slots" />
-        <api-table :headings="autocomplete.events.headings" :props="autocomplete.events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="autocomplete.props.headings"
+            :props="autocomplete.props.props"
+          />
+        </template>
+        <template #scoped-slots>
+          <api-table
+            :headings="autocomplete.slots.headings"
+            :props="autocomplete.slots.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="autocomplete.events.headings"
+            :props="autocomplete.events.props"
+          />
+        </template>
       </api-item>
 
       <api-item title="API - md-highlight-text">
         <p>The following options can be used with highlight text:</p>
-        <api-table :headings="highlight.props.headings" :props="highlight.props.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="highlight.props.headings"
+            :props="highlight.props.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>
 </template>
 
 <script>
-  import examples from 'docs-mixins/docsExample'
+  import examples from '../../../mixins/docsExample'
 
   export default {
     name: 'DocAutocomplete',

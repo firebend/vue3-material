@@ -7,12 +7,18 @@
 
     <md-field>
       <label>Upload files</label>
-      <md-file v-model="placeholder" placeholder="A nice input placeholder" />
+      <md-file
+        v-model="placeholder"
+        placeholder="A nice input placeholder"
+      />
     </md-field>
 
     <md-field>
       <label>Disabled</label>
-      <md-file v-model="disabled" disabled />
+      <md-file
+        v-model="disabled"
+        disabled
+      />
     </md-field>
 
     <md-field>
@@ -22,12 +28,18 @@
 
     <md-field>
       <label>Multiple</label>
-      <md-file v-model="multiple" multiple />
+      <md-file
+        v-model="multiple"
+        multiple
+      />
     </md-field>
 
     <md-field>
       <label>Only images</label>
-      <md-file v-model="single" accept="image/*" />
+      <md-file
+        v-model="single"
+        accept="image/*"
+      />
     </md-field>
   </div>
 </template>

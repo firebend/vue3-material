@@ -3,7 +3,10 @@
     <md-list class="md-triple-line">
       <md-list-item>
         <md-avatar>
-          <img src="https://placeimg.com/40/40/people/1" alt="People">
+          <img
+            src="https://placeimg.com/40/40/people/1"
+            alt="People"
+          >
         </md-avatar>
 
         <div class="md-list-item-text">
@@ -13,15 +16,20 @@
         </div>
 
         <md-button class="md-icon-button md-list-action">
-          <md-icon class="md-primary">star</md-icon>
+          <md-icon class="md-primary">
+            star
+          </md-icon>
         </md-button>
       </md-list-item>
 
-      <md-divider class="md-inset"></md-divider>
+      <md-divider class="md-inset" />
 
       <md-list-item>
         <md-avatar>
-          <img src="https://placeimg.com/40/40/people/6" alt="People">
+          <img
+            src="https://placeimg.com/40/40/people/6"
+            alt="People"
+          >
         </md-avatar>
 
         <div class="md-list-item-text">
@@ -35,11 +43,14 @@
         </md-button>
       </md-list-item>
 
-      <md-divider class="md-inset"></md-divider>
+      <md-divider class="md-inset" />
 
       <md-list-item>
         <md-avatar>
-          <img src="https://placeimg.com/40/40/people/5" alt="People">
+          <img
+            src="https://placeimg.com/40/40/people/5"
+            alt="People"
+          >
         </md-avatar>
 
         <div class="md-list-item-text">
@@ -53,11 +64,14 @@
         </md-button>
       </md-list-item>
 
-      <md-divider class="md-inset"></md-divider>
+      <md-divider class="md-inset" />
 
       <md-list-item>
         <md-avatar>
-          <img src="https://placeimg.com/40/40/people/8" alt="People">
+          <img
+            src="https://placeimg.com/40/40/people/8"
+            alt="People"
+          >
         </md-avatar>
 
         <div class="md-list-item-text">
@@ -75,7 +89,10 @@
     <md-list class="md-triple-line md-dense">
       <md-list-item>
         <md-avatar>
-          <img src="https://placeimg.com/40/40/people/1" alt="People">
+          <img
+            src="https://placeimg.com/40/40/people/1"
+            alt="People"
+          >
         </md-avatar>
 
         <div class="md-list-item-text">
@@ -85,15 +102,20 @@
         </div>
 
         <md-button class="md-icon-button md-list-action">
-          <md-icon class="md-primary">star</md-icon>
+          <md-icon class="md-primary">
+            star
+          </md-icon>
         </md-button>
       </md-list-item>
 
-      <md-divider class="md-inset"></md-divider>
+      <md-divider class="md-inset" />
 
       <md-list-item>
         <md-avatar>
-          <img src="https://placeimg.com/40/40/people/6" alt="People">
+          <img
+            src="https://placeimg.com/40/40/people/6"
+            alt="People"
+          >
         </md-avatar>
 
         <div class="md-list-item-text">
@@ -107,11 +129,14 @@
         </md-button>
       </md-list-item>
 
-      <md-divider class="md-inset"></md-divider>
+      <md-divider class="md-inset" />
 
       <md-list-item>
         <md-avatar>
-          <img src="https://placeimg.com/40/40/people/5" alt="People">
+          <img
+            src="https://placeimg.com/40/40/people/5"
+            alt="People"
+          >
         </md-avatar>
 
         <div class="md-list-item-text">
@@ -125,11 +150,14 @@
         </md-button>
       </md-list-item>
 
-      <md-divider class="md-inset"></md-divider>
+      <md-divider class="md-inset" />
 
       <md-list-item>
         <md-avatar>
-          <img src="https://placeimg.com/40/40/people/8" alt="People">
+          <img
+            src="https://placeimg.com/40/40/people/8"
+            alt="People"
+          >
         </md-avatar>
 
         <div class="md-list-item-text">

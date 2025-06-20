@@ -6,7 +6,10 @@
 <example src="./examples/TabsOrdering.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.tabs.title')">
+  <page-container
+    centered
+    :title="$t('pages.tabs.title')"
+  >
     <div class="page-container-section">
       <p>Tabs make it easy to explore, switch between different views and enable content organization at a high level, such as different data sets or functional aspects of an app.</p>
       <p>Tabs are really powerful and have deep integration with Vue Core features and router.</p>
@@ -14,42 +17,69 @@
     </div>
 
     <div class="page-container-section">
-      <h2 id="navigational-tabs">Navigational tabs</h2>
+      <h2 id="navigational-tabs">
+        Navigational tabs
+      </h2>
 
       <p>Sometimes you may need a tab to be the main navigational element of your application and you can do this. Tabs integrate with Vue Router by default and will be able to use single tab just like a regular button or link, by using the <code>router-link</code> props. The tabs will sync with the page URL and will produce effects when transitioning between tabs. <strong>AUTOMATIC</strong>!</p>
-      <code-example title="Seamless integration with Vue Router" :component="examples['tab-router']" />
+      <code-example
+        title="Seamless integration with Vue Router"
+        :component="examples['tab-router']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="tab-inner">Tab with inner content</h2>
+      <h2 id="tab-inner">
+        Tab with inner content
+      </h2>
 
       <p>In the previous example, the tabs worked just like navigation buttons, without content. With that you would need to render the content by yourself. Although this is not a hard thing, because you can use Vue Router, you can pass arbitrary content to your tabs. And it can also work syncing with router:</p>
-      <code-example title="Content syncing with Router" :component="examples['tab-content']" />
+      <code-example
+        title="Content syncing with Router"
+        :component="examples['tab-content']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="tab-alignments">Alignments</h2>
+      <h2 id="tab-alignments">
+        Alignments
+      </h2>
 
       <p>Tabs have four types of alignments for the navigation buttons: Left, Center, Right and Fixed. You can use them with any tabs:</p>
-      <code-example title="With different hue colors" :component="examples['tab-alignments']" />
+      <code-example
+        title="With different hue colors"
+        :component="examples['tab-alignments']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="tab-icons">Icons</h2>
+      <h2 id="tab-icons">
+        Icons
+      </h2>
 
       <p>Tabs accept icons, to make it easier for your user to assimilate the contents of a tab:</p>
-      <code-example title="With svg support" :component="examples['tab-icons']" />
+      <code-example
+        title="With svg support"
+        :component="examples['tab-icons']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="tab-custom-template">Custom Template</h2>
+      <h2 id="tab-custom-template">
+        Custom Template
+      </h2>
 
       <p>You can use a custom template for the navigation buttons. This will be applied to all navigation buttons and allows you to make updates on your tab, like this great example of unread/new content: Simple, uh?</p>
-      <code-example title="Template Slot" :component="examples['tab-custom-template']" />
+      <code-example
+        title="Template Slot"
+        :component="examples['tab-custom-template']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="tabs-ordering">Tabs ordering</h2>
+      <h2 id="tabs-ordering">
+        Tabs ordering
+      </h2>
 
       <p>
         Tabs are kept in the order they appear in the HTML template.<br>
@@ -58,26 +88,59 @@
         When an active tab is removed or hidden, the following tab will be activated; or the preceding tab, if there is no following tab.
       </p>
 
-      <code-example title="Tabs are ordered by their HTML template positions" :component="examples['tabs-ordering']" />
+      <code-example
+        title="Tabs are ordered by their HTML template positions"
+        :component="examples['tabs-ordering']"
+      />
 
       <api-item title="API - md-tabs">
         <p>The following options can be applied to any tabs:</p>
 
-        <api-table :headings="tabs.props.headings" :props="tabs.props.props" slot="props" />
-        <api-table :headings="tabs.slots.headings" :props="tabs.slots.props" slot="scoped-slots" />
-        <api-table :headings="tabs.events.headings" :props="tabs.events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="tabs.props.headings"
+            :props="tabs.props.props"
+          />
+        </template>
+        <template #scoped-slots>
+          <api-table
+            :headings="tabs.slots.headings"
+            :props="tabs.slots.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="tabs.events.headings"
+            :props="tabs.events.props"
+          />
+        </template>
       </api-item>
 
       <api-item title="API - md-tab">
-        <p>The following options can be applied to any tab.  All <a href="https://router.vuejs.org/en/api/router-link.html" target="_blank">options</a> of <code>router-link</code> can be simply used here:</p>
+        <p>
+          The following options can be applied to any tab.  All <a
+            href="https://router.vuejs.org/en/api/router-link.html"
+            target="_blank"
+          >options</a> of <code>router-link</code> can be simply used here:
+        </p>
 
-        <api-table :headings="tab.headings" :props="tab.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="tab.headings"
+            :props="tab.props"
+          />
+        </template>
       </api-item>
 
       <api-item title="API - Swipeable">
         <p>The following options can be applied to any <code>md-tabs</code> component that is using <code>md-swipeable</code> prop.</p>
 
-        <api-table :headings="swipeable.props.headings" :props="swipeable.props.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="swipeable.props.headings"
+            :props="swipeable.props.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

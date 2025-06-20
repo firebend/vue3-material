@@ -1,9 +1,19 @@
 <template>
   <div>
-    <md-progress-spinner md-mode="determinate" :md-value="amount"></md-progress-spinner>
-    <md-progress-spinner class="md-accent" md-mode="determinate" :md-value="amount"></md-progress-spinner>
+    <md-progress-spinner
+      md-mode="determinate"
+      :md-value="amount"
+    />
+    <md-progress-spinner
+      class="md-accent"
+      md-mode="determinate"
+      :md-value="amount"
+    />
     <div>
-      <input type="range" v-model.number="amount"> {{ amount }}%
+      <input
+        v-model.number="amount"
+        type="range"
+      > {{ amount }}%
     </div>
   </div>
 </template>

@@ -1,17 +1,38 @@
 <template>
   <div class="main-nav-container">
-    <transition name="nav" appear>
-      <md-content class="main-nav md-scrollbar" v-if="!isSplash">
+    <transition
+      name="nav"
+      appear
+    >
+      <md-content
+        v-if="!isSplash"
+        class="main-nav md-scrollbar"
+      >
         <main-nav-content />
-
       </md-content>
     </transition>
 
-    <vue-toc target=".page-container" class="toc" :key="$route.fullPath" v-if="!isSplash" />
+    <vue-toc
+      v-if="!isSplash"
+      :key="$route.fullPath"
+      target=".page-container"
+      class="toc"
+    />
 
-    <md-drawer md-fixed :md-active.sync="isMenuVisible" @md-closed="hideMenu">
-      <md-toolbar class="md-transparent" md-elevation="0">
-        <logo-vue-material class="md-icon" animated :blending="false" />
+    <md-drawer
+      v-model:md-active="isMenuVisible"
+      md-fixed
+      @md-closed="hideMenu"
+    >
+      <md-toolbar
+        class="md-transparent"
+        md-elevation="0"
+      >
+        <logo-vue-material
+          class="md-icon"
+          animated
+          :blending="false"
+        />
         <span class="md-title">Vue material</span>
       </md-toolbar>
 

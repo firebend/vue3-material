@@ -1,7 +1,10 @@
 <example src="./examples/SnackbarExample.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.snackbar.title')">
+  <page-container
+    centered
+    :title="$t('pages.snackbar.title')"
+  >
     <div class="page-container-section">
       <p>Snackbars provide brief feedback about an operation through a message at the bottom of the screen.</p>
       <p>They can have a custom duration on the screen or be persistent. It can be centered or left aligned.</p>
@@ -11,13 +14,26 @@
     <div class="page-container-section">
       <h2>Duration and position</h2>
 
-      <code-example title="Dynamic values" :component="examples['snackbar-example']" />
+      <code-example
+        title="Dynamic values"
+        :component="examples['snackbar-example']"
+      />
 
       <api-item title="API - md-snackbar">
         <p>The following options can be applied to any snackbar:</p>
 
-        <api-table :headings="props.headings" :props="props.props" slot="props" />
-        <api-table :headings="events.headings" :props="events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="props.headings"
+            :props="props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="events.headings"
+            :props="events.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

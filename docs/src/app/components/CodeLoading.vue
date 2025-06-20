@@ -1,8 +1,14 @@
 <template>
-  <transition name="code-loading" appear>
+  <transition
+    name="code-loading"
+    appear
+  >
     <div class="code-loading">
       <md-progress-spinner md-mode="indeterminate" />
-      <div class="code-loading-label" v-if="$slots.default">
+      <div
+        v-if="$slots.default"
+        class="code-loading-label"
+      >
         <slot />
       </div>
     </div>
@@ -16,7 +22,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
+  @use "vue-material/components/MdAnimation/variables";
 
   .code-loading {
     min-height: 150px;
@@ -25,7 +31,7 @@
     align-items: center;
     justify-content: center;
     background: #fff;
-    transition: opacity .3s $md-transition-default-timing;
+    transition: opacity .3s variables.$md-transition-default-timing;
     will-change: opacity;
     font-size: 15px;
   }

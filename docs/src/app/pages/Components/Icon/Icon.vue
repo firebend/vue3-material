@@ -3,42 +3,85 @@
 <example src="./examples/SvgAssets.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.icon.title')">
+  <page-container
+    centered
+    :title="$t('pages.icon.title')"
+  >
     <div class="page-container-section">
-      <p>Material icons uses geometric shapes to visually represent core ideas, capabilities, or topics. They are generally used along with the <a href="https://material.io/icons/" target="_blank">Material icons</a>, but not restricted to. Icons can use icon fonts or external SVGs. Also, can accept some size dimensions, like <strong>2x</strong>, <strong>3x</strong>, <strong>4x</strong> and <strong>5x</strong>.</p>
+      <p>
+        Material icons uses geometric shapes to visually represent core ideas, capabilities, or topics. They are generally used along with the <a
+          href="https://material.io/icons/"
+          target="_blank"
+        >Material icons</a>, but not restricted to. Icons can use icon fonts or external SVGs. Also, can accept some size dimensions, like <strong>2x</strong>, <strong>3x</strong>, <strong>4x</strong> and <strong>5x</strong>.
+      </p>
     </div>
 
     <div class="page-container-section">
-      <h2 id="material-icon">Material Icon Font</h2>
+      <h2 id="material-icon">
+        Material Icon Font
+      </h2>
       <p>By default the <code>md-icon</code> will assume that you are using the Material Icons Font. You have to pass the name of the icon with underscore instead of spaces. For example: <code>&#x3C;md-icon&#x3E;thumb_up&#x3C;/md-icon&#x3E;</code>.</p>
 
-      <code-example title="Material Icons" :component="examples['material-icons']" />
+      <code-example
+        title="Material Icons"
+        :component="examples['material-icons']"
+      />
 
       <api-item title="API - md-icon">
         <p>The following options can be applied to all icons:</p>
 
-        <api-table :headings="api.material.classes.headings" :props="api.material.classes.props" slot="classes" />
-        <api-table :headings="api.material.events.headings" :props="api.material.events.props" slot="events" />
+        <template #classes>
+          <api-table
+            :headings="api.material.classes.headings"
+            :props="api.material.classes.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="api.material.events.headings"
+            :props="api.material.events.props"
+          />
+        </template>
       </api-item>
     </div>
 
     <div class="page-container-section">
-      <h2 id="custom-fonts">Custom Fonts</h2>
-      <p>Alternatevely you can load any custom fonts to be used with <code>md-icon</code>, like <a href="http://fontawesome.io/" target="_blank">Font Awesome</a> for example. Just use the Font Awesome (or any other) classes.</p>
+      <h2 id="custom-fonts">
+        Custom Fonts
+      </h2>
+      <p>
+        Alternatevely you can load any custom fonts to be used with <code>md-icon</code>, like <a
+          href="http://fontawesome.io/"
+          target="_blank"
+        >Font Awesome</a> for example. Just use the Font Awesome (or any other) classes.
+      </p>
 
-      <code-example title="Font Awesome" :component="examples['font-awesome']" />
+      <code-example
+        title="Font Awesome"
+        :component="examples['font-awesome']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="svg-source">SVG Source</h2>
+      <h2 id="svg-source">
+        SVG Source
+      </h2>
       <p>When loading an icon font, you will be able to use ALL of it's icons. This may hurt the performance of your application. Instead, you can use only the icons that you really need, loading them using svg.</p>
 
-      <code-example title="SVG Assets" :component="examples['svg-assets']" />
+      <code-example
+        title="SVG Assets"
+        :component="examples['svg-assets']"
+      />
 
       <api-item title="API">
         <p>The following option is specifically for svg icons:</p>
 
-        <api-table :headings="api.svg.props.headings" :props="api.svg.props.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="api.svg.props.headings"
+            :props="api.svg.props.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

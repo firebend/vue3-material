@@ -1,8 +1,9 @@
-@import "vue-material/theme/engine";
+@use "vue-material/theme/engine";
+@use "vue-material/theme/palette";
 
-@include md-register-theme("light-green", (
-  primary: md-get-palette-color(lightgreen, A700),
-  accent: md-get-palette-color(red, A200)
+@include engine.md-register-theme("light-green", (
+  primary: palette.md-get-palette-color(lightgreen, A700),
+  accent: palette.md-get-palette-color(red, A200)
 ));
 
 @import "./docs-imports.scss";

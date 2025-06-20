@@ -1,7 +1,10 @@
 <template>
   <div>
-    <md-progress-bar md-mode="query"></md-progress-bar>
-    <md-progress-bar class="md-accent" md-mode="query"></md-progress-bar>
+    <md-progress-bar md-mode="query" />
+    <md-progress-bar
+      class="md-accent"
+      md-mode="query"
+    />
   </div>
 </template>
 

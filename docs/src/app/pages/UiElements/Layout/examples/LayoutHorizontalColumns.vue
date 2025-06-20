@@ -1,8 +1,8 @@
 <template>
   <div class="md-layout">
-    <div class="md-layout-item"></div>
-    <div class="md-layout-item"></div>
-    <div class="md-layout-item"></div>
+    <div class="md-layout-item" />
+    <div class="md-layout-item" />
+    <div class="md-layout-item" />
   </div>
 </template>
 
@@ -19,15 +19,15 @@
     height: 40px;
 
     &:nth-child(1) {
-      background: md-get-palette-color(grey, 300);
+      background: palette.md-get-palette-color(grey, 300);
     }
 
     &:nth-child(2) {
-      background: md-get-palette-color(grey, 400);
+      background: palette.md-get-palette-color(grey, 400);
     }
 
     &:nth-child(3) {
-      background: md-get-palette-color(grey, 500);
+      background: palette.md-get-palette-color(grey, 500);
     }
   }
 </style>

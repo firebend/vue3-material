@@ -4,22 +4,34 @@
       <md-subheader>Notifications</md-subheader>
 
       <md-list-item>
-        <md-checkbox v-model="notification" value="preview" />
+        <md-checkbox
+          v-model="notification"
+          value="preview"
+        />
         <span class="md-list-item-text">Show content preview</span>
       </md-list-item>
 
       <md-list-item>
-        <md-checkbox v-model="notification" value="sound" />
+        <md-checkbox
+          v-model="notification"
+          value="sound"
+        />
         <span class="md-list-item-text">Sound</span>
       </md-list-item>
 
       <md-list-item>
-        <md-checkbox v-model="notification" value="vibrate" />
+        <md-checkbox
+          v-model="notification"
+          value="vibrate"
+        />
         <span class="md-list-item-text">Vibrate</span>
       </md-list-item>
 
       <md-list-item>
-        <md-checkbox v-model="notification" value="light" />
+        <md-checkbox
+          v-model="notification"
+          value="light"
+        />
         <span class="md-list-item-text">Notification light</span>
       </md-list-item>
     </md-list>
@@ -49,22 +61,34 @@
       <md-subheader>Ringtone</md-subheader>
 
       <md-list-item>
-        <md-radio v-model="ringtone" value="joy" />
+        <md-radio
+          v-model="ringtone"
+          value="joy"
+        />
         <span class="md-list-item-text">Joy</span>
       </md-list-item>
 
       <md-list-item>
-        <md-radio v-model="ringtone" value="metal" />
+        <md-radio
+          v-model="ringtone"
+          value="metal"
+        />
         <span class="md-list-item-text">Metal</span>
       </md-list-item>
 
       <md-list-item>
-        <md-radio v-model="ringtone" value="peace" />
+        <md-radio
+          v-model="ringtone"
+          value="peace"
+        />
         <span class="md-list-item-text">Peace</span>
       </md-list-item>
 
       <md-list-item>
-        <md-radio v-model="ringtone" value="rock-night" />
+        <md-radio
+          v-model="ringtone"
+          value="rock-night"
+        />
         <span class="md-list-item-text">Rock night</span>
       </md-list-item>
     </md-list>

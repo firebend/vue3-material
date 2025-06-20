@@ -18,7 +18,10 @@
     </md-speed-dial>
 
     Click as trigger:
-    <md-speed-dial md-event="click" md-direction="bottom">
+    <md-speed-dial
+      md-event="click"
+      md-direction="bottom"
+    >
       <md-speed-dial-target class="md-primary">
         <md-icon>my_location</md-icon>
       </md-speed-dial-target>

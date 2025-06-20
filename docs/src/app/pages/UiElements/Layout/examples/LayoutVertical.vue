@@ -1,8 +1,8 @@
 <template>
   <div class="md-layout-vertical md-gutter">
-    <div class="md-layout-item"></div>
-    <div class="md-layout-item"></div>
-    <div class="md-layout-item"></div>
+    <div class="md-layout-item" />
+    <div class="md-layout-item" />
+    <div class="md-layout-item" />
   </div>
 </template>
 
@@ -20,6 +20,6 @@
   }
 
   .md-layout-item {
-    background: md-get-palette-color(blue, 200);
+    background: palette.md-get-palette-color(blue, 200);
   }
 </style>

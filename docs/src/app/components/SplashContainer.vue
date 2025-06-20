@@ -1,6 +1,9 @@
 <template>
   <transition name="splash-container">
-    <div class="splash-container main-container" :class="{ centered }">
+    <div
+      class="splash-container main-container"
+      :class="{ centered }"
+    >
       <slot />
     </div>
   </transition>
@@ -32,19 +35,19 @@
       this.setPageTitle(this.title)
       this.setSplashMode(true)
     },
-    beforeDestroy () {
+    beforeUnmount () {
       this.setSplashMode(false)
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
+  @use "vue-material/components/MdAnimation/variables";
 
   .splash-container {
     margin: auto;
     padding: 16px;
-    transition: transform .3s $md-transition-default-timing;
+    transition: transform .3s variables.$md-transition-default-timing;
   }
 
   .splash-container-leave-active {

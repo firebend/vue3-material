@@ -6,62 +6,110 @@
 <example src="./examples/PersistentMini.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.drawer.title')">
+  <page-container
+    centered
+    :title="$t('pages.drawer.title')"
+  >
     <div class="page-container-section">
       <p>The navigation drawer slides in from the left or right and contains the navigation destinations for your app. It is commonly used with lists inside, although can accept any type of content.</p>
       <p>Drawers have 3 types: Temporary, Permanent and Persistent.</p>
       <p>They can be placed on the left or right, but you can also have both.</p>
-      <note-block>In some examples of this demo we are using drawers along with the <router-link to="/components/app">App</router-link> component, but you can totally use it alone.</note-block>
+      <note-block>
+        In some examples of this demo we are using drawers along with the <router-link to="/components/app">
+          App
+        </router-link> component, but you can totally use it alone.
+      </note-block>
     </div>
 
     <div class="page-container-section">
-      <h2 id="temporary">Temporary</h2>
+      <h2 id="temporary">
+        Temporary
+      </h2>
 
       <p>Temporary navigation drawers are closed by default and opens temporarily above all other content until a section is selected. This is highly recommended for mobile devices. If you do not pass any options to drawer this will be the default preset:</p>
-      <code-example title="Also works on the right side" :component="examples['temporary']" />
+      <code-example
+        title="Also works on the right side"
+        :component="examples['temporary']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="permanent">Permanent</h2>
+      <h2 id="permanent">
+        Permanent
+      </h2>
 
       <p>Permanent navigation drawers are always visible and pinned to the left edge, at the same elevation as the content or background. They cannot be closed and are recommended default for desktop.</p>
       <p>They come with three sub-types: Full, Clipped and Card:</p>
       <p>The full high type is the default recommendation for desktop for apps focused on information consumption that use a left-to-right hierarchy. So this is great for responsive applications that have global navigation links, as it will automatically hide on small screens:</p>
 
-      <note-block tip>All permanent drawers will automatically become temporary on small screens.</note-block>
+      <note-block tip>
+        All permanent drawers will automatically become temporary on small screens.
+      </note-block>
 
-      <code-example title="Full Height" :component="examples['permanent-full']" />
+      <code-example
+        title="Full Height"
+        :component="examples['permanent-full']"
+      />
 
       <p>The clipped option is also great for responsive applications, but are for apps focused on productivity that require balance across the screen:</p>
-      <code-example title="Clipped" :component="examples['permanent-clipped']" />
+      <code-example
+        title="Clipped"
+        :component="examples['permanent-clipped']"
+      />
 
       <p>The floating card is good to apps that require less hierarchy, like the ones who have a large background content, like maps and video. This is the one used on Google Maps for desktop:</p>
-      <code-example title="Card" :component="examples['permanent-card']" />
+      <code-example
+        title="Card"
+        :component="examples['permanent-card']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="persistent">Persistent</h2>
+      <h2 id="persistent">
+        Persistent
+      </h2>
 
       <p>Persistent navigation drawers can toggle open or closed. The drawer sits on the same surface elevation as the content. It is closed by default and opens by selecting the menu icon, and stays open until closed by the user.</p>
       <p>They come with two sub-types: Full and Mini:</p>
       <p>The full type can be use either on desktop or mobile, although is recommended for larger screens:</p>
-      <code-example title="Push page content" :component="examples['persistent-full']" />
+      <code-example
+        title="Push page content"
+        :component="examples['persistent-full']"
+      />
 
       <p>The mini variant is recommended for apps sections that need quick selection access alongside content. They should be used only on desktop as bottom bar will be more effective for mobile devices. It is great to maximize the content area, without losing the navigation buttons:</p>
-      <code-example title="Mini drawer always visible" :component="examples['persistent-mini']" />
+      <code-example
+        title="Mini drawer always visible"
+        :component="examples['persistent-mini']"
+      />
     </div>
 
     <api-item title="API - md-drawer">
       <p>The following options can be applied to any drawer:</p>
 
-      <api-table :headings="drawer.props.headings" :props="drawer.props.props" slot="props" />
-      <api-table :headings="drawer.events.headings" :props="drawer.events.props" slot="events" />
+      <template #props>
+        <api-table
+          :headings="drawer.props.headings"
+          :props="drawer.props.props"
+        />
+      </template>
+      <template #events>
+        <api-table
+          :headings="drawer.events.headings"
+          :props="drawer.events.props"
+        />
+      </template>
     </api-item>
 
     <api-item title="API - Swipeable">
       <p>The following options can be applied to any <code>md-drawer</code> component that is using <code>md-swipeable</code> prop.</p>
 
-      <api-table :headings="swipeable.props.headings" :props="swipeable.props.props" slot="props" />
+      <template #props>
+        <api-table
+          :headings="swipeable.props.headings"
+          :props="swipeable.props.props"
+        />
+      </template>
     </api-item>
   </page-container>
 </template>

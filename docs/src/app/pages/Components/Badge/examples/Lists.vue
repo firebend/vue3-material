@@ -4,7 +4,10 @@
       <md-list-item>
         <md-icon>move_to_inbox</md-icon>
         <span class="md-list-item-text">Inbox</span>
-        <md-badge class="md-primary md-square" md-content="6" />
+        <md-badge
+          class="md-primary md-square"
+          md-content="6"
+        />
       </md-list-item>
 
       <md-list-item>
@@ -15,13 +18,19 @@
       <md-list-item>
         <md-icon>delete</md-icon>
         <span class="md-list-item-text">Trash</span>
-        <md-badge class="md-primary" md-content="6" />
+        <md-badge
+          class="md-primary"
+          md-content="6"
+        />
       </md-list-item>
 
       <md-list-item>
         <md-icon>error</md-icon>
         <span class="md-list-item-text">Spam</span>
-        <md-badge class="md-square" md-content="New" />
+        <md-badge
+          class="md-square"
+          md-content="New"
+        />
       </md-list-item>
     </md-list>
   </div>

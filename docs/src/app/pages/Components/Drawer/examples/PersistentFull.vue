@@ -2,18 +2,31 @@
   <div class="page-container">
     <md-app>
       <md-app-toolbar class="md-primary">
-        <md-button class="md-icon-button" @click="toggleMenu" v-if="!menuVisible">
+        <md-button
+          v-if="!menuVisible"
+          class="md-icon-button"
+          @click="toggleMenu"
+        >
           <md-icon>menu</md-icon>
         </md-button>
         <span class="md-title">My Title</span>
       </md-app-toolbar>
 
-      <md-app-drawer :md-active.sync="menuVisible" md-persistent="full">
-        <md-toolbar class="md-transparent" md-elevation="0">
+      <md-app-drawer
+        v-model:md-active="menuVisible"
+        md-persistent="full"
+      >
+        <md-toolbar
+          class="md-transparent"
+          md-elevation="0"
+        >
           <span>Navigation</span>
 
           <div class="md-toolbar-section-end">
-            <md-button class="md-icon-button md-dense" @click="toggleMenu">
+            <md-button
+              class="md-icon-button md-dense"
+              @click="toggleMenu"
+            >
               <md-icon>keyboard_arrow_left</md-icon>
             </md-button>
           </div>

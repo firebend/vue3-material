@@ -1,11 +1,21 @@
 <template>
-  <div id="docs" class="container" :class="containerClass">
+  <div
+    id="docs"
+    class="container"
+    :class="containerClass"
+  >
     <main-header />
 
-    <div class="container-wrapper md-layout-row" :class="containerClass">
+    <div
+      class="container-wrapper md-layout-row"
+      :class="containerClass"
+    >
       <main-nav />
 
-      <div class="main-container" v-if="loading">
+      <div
+        v-if="loading"
+        class="main-container"
+      >
         <code-loading>Loading page...</code-loading>
       </div>
 
@@ -45,6 +55,15 @@
         }
       }
     },
+    created () {
+      this.$router.beforeEach(this.beforeRouteRender)
+      this.$router.afterEach(this.afterRouteRender)
+    },
+    mounted () {
+      window.setTimeout(() => {
+        this.message = true
+      }, 2000)
+    },
     methods: {
       closeMessage () {
         this.message = false
@@ -56,15 +75,6 @@
       afterRouteRender () {
         this.loading = false
       }
-    },
-    created () {
-      this.$router.beforeEach(this.beforeRouteRender)
-      this.$router.afterEach(this.afterRouteRender)
-    },
-    mounted () {
-      window.setTimeout(() => {
-        this.message = true
-      }, 2000)
     }
   }
 </script>

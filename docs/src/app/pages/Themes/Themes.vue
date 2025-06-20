@@ -1,7 +1,8 @@
 <template>
-  <page-container centered :title="$t('pages.themes.title')">
-
-  </page-container>
+  <page-container
+    centered
+    :title="$t('pages.themes.title')"
+  />
 </template>
 
 <script>

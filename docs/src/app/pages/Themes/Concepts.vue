@@ -1,7 +1,12 @@
 <template>
-  <page-container centered :title="$t('pages.themeConcepts.title')">
+  <page-container
+    centered
+    :title="$t('pages.themeConcepts.title')"
+  >
     <div class="page-container-section">
-      <h2 class="md-headline">Theme Engine</h2>
+      <h2 class="md-headline">
+        Theme Engine
+      </h2>
 
       <p>The concept of themes in Vue Material have four pillars: Dynamic, Multiple, Flexible and Friendly.</p>
       <ul>
@@ -15,9 +20,17 @@
     </div>
 
     <div class="page-container-section">
-      <h2 class="md-headline">Color Intentions</h2>
+      <h2 class="md-headline">
+        Color Intentions
+      </h2>
 
-      <p>Color in Material Design is inspired by bold hues juxtaposed with muted environments, deep shadows and bright highlights. The <a href="https://material.google.com/style/color.html#color-color-palette" target="_blank" rel="noopener">Material Design palette</a> can be fully applied here and you should use the name and the hue number to create themes.</p>
+      <p>
+        Color in Material Design is inspired by bold hues juxtaposed with muted environments, deep shadows and bright highlights. The <a
+          href="https://material.google.com/style/color.html#color-color-palette"
+          target="_blank"
+          rel="noopener"
+        >Material Design palette</a> can be fully applied here and you should use the name and the hue number to create themes.
+      </p>
       <p>Vue Material use classes to apply those color intentions: <code>md-primary</code>, <code>md-accent</code>, and <code>md-transparent</code>. The background color is applied automatically by the theme engine.</p>
       <note-block>Although it is possible, it is not recommended to use the same color for primary and accent.</note-block>
     </div>

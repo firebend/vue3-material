@@ -3,7 +3,10 @@
     <md-card>
       <md-card-media-cover>
         <md-card-media md-ratio="16:9">
-          <img src="/assets/examples/card-sky.jpg" alt="Skyscraper">
+          <img
+            src="assets/examples/card-sky.jpg"
+            alt="Skyscraper"
+          >
         </md-card-media>
 
         <md-card-area>
@@ -23,7 +26,10 @@
     <md-card>
       <md-card-media-cover md-text-scrim>
         <md-card-media md-ratio="16:9">
-          <img src="/assets/examples/card-sky.jpg" alt="Skyscraper">
+          <img
+            src="assets/examples/card-sky.jpg"
+            alt="Skyscraper"
+          >
         </md-card-media>
 
         <md-card-area>
@@ -43,7 +49,10 @@
     <md-card>
       <md-card-media-cover md-solid>
         <md-card-media md-ratio="4:3">
-          <img src="/assets/examples/card-sky.jpg" alt="Skyscraper">
+          <img
+            src="assets/examples/card-sky.jpg"
+            alt="Skyscraper"
+          >
         </md-card-media>
 
         <md-card-area>
@@ -58,7 +67,10 @@
     <md-card>
       <md-card-media-cover md-solid>
         <md-card-media md-ratio="1:1">
-          <img src="/assets/examples/card-sky.jpg" alt="Skyscraper">
+          <img
+            src="assets/examples/card-sky.jpg"
+            alt="Skyscraper"
+          >
         </md-card-media>
 
         <md-card-area>
@@ -82,6 +94,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'MediaCover'
+}
+</script>
+
 <style lang="scss" scoped>
   .md-card {
     width: 320px;
@@ -90,9 +108,3 @@
     vertical-align: top;
   }
 </style>
-
-<script>
-export default {
-  name: 'MediaCover'
-}
-</script>

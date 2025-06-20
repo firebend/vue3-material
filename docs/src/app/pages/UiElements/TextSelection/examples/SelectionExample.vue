@@ -23,11 +23,11 @@
   @import "vue-material/theme/engine";
 
   @include md-register-theme("selection-black", (
-    accent: md-get-palette-color(black, 500)
+    accent: palette.md-get-palette-color(black, 500)
   ));
 
   @include md-register-theme("selection-orange", (
-    accent: md-get-palette-color(orange, 500),
+    accent: palette.md-get-palette-color(orange, 500),
     theme: dark
   ));
 

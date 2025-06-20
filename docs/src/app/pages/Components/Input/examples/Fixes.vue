@@ -3,12 +3,12 @@
     <md-field>
       <label>Prefix</label>
       <span class="md-prefix">$</span>
-      <md-input v-model="initial"></md-input>
+      <md-input v-model="initial" />
     </md-field>
 
     <md-field>
       <label>Suffix</label>
-      <md-input v-model="empty"></md-input>
+      <md-input v-model="empty" />
       <span class="md-suffix">@gmail.com</span>
     </md-field>
   </div>

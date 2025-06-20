@@ -3,23 +3,44 @@
     <div class="demo-option">
       <md-field class="select">
         <label for="top">Top</label>
-        <md-select id="top" v-model="topPosition">
-          <md-option value="md-top-left">Left</md-option>
-          <md-option value="md-top-center">Center</md-option>
-          <md-option value="md-top-right">Right</md-option>
+        <md-select
+          id="top"
+          v-model="topPosition"
+        >
+          <md-option value="md-top-left">
+            Left
+          </md-option>
+          <md-option value="md-top-center">
+            Center
+          </md-option>
+          <md-option value="md-top-right">
+            Right
+          </md-option>
         </md-select>
       </md-field>
 
       <md-field class="select">
         <label for="bottom">Bottom</label>
-        <md-select id="bottom" v-model="bottomPosition">
-          <md-option value="md-bottom-left">Left</md-option>
-          <md-option value="md-bottom-center">Center</md-option>
-          <md-option value="md-bottom-right">Right</md-option>
+        <md-select
+          id="bottom"
+          v-model="bottomPosition"
+        >
+          <md-option value="md-bottom-left">
+            Left
+          </md-option>
+          <md-option value="md-bottom-center">
+            Center
+          </md-option>
+          <md-option value="md-bottom-right">
+            Right
+          </md-option>
         </md-select>
       </md-field>
     </div>
-    <md-speed-dial :class="topPosition" md-direction="bottom">
+    <md-speed-dial
+      :class="topPosition"
+      md-direction="bottom"
+    >
       <md-speed-dial-target class="md-primary">
         <md-icon>my_location</md-icon>
       </md-speed-dial-target>

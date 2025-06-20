@@ -1,17 +1,39 @@
 <template>
   <div>
     <div class="phone-viewport">
-      <md-bottom-bar class="md-accent" md-type="shift" @md-changed="checkNewPosts">
-        <md-bottom-bar-item md-label="Home" md-icon="home"></md-bottom-bar-item>
-        <md-bottom-bar-item md-label="Pages" md-icon="pages"></md-bottom-bar-item>
+      <md-bottom-bar
+        class="md-accent"
+        md-type="shift"
+        @md-changed="checkNewPosts"
+      >
+        <md-bottom-bar-item
+          md-label="Home"
+          md-icon="home"
+        />
+        <md-bottom-bar-item
+          md-label="Pages"
+          md-icon="pages"
+        />
 
-        <md-bottom-bar-item id="item-posts" @click="clearNewPosts">
-          <md-icon class="md-bottom-bar-icon" md-src="/assets/icon-whatshot.svg"></md-icon>
+        <md-bottom-bar-item
+          id="item-posts"
+          @click="clearNewPosts"
+        >
+          <md-icon
+            class="md-bottom-bar-icon"
+            md-src="assets/icon-whatshot.svg"
+          />
           <span class="md-bottom-bar-label">Posts</span>
-          <i class="badge" v-if="newPosts">{{ newPosts }}</i>
+          <i
+            v-if="newPosts"
+            class="badge"
+          >{{ newPosts }}</i>
         </md-bottom-bar-item>
 
-        <md-bottom-bar-item md-label="Favorites" md-icon="favorite"></md-bottom-bar-item>
+        <md-bottom-bar-item
+          md-label="Favorites"
+          md-icon="favorite"
+        />
       </md-bottom-bar>
     </div>
   </div>
@@ -24,6 +46,9 @@
       newPosts: 0,
       checkInterval: null
     }),
+    mounted () {
+      this.checkNewPosts()
+    },
     methods: {
       clearCheckPosts () {
         window.clearInterval(this.checkInterval)
@@ -45,9 +70,6 @@
           }, 1000)
         }
       }
-    },
-    mounted () {
-      this.checkNewPosts()
     }
   }
 </script>

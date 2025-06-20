@@ -2,19 +2,54 @@
   <div>
     <div class="phone-viewport">
       <md-bottom-bar md-type="shift">
-        <md-bottom-bar-item id="bottom-bar-item-home" md-label="Home" md-icon="home"></md-bottom-bar-item>
-        <md-bottom-bar-item id="bottom-bar-item-pages" md-label="Pages" md-icon="pages"></md-bottom-bar-item>
-        <md-bottom-bar-item id="bottom-bar-item-posts" md-label="Posts" md-icon="/assets/icon-whatshot.svg"></md-bottom-bar-item>
-        <md-bottom-bar-item id="bottom-bar-item-favorites" md-label="Favorites" md-icon="favorite"></md-bottom-bar-item>
+        <md-bottom-bar-item
+          id="bottom-bar-item-home"
+          md-label="Home"
+          md-icon="home"
+        />
+        <md-bottom-bar-item
+          id="bottom-bar-item-pages"
+          md-label="Pages"
+          md-icon="pages"
+        />
+        <md-bottom-bar-item
+          id="bottom-bar-item-posts"
+          md-label="Posts"
+          md-icon="assets/icon-whatshot.svg"
+        />
+        <md-bottom-bar-item
+          id="bottom-bar-item-favorites"
+          md-label="Favorites"
+          md-icon="favorite"
+        />
       </md-bottom-bar>
     </div>
 
     <div class="phone-viewport">
-      <md-bottom-bar class="md-accent" md-type="shift">
-        <md-bottom-bar-item id="bottom-bar-item-home" md-label="Home" md-icon="home"></md-bottom-bar-item>
-        <md-bottom-bar-item id="bottom-bar-item-pages" md-label="Pages" md-icon="pages"></md-bottom-bar-item>
-        <md-bottom-bar-item id="bottom-bar-item-posts" md-label="Posts" md-icon="/assets/icon-whatshot.svg"></md-bottom-bar-item>
-        <md-bottom-bar-item id="bottom-bar-item-favorites" md-label="Favorites" md-icon="favorite"></md-bottom-bar-item>
+      <md-bottom-bar
+        class="md-accent"
+        md-type="shift"
+      >
+        <md-bottom-bar-item
+          id="bottom-bar-item-home"
+          md-label="Home"
+          md-icon="home"
+        />
+        <md-bottom-bar-item
+          id="bottom-bar-item-pages"
+          md-label="Pages"
+          md-icon="pages"
+        />
+        <md-bottom-bar-item
+          id="bottom-bar-item-posts"
+          md-label="Posts"
+          md-icon="assets/icon-whatshot.svg"
+        />
+        <md-bottom-bar-item
+          id="bottom-bar-item-favorites"
+          md-label="Favorites"
+          md-icon="favorite"
+        />
       </md-bottom-bar>
     </div>
   </div>

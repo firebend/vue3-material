@@ -5,13 +5,26 @@
     method="POST"
     target="_blank"
   >
-    <md-button type="submit" class="md-icon-button md-dense">
+    <md-button
+      type="submit"
+      class="md-icon-button md-dense"
+    >
       <md-icon>launch</md-icon>
-      <md-tooltip md-theme="default">Open in sandbox</md-tooltip>
+      <md-tooltip md-theme="default">
+        Open in sandbox
+      </md-tooltip>
     </md-button>
 
-    <input type="hidden" name="parameters" v-model="parameters" />
-    <input type="hidden" name="query" value="module=App.vue" />
+    <input
+      v-model="parameters"
+      type="hidden"
+      name="parameters"
+    >
+    <input
+      type="hidden"
+      name="query"
+      value="module=App.vue"
+    >
   </form>
 </template>
 

@@ -1,9 +1,9 @@
 <template>
   <div class="md-layout md-gutter">
-    <div class="md-layout-item md-size-15"></div>
-    <div class="md-layout-item"></div>
-    <div class="md-layout-item"></div>
-    <div class="md-layout-item md-size-15"></div>
+    <div class="md-layout-item md-size-15" />
+    <div class="md-layout-item" />
+    <div class="md-layout-item" />
+    <div class="md-layout-item md-size-15" />
   </div>
 </template>
 
@@ -23,7 +23,7 @@
       width: 100%;
       height: 100%;
       display: block;
-      background: md-get-palette-color(green, 200);
+      background: palette.md-get-palette-color(green, 200);
       content: " ";
     }
   }

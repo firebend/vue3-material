@@ -5,52 +5,90 @@
     </div>
 
     <div class="home-call">
-      <h1 class="home-name">Vue Material</h1>
+      <h1 class="home-name">
+        Vue Material
+      </h1>
 
-      <p class="mb-10">{{ $t('pages.home.slogan') }}</p>
+      <p class="mb-10">
+        {{ $t('pages.home.slogan') }}
+      </p>
 
 
       <div class="home-actions">
-        <gh-btns-star slug="vuematerial/vue-material" show-count></gh-btns-star>
+        <gh-btns-star
+          slug="vuematerial/vue-material"
+          show-count
+        />
         <!-- Place this tag where you want the button to render. -->
-        <github-button href="https://github.com/sponsors/vuematerial" data-icon="octicon-heart" data-size="large" aria-label="Sponsor @vuematerial on GitHub">Sponsor</github-button>
+        <!--        <github-button href="https://github.com/sponsors/vuematerial" data-icon="octicon-heart" data-size="large" aria-label="Sponsor @vuematerial on GitHub">Sponsor</github-button>-->
       </div>
       <div class="home-actions">
-        <a href="https://www.npmjs.com/package/vue-material" target="_blank">
-          <img src="https://img.shields.io/npm/dt/vue-material.svg" alt="Downloads">
+        <a
+          href="https://www.npmjs.com/package/vue-material"
+          target="_blank"
+        >
+          <img
+            src="https://img.shields.io/npm/dt/vue-material.svg"
+            alt="Downloads"
+          >
         </a>
-        <a href="https://www.npmjs.com/package/vue-material" target="_blank">
-          <img src="https://img.shields.io/npm/l/vue-material.svg" alt="License">
+        <a
+          href="https://www.npmjs.com/package/vue-material"
+          target="_blank"
+        >
+          <img
+            src="https://img.shields.io/npm/l/vue-material.svg"
+            alt="License"
+          >
         </a>
-        <a href="https://opencollective.com/vue-material" target="_blank">
-          <img src="https://opencollective.com/vue-material/tiers/backer/badge.svg?label=backer&color=brightgreen" />
+        <a
+          href="https://opencollective.com/vue-material"
+          target="_blank"
+        >
+          <img src="https://opencollective.com/vue-material/tiers/backer/badge.svg?label=backer&color=brightgreen">
         </a>
-        <a href="https://discord.gg/vuematerial" target="_blank">
-          <img src="https://img.shields.io/discord/379653048798281729.svg?logo=discord&colorB=7289DA" alt="Chat">
+        <a
+          href="https://discord.gg/vuematerial"
+          target="_blank"
+        >
+          <img
+            src="https://img.shields.io/discord/379653048798281729.svg?logo=discord&colorB=7289DA"
+            alt="Chat"
+          >
         </a>
       </div>
       <div class="home-actions mt-2">
-        <md-button class="md-button-spaced md-plain md-raised" to="/getting-started">{{ $t('pages.gettingStarted.title') }}</md-button>
-        <md-button class="md-button-spaced md-plain md-raised" to="/components">{{ $t('pages.components.title') }}</md-button>
+        <md-button
+          class="md-button-spaced md-plain md-raised"
+          to="/getting-started"
+        >
+          {{ $t('pages.gettingStarted.title') }}
+        </md-button>
+        <md-button
+          class="md-button-spaced md-plain md-raised"
+          to="/components"
+        >
+          {{ $t('pages.components.title') }}
+        </md-button>
       </div>
     </div>
   </header>
 </template>
 
 <script>
-import GithubButton from 'vue-github-button'
+// import GithubButton from 'vue-github-button'
 
 export default {
   name: 'HomeHeader',
   components: {
-    GithubButton
+    // GithubButton
   },
 }
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
-  @import "vue-material/components/MdLayout/mixins";
+  @use "vue-material/components/MdAnimation/variables";
+  @use "vue-material/components/MdLayout/mixins";
 
   .home-header {
     text-align: center;
@@ -63,7 +101,7 @@ export default {
     align-items: center;
     position: relative;
 
-    @include md-layout-xsmall {
+    @include mixins.md-layout-xsmall {
       max-width: 100px;
     }
   }
@@ -85,7 +123,7 @@ export default {
     font-weight: 500;
     line-height: 1em;
 
-    @include md-layout-xsmall {
+    @include mixins.md-layout-xsmall {
       font-size: 36px;
     }
   }
@@ -102,14 +140,14 @@ export default {
       margin-left: 5px;
     }
 
-    >>>.gh-button{
+    :deep(.gh-button) {
       color: #25292e;
       &:hover{
         color: #25292e;
       }
     }
 
-    >>>.social-count{
+    :deep(.social-count) {
       color: #25292e;
       &:hover{
         color: #25292e;

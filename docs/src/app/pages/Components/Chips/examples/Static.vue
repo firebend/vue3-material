@@ -1,6 +1,9 @@
 <template>
   <div>
-    <md-chips v-model="cities" md-static></md-chips>
+    <md-chips
+      v-model="cities"
+      md-static
+    />
   </div>
 </template>
 

@@ -4,7 +4,9 @@
       <md-subheader>Phone</md-subheader>
 
       <md-list-item>
-        <md-icon class="md-primary">phone</md-icon>
+        <md-icon class="md-primary">
+          phone
+        </md-icon>
 
         <div class="md-list-item-text">
           <span>(650) 555-1234</span>
@@ -27,12 +29,14 @@
         </md-button>
       </md-list-item>
 
-      <md-divider></md-divider>
+      <md-divider />
 
       <md-subheader>Email</md-subheader>
 
       <md-list-item>
-        <md-icon class="md-primary">email</md-icon>
+        <md-icon class="md-primary">
+          email
+        </md-icon>
 
         <div class="md-list-item-text">
           <span>aliconnors@example.com</span>
@@ -52,7 +56,9 @@
       <md-subheader>Phone</md-subheader>
 
       <md-list-item>
-        <md-icon class="md-primary">phone</md-icon>
+        <md-icon class="md-primary">
+          phone
+        </md-icon>
 
         <div class="md-list-item-text">
           <span>(650) 555-1234</span>
@@ -75,12 +81,14 @@
         </md-button>
       </md-list-item>
 
-      <md-divider></md-divider>
+      <md-divider />
 
       <md-subheader>Email</md-subheader>
 
       <md-list-item>
-        <md-icon class="md-primary">email</md-icon>
+        <md-icon class="md-primary">
+          email
+        </md-icon>
 
         <div class="md-list-item-text">
           <span>aliconnors@example.com</span>

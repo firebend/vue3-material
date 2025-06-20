@@ -17,6 +17,7 @@
     "paths": {
       "vue-material": ["packages/vue-material/src/index.ts"],
       "vue-material/*": ["packages/vue-material/src/*"],
+      "assets/*": ["packages/vue-material/assets/*"],
     }
   },
   "exclude": ["node_modules", "tmp"]

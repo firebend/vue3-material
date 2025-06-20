@@ -1,12 +1,25 @@
 <template>
-  <md-content class="ad-manager" id="ad-manager" md-theme="docs-dark">
-    <div id="carbon-ads" class="carbon-ads"></div>
+  <md-content
+    id="ad-manager"
+    class="ad-manager"
+    md-theme="docs-dark"
+  >
+    <div
+      id="carbon-ads"
+      class="carbon-ads"
+    />
   </md-content>
 </template>
 
 <script>
   export default {
     name: 'AdManager',
+    mounted () {
+      this.getSponsor()
+    },
+    updated () {
+      this.getSponsor()
+    },
     methods: {
       getSponsor () {
 
@@ -19,18 +32,12 @@
 
         document.getElementById('carbon-ads').appendChild(carbonScript)
       }
-    },
-    mounted () {
-      this.getSponsor()
-    },
-    updated () {
-      this.getSponsor()
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/theme/engine";
+  @use "vue-material/theme/engine";
 
   $ad-responsive-big: 1690px;
   $ad-responsive-small: 768px;

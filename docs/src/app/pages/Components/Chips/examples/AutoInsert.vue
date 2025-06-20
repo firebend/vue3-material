@@ -1,6 +1,11 @@
 <template>
   <div>
-    <md-chips class="md-primary" v-model="emails" md-placeholder="Enter a email" :md-auto-insert="true">
+    <md-chips
+      v-model="emails"
+      class="md-primary"
+      md-placeholder="Enter a email"
+      :md-auto-insert="true"
+    >
       <label>Recipients</label>
     </md-chips>
   </div>

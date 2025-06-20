@@ -9,7 +9,9 @@
         <md-subheader>Phone</md-subheader>
 
         <md-list-item>
-          <md-icon class="md-primary">phone</md-icon>
+          <md-icon class="md-primary">
+            phone
+          </md-icon>
 
           <div class="md-list-item-text">
             <span>(650) 555-1234</span>
@@ -32,11 +34,13 @@
           </md-button>
         </md-list-item>
 
-        <md-divider></md-divider>
+        <md-divider />
         <md-subheader>Email</md-subheader>
 
         <md-list-item>
-          <md-icon class="md-primary">email</md-icon>
+          <md-icon class="md-primary">
+            email
+          </md-icon>
 
           <div class="md-list-item-text">
             <span>aliconnors@example.com</span>
@@ -59,7 +63,9 @@
       </md-toolbar>
 
       <md-list>
-        <md-subheader class="md-primary">Navigation</md-subheader>
+        <md-subheader class="md-primary">
+          Navigation
+        </md-subheader>
 
         <md-list-item>
           <md-icon>move_to_inbox</md-icon>
@@ -81,36 +87,51 @@
           <span class="md-list-item-text">Spam</span>
         </md-list-item>
 
-        <md-divider class="md-inset"></md-divider>
-        <md-subheader class="md-primary">Contacts</md-subheader>
+        <md-divider class="md-inset" />
+        <md-subheader class="md-primary">
+          Contacts
+        </md-subheader>
 
         <md-list-item>
           <md-avatar>
-            <img src="https://placeimg.com/40/40/people/5" alt="People">
+            <img
+              src="https://placeimg.com/40/40/people/5"
+              alt="People"
+            >
           </md-avatar>
 
           <span class="md-list-item-text">Abbey Christansen</span>
 
           <md-button class="md-icon-button md-list-action">
-            <md-icon class="md-primary">chat_bubble</md-icon>
+            <md-icon class="md-primary">
+              chat_bubble
+            </md-icon>
           </md-button>
         </md-list-item>
 
         <md-list-item>
           <md-avatar>
-            <img src="https://placeimg.com/40/40/people/1" alt="People">
+            <img
+              src="https://placeimg.com/40/40/people/1"
+              alt="People"
+            >
           </md-avatar>
 
           <span class="md-list-item-text">Alex Nelson</span>
 
           <md-button class="md-icon-button md-list-action">
-            <md-icon class="md-primary">chat_bubble</md-icon>
+            <md-icon class="md-primary">
+              chat_bubble
+            </md-icon>
           </md-button>
         </md-list-item>
 
         <md-list-item>
           <md-avatar>
-            <img src="https://placeimg.com/40/40/people/6" alt="People">
+            <img
+              src="https://placeimg.com/40/40/people/6"
+              alt="People"
+            >
           </md-avatar>
 
           <span class="md-list-item-text">Mary Johnson</span>

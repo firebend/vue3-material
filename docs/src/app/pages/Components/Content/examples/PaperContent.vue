@@ -1,10 +1,20 @@
 <template>
   <div>
     <md-content>Background</md-content>
-    <md-content class="md-primary">Primary</md-content>
-    <md-content class="md-accent">Accent</md-content>
+    <md-content class="md-primary">
+      Primary
+    </md-content>
+    <md-content class="md-accent">
+      Accent
+    </md-content>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'PaperContent'
+}
+</script>
 
 <style lang="scss" scoped>
   .md-content {
@@ -15,9 +25,3 @@
     align-items: center;
   }
 </style>
-
-<script>
-export default {
-  name: 'PaperContent'
-}
-</script>

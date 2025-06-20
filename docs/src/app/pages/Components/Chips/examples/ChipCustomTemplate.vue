@@ -1,11 +1,17 @@
 <template>
   <div>
-    <md-chips v-model="projects" :md-limit="5" md-placeholder="Add project...">
-      <template slot="md-chip" slot-scope="{ chip }">
+    <md-chips
+      v-model="projects"
+      :md-limit="5"
+      md-placeholder="Add project..."
+    >
+      <template #md-chip="{ chip }">
         {{ chip }} <small v-if="chip === currentProject">(Marcos Moura)</small>
       </template>
 
-      <div class="md-helper-text">Up to 5 projects</div>
+      <div class="md-helper-text">
+        Up to 5 projects
+      </div>
     </md-chips>
   </div>
 </template>

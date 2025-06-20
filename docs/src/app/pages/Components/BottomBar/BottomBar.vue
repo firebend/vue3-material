@@ -4,49 +4,94 @@
 <example src="./examples/BarCustomTemplate.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.bottomBar.title')">
+  <page-container
+    centered
+    :title="$t('pages.bottomBar.title')"
+  >
     <div class="page-container-section">
       <p>Bottom navigation bars make it easy to explore and switch between top-level views in a single tap. The bottom bar component is a high-level navigation system made for mobile devices with Vue Router support. Check it out:</p>
     </div>
 
     <div class="page-container-section">
-      <h2 id="seamless">Seamless integration with Vue Router</h2>
+      <h2 id="seamless">
+        Seamless integration with Vue Router
+      </h2>
 
       <p>The bottom bar is compatible with all Vue Router options. Just pass the values as parameters on <code>md-bottom-bar-item</code> component:</p>
-      <code-example title="With default fixed style" :component="examples['bar-router']" />
-      <note-block tip>Note: Try to change the url manually to see the component selecting the correct item.</note-block>
+      <code-example
+        title="With default fixed style"
+        :component="examples['bar-router']"
+      />
+      <note-block tip>
+        Note: Try to change the url manually to see the component selecting the correct item.
+      </note-block>
     </div>
 
     <div class="page-container-section">
-      <h2 id="shift">Shift effect</h2>
+      <h2 id="shift">
+        Shift effect
+      </h2>
 
       <p>You can also use the awesome shift effect on your bars. It is great to keep the focus of the active item and you can show up to 6 items at once:</p>
-      <code-example title="With Primary and Accent colors" :component="examples['shift']" />
+      <code-example
+        title="With Primary and Accent colors"
+        :component="examples['shift']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="dynamic">Dynamic Themes</h2>
+      <h2 id="dynamic">
+        Dynamic Themes
+      </h2>
 
       <p>Sometimes each part of your application have it's own color theme, like in a social media app. You can change the theme dynamically to morph states creating an immersive experience:</p>
-      <code-example title="Morphing States" :component="examples['changing-themes']" />
+      <code-example
+        title="Morphing States"
+        :component="examples['changing-themes']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="custom">Custom Template</h2>
+      <h2 id="custom">
+        Custom Template
+      </h2>
 
       <p>Maybe you want to show more informations inside a bottom bar item. With a simple and flexible default slot, you can make anything you want. Look at this unread notification example:</p>
       <note-block>If you pass anything inside the <code>&lt;md-bottom-bar-item&gt;</code>, the component will ignore the <code>md-label</code> and <code>md-icon</code>. Only use the content slot if you want to create a custom template.</note-block>
-      <code-example title="Template Slot" :component="examples['bar-custom-template']" />
+      <code-example
+        title="Template Slot"
+        :component="examples['bar-custom-template']"
+      />
 
       <api-item title="API - md-bottom-bar">
         <p>All the following options can be used on any bottom bar:</p>
-        <api-table :headings="bar.props.headings" :props="bar.props.props" slot="props" />
-        <api-table :headings="bar.events.headings" :props="bar.events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="bar.props.headings"
+            :props="bar.props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="bar.events.headings"
+            :props="bar.events.props"
+          />
+        </template>
       </api-item>
 
       <api-item title="API - md-bottom-bar-item">
-        <p>The following options can be used on any bottom bar item. All <a href="https://router.vuejs.org/en/api/router-link.html" target="_blank">options</a> of <code>router-link</code> can be simply used here:</p>
-        <api-table :headings="item.props.headings" :props="item.props.props" slot="props" />
+        <p>
+          The following options can be used on any bottom bar item. All <a
+            href="https://router.vuejs.org/en/api/router-link.html"
+            target="_blank"
+          >options</a> of <code>router-link</code> can be simply used here:
+        </p>
+        <template #props>
+          <api-table
+            :headings="item.props.headings"
+            :props="item.props.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

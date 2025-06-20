@@ -3,7 +3,10 @@
 <example src="./examples/TrueFalseValue.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.checkbox.title')">
+  <page-container
+    centered
+    :title="$t('pages.checkbox.title')"
+  >
     <div class="page-container-section">
       <p>Checkboxes allow the user to select multiple options from a set. Vue material checkboxes can work with multiple <code>v-model</code> types: <code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>Object</code> and <code>Array</code>.</p>
     </div>
@@ -11,18 +14,39 @@
     <div class="page-container-section">
       <h2>Checkbox</h2>
 
-      <code-example title="Checkbox" :component="examples['regular-checkboxes']" />
-      <code-example title="Hue Colors" :component="examples['checkbox-hue-colors']" />
-      <code-example title="True / False Value" :component="examples['true-false-value']" />
+      <code-example
+        title="Checkbox"
+        :component="examples['regular-checkboxes']"
+      />
+      <code-example
+        title="Hue Colors"
+        :component="examples['checkbox-hue-colors']"
+      />
+      <code-example
+        title="True / False Value"
+        :component="examples['true-false-value']"
+      />
 
       <api-item title="API - md-checkbox">
         <p>The following options can be applied to all checkboxes:</p>
 
-        <api-table :headings="props.headings" :props="props.props" slot="props" />
-        <api-table :headings="events.headings" :props="events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="props.headings"
+            :props="props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="events.headings"
+            :props="events.props"
+          />
+        </template>
       </api-item>
 
-      <note-block tip>All other <code>&lt;input type=&quot;checkbox&quot;&gt;</code> attributes, such as <strong>name</strong> and <strong>required</strong>, can be used on <code>md-checkbox</code>.</note-block>
+      <note-block tip>
+        All other <code>&lt;input type=&quot;checkbox&quot;&gt;</code> attributes, such as <strong>name</strong> and <strong>required</strong>, can be used on <code>md-checkbox</code>.
+      </note-block>
     </div>
   </page-container>
 </template>

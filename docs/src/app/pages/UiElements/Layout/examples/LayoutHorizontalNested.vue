@@ -2,21 +2,21 @@
   <div>
     <div class="md-layout md-gutter">
       <div class="md-layout-item md-layout md-gutter">
-        <div class="md-layout-item"></div>
-        <div class="md-layout-item"></div>
-        <div class="md-layout-item"></div>
+        <div class="md-layout-item" />
+        <div class="md-layout-item" />
+        <div class="md-layout-item" />
       </div>
 
       <div class="md-layout-item md-layout md-gutter">
-        <div class="md-layout-item"></div>
-        <div class="md-layout-item"></div>
+        <div class="md-layout-item" />
+        <div class="md-layout-item" />
       </div>
 
       <div class="md-layout-item md-layout md-gutter">
-        <div class="md-layout-item"></div>
-        <div class="md-layout-item"></div>
-        <div class="md-layout-item"></div>
-        <div class="md-layout-item"></div>
+        <div class="md-layout-item" />
+        <div class="md-layout-item" />
+        <div class="md-layout-item" />
+        <div class="md-layout-item" />
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
     &.md-layout {
       &:after {
         transform: translateY(-100%);
-        background: md-get-palette-color(yellow, 200);
+        background: palette.md-get-palette-color(yellow, 200);
       }
 
       .md-layout-item:after {
@@ -52,7 +52,7 @@
         margin-top: 16px;
         position: relative;
         z-index: 1;
-        background: md-get-palette-color(pink, 200);
+        background: palette.md-get-palette-color(pink, 200);
       }
     }
   }

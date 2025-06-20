@@ -282,7 +282,7 @@ export const routes: DynamicRoute[] = [
     page: 'WithRouter.vue'
   },
   {
-    path: '*',
+    path: '/:pathMatch(.*)*',
     name: 'error',
     page: 'Error.vue'
   }

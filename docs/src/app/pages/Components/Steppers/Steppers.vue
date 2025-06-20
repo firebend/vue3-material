@@ -6,61 +6,114 @@
 <example src="./examples/StepperRoute.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.steppers.title')">
+  <page-container
+    centered
+    :title="$t('pages.steppers.title')"
+  >
     <div class="page-container-section">
       <p>Steppers display progress through a sequence of logical and numbered steps. They may also be used for navigation and have two main types: Horizontal or Vertical. The horizontal type can have an alternative layout.</p>
       <p>Individual steps are editable and optional by default, but you can change that.</p>
     </div>
 
     <div class="page-container-section">
-      <h2 id="horizontal-steppers">Horizontal Steppers</h2>
+      <h2 id="horizontal-steppers">
+        Horizontal Steppers
+      </h2>
 
       <p>Horizontal steppers are ideal when the contents of one step depend on an earlier step. You should avoid using long step names in horizontal steppers.</p>
       <p>This is the default type of steppers. They are not recommended for mobile:</p>
-      <code-example title="Default layout" :component="examples['stepper-horizontal']" />
+      <code-example
+        title="Default layout"
+        :component="examples['stepper-horizontal']"
+      />
 
       <p>They can also have a alternative layout to give greater emphasis to the steps titles:</p>
-      <code-example title="Alternative Layout" :component="examples['stepper-alternative']" />
+      <code-example
+        title="Alternative Layout"
+        :component="examples['stepper-alternative']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="vertical-steppers">Vertical Steppers</h2>
+      <h2 id="vertical-steppers">
+        Vertical Steppers
+      </h2>
 
       <p>Vertical steppers are great deal for mobile devices or to be inserted on small areas of your application, like a dialog or a card.</p>
-      <code-example title="Ideal for Mobile" :component="examples['stepper-vertical']" />
+      <code-example
+        title="Ideal for Mobile"
+        :component="examples['stepper-vertical']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="linear-steppers">Linear Steppers</h2>
+      <h2 id="linear-steppers">
+        Linear Steppers
+      </h2>
 
       <p>By default steps are optional and this means that you can advance to the last step without pass through the other ones. But sometimes we're guiding an user through a linear flow and all steps matter or are connected together. Linear steppers require users to complete one step in order to move on to the next:</p>
-      <code-example title="With error handler" :component="examples['stepper-linear']" />
+      <code-example
+        title="With error handler"
+        :component="examples['stepper-linear']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="non-editable-steps">Non Editable Steps</h2>
+      <h2 id="non-editable-steps">
+        Non Editable Steps
+      </h2>
 
       <p>By default steps are also editable. But you can disable this by manually setting on each step that could be non-editable. This makes sense when users cannot edit a step later or when step editing poses a distraction risk to form completion:</p>
-      <code-example title="Disable Edit" :component="examples['stepper-non-editable']" />
+      <code-example
+        title="Disable Edit"
+        :component="examples['stepper-non-editable']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="vue-router-integration">Vue Router Integration</h2>
+      <h2 id="vue-router-integration">
+        Vue Router Integration
+      </h2>
 
       <p>Vue Material Steppers have a deep integratio with Vue Router. This means that you can have a route per step. This allows you to navigate between steps through the browser history, store the current stepper after a refresh and lots of great scenarios that you can explore! Take a look at the page URL changing when clicking on each steps:</p>
-      <note-block tip>Try to refresh the page to see that Steppers will detect the active step based on the current URL. Just awesome!</note-block>
-      <code-example title="Sync with route" :component="examples['stepper-route']" />
+      <note-block tip>
+        Try to refresh the page to see that Steppers will detect the active step based on the current URL. Just awesome!
+      </note-block>
+      <code-example
+        title="Sync with route"
+        :component="examples['stepper-route']"
+      />
 
       <api-item title="API - md-steppers">
         <p>The following options can be applied to any steppers:</p>
 
-        <api-table :headings="steppers.props.headings" :props="steppers.props.props" slot="props" />
-        <api-table :headings="steppers.events.headings" :props="steppers.events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="steppers.props.headings"
+            :props="steppers.props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="steppers.events.headings"
+            :props="steppers.events.props"
+          />
+        </template>
       </api-item>
 
       <api-item title="API - md-step">
-        <p>The following options can be used on any step. All <a href="https://router.vuejs.org/en/api/router-link.html" target="_blank">options</a> of <code>router-link</code> can be simply used here:</p>
-        <api-table :headings="step.props.headings" :props="step.props.props" slot="props" />
+        <p>
+          The following options can be used on any step. All <a
+            href="https://router.vuejs.org/en/api/router-link.html"
+            target="_blank"
+          >options</a> of <code>router-link</code> can be simply used here:
+        </p>
+        <template #props>
+          <api-table
+            :headings="step.props.headings"
+            :props="step.props.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

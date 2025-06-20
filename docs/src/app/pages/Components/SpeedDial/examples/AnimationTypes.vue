@@ -18,7 +18,10 @@
     </md-speed-dial>
 
     Scale effect:
-    <md-speed-dial md-effect="scale" md-direction="bottom">
+    <md-speed-dial
+      md-effect="scale"
+      md-direction="bottom"
+    >
       <md-speed-dial-target class="md-primary">
         <md-icon>my_location</md-icon>
       </md-speed-dial-target>
@@ -35,7 +38,10 @@
     </md-speed-dial>
 
     Opacity effect:
-    <md-speed-dial md-effect="opacity" md-direction="bottom">
+    <md-speed-dial
+      md-effect="opacity"
+      md-direction="bottom"
+    >
       <md-speed-dial-target class="md-plain">
         <md-icon>edit</md-icon>
       </md-speed-dial-target>

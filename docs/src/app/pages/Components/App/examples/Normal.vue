@@ -6,7 +6,10 @@
       </md-app-toolbar>
 
       <md-app-drawer md-permanent="full">
-        <md-toolbar class="md-transparent" md-elevation="0">
+        <md-toolbar
+          class="md-transparent"
+          md-elevation="0"
+        >
           Navigation
         </md-toolbar>
 
@@ -47,6 +50,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'Normal'
+}
+</script>
+
 <style lang="scss" scoped>
   .md-app {
     max-height: 400px;
@@ -59,9 +68,3 @@
     max-width: calc(100vw - 125px);
   }
 </style>
-
-<script>
-export default {
-  name: 'Normal'
-}
-</script>

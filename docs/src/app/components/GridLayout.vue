@@ -4,6 +4,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'GridLayout'
+}
+</script>
+
 <style lang="scss" scoped>
   .grid-layout {
     margin: 0 -16px;
@@ -16,9 +22,3 @@
     flex: 0 0 33%;
   }
 </style>
-
-<script>
-export default {
-  name: 'GridLayout'
-}
-</script>

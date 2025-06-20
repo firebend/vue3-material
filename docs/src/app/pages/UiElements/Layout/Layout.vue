@@ -7,7 +7,10 @@
 <example src="./examples/LayoutHorizontalNested.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.layout.title')">
+  <page-container
+    centered
+    :title="$t('pages.layout.title')"
+  >
     <div class="page-container-section">
       <p>Responsive layouts in material design adapt to any possible screen size. This UI guidance includes a flexible grid that ensures consistency across layouts, breakpoints that detail about how the contents reflow on different screens and a description of how an app can scale from small to extra-large screens.</p>
       <p>By default you can create gutter-free layouts or make the grid system itself calculate the best margin size for each of your possible screen sizes.</p>
@@ -15,68 +18,116 @@
     </div>
 
     <div class="page-container-section">
-      <h2 id="breakpoints">Breakpoints</h2>
+      <h2 id="breakpoints">
+        Breakpoints
+      </h2>
       <p>Vue Material layout uses breakpoints for responsiveness:</p>
-      <api-table :headings="breakpoints.props.headings" :props="breakpoints.props.props" slot="props" />
+      <api-table
+        slot="props"
+        :headings="breakpoints.props.headings"
+        :props="breakpoints.props.props"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="columnLayout">Column Layout</h2>
+      <h2 id="columnLayout">
+        Column Layout
+      </h2>
 
       <p>The layout system in Vue Material is essentially based on columns and makes use of the flexbox to be flexible enough and thereby gives you the best experience with a great and easy API.</p>
       <p>What you have to do to get started with layouts is to create a <code>md-layout</code> parent element, that will hold a list of <code>md-layout-item</code>. You can set up as many columns as you want using <code>md-layout-item</code>:</p>
-      <code-example title="Columns" :component="examples['layout-horizontal-columns']" />
+      <code-example
+        title="Columns"
+        :component="examples['layout-horizontal-columns']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>By default layout items do not have space between each other. Regular layouts would rather prefer to have spaces between the layout items, like a list of card, for example. You can set Vue Material to calculate automatically the space between elements and these spaces are based on the screen width, using the breakpoints:</p>
-      <api-table :headings="gutter.props.headings" :props="gutter.props.props" slot="props" />
+      <api-table
+        slot="props"
+        :headings="gutter.props.headings"
+        :props="gutter.props.props"
+      />
       <p>Look at this piece of code and resize your browser to see the changes:</p>
-      <code-example title="Gutter" :component="examples['layout-horizontal-gutter']" />
+      <code-example
+        title="Gutter"
+        :component="examples['layout-horizontal-gutter']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>Layout columns also work with nested layouts:</p>
-      <code-example title="Nested columns" :component="examples['layout-horizontal-nested']" />
+      <code-example
+        title="Nested columns"
+        :component="examples['layout-horizontal-nested']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>You can use layouts for almost anything on your app, even for small parts. To help you with that you can have differents alignments per <code>md-layout</code>, combining horizontal and vertical alignments, using the <code>md-alignment-[vertical]-[horizontal]</code> class, e.g. <code>md-alignment-top-center</code>. The alignment works on the parent element and will affect the position of all children items:</p>
-      <code-example title="Alignments" :component="examples['layout-horizontal-alignment']" />
+      <code-example
+        title="Alignments"
+        :component="examples['layout-horizontal-alignment']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>In the previous examples the layout system did the calculation of the size of the child items based on the no. of items. But if you want to set size for each item, you can simply set the class, <code>md-size-[amount]</code>, to the item that you want, e.g. <code>md-size-30</code>. The size are always in % and the values can be multiple of 5 and also accepts the values 33 and 66.</p>
       <p>You don't even need to set the size for all elements, as the flexbox model will calculate the size for the remaining items. Cool, uh?</p>
-      <code-example title="Size" :component="examples['layout-horizontal-sizes']" />
+      <code-example
+        title="Size"
+        :component="examples['layout-horizontal-sizes']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>A layout system is not good enough if it is not responsive. In the last example you saw fluid layout sizes, but you can change them based on the breakpoint name, by just giving a different class for each breakpoint that you may want. The class is <code>md-[breakpoint]-size-[amount]</code> and works just like the last example. The layout engine of Vue Material will do the magic. Try to resize your browser:</p>
-      <code-example title="Responsive" :component="examples['layout-horizontal-responsive']" />
+      <code-example
+        title="Responsive"
+        :component="examples['layout-horizontal-responsive']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>Although this is not the best option, it is quite common to hide elements on smaller screen. You can do that using the <code>md-[breakpoint]-hide</code> classes:</p>
-      <code-example title="Hide Elements" :component="examples['layout-horizontal-hide']" />
+      <code-example
+        title="Hide Elements"
+        :component="examples['layout-horizontal-hide']"
+      />
     </div>
 
     <api-item title="API - md-layout">
       <p>The following classes can be applied to any HTML Element:</p>
 
-      <api-table :headings="layout.headings" :props="layout.props" slot="classes" />
+      <template #classes>
+        <api-table
+          :headings="layout.headings"
+          :props="layout.props"
+        />
+      </template>
     </api-item>
 
     <api-item title="API - md-layout-item">
       <p>The following classes can be applied to any HTML Element that are direct children of <code>md-layout</code>:</p>
 
-      <api-table :headings="item.headings" :props="item.props" slot="classes" />
+      <template #classes>
+        <api-table
+          :headings="item.headings"
+          :props="item.props"
+        />
+      </template>
     </api-item>
 
     <api-item title="API - md-hide">
       <p>The following classes can be applied to any HTML Element:</p>
 
-      <api-table :headings="hide.headings" :props="hide.props" slot="classes" />
+      <template #classes>
+        <api-table
+          :headings="hide.headings"
+          :props="hide.props"
+        />
+      </template>
     </api-item>
   </page-container>
 </template>

@@ -1,5 +1,8 @@
 <template>
-  <div class="note-block" :class="[{ alert, tip, warning }, $mdActiveTheme]">
+  <div
+    class="note-block"
+    :class="[{ alert, tip, warning }, $mdActiveTheme]"
+  >
     <slot />
   </div>
 </template>
@@ -18,12 +21,12 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
-  @import "vue-material/theme/engine";
+  @use "vue-material/components/MdAnimation/variables";
+  @use "vue-material/theme/palette";
 
-  $note-border: md-get-palette-color(orange, A200);
-  $alert-border: md-get-palette-color(red, A200);
-  $tip-border: md-get-palette-color(green, 500);
+  $note-border: palette.md-get-palette-color(orange, A200);
+  $alert-border: palette.md-get-palette-color(red, A200);
+  $tip-border: palette.md-get-palette-color(green, 500);
 
   .note-block {
     margin: 1.5em 0;

@@ -1,28 +1,48 @@
 <template>
   <div>
     <div class="block">
-        <div class="title">Without <code>:true-value</code> / <code>:false-value</code></div>
-        <div class="input">
-          <md-checkbox v-model="withoutSetValue">{{withoutSetValue|jsonStringify}}</md-checkbox>
-        </div>
+      <div class="title">
+        Without <code>:true-value</code> / <code>:false-value</code>
+      </div>
+      <div class="input">
+        <md-checkbox v-model="withoutSetValue">
+          {{ jsonStringify(withoutSetValue) }}
+        </md-checkbox>
+      </div>
     </div>
 
     <md-divider />
 
     <div class="block">
-        <div class="title">With <code>:true-value</code> / <code>:false-value</code></div>
-        <div class="input">
-          <md-checkbox v-model="withSetValue" true-value="true" false-value="false">{{withSetValue|jsonStringify}}</md-checkbox>
-        </div>
+      <div class="title">
+        With <code>:true-value</code> / <code>:false-value</code>
+      </div>
+      <div class="input">
+        <md-checkbox
+          v-model="withSetValue"
+          true-value="true"
+          false-value="false"
+        >
+          {{ jsonStringify(withSetValue) }}
+        </md-checkbox>
+      </div>
     </div>
 
     <md-divider />
 
     <div class="block">
-        <div class="title">Native checkbox with <code>:true-value</code> / <code>:false-value</code></div>
-        <div class="input">
-          <label><input type="checkbox" v-model="native" true-value="true" false-value="false" value="test" />{{native|jsonStringify}}</label>
-        </div>
+      <div class="title">
+        Native checkbox with <code>:true-value</code> / <code>:false-value</code>
+      </div>
+      <div class="input">
+        <label><input
+          v-model="native"
+          type="checkbox"
+          true-value="true"
+          false-value="false"
+          value="test"
+        >{{ jsonStringify(native) }}</label>
+      </div>
     </div>
   </div>
 </template>
@@ -37,12 +57,11 @@ export default {
       native: null
     }
   },
-
-  filters: {
+  methods: {
     jsonStringify (val) {
       return JSON.stringify(val)
     }
-  }
+  },
 }
 </script>
 

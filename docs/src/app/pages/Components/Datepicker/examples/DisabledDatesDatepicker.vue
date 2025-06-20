@@ -1,6 +1,9 @@
 <template>
   <div>
-    <md-datepicker v-model="selectedDate" :md-disabled-dates="disabledDates" />
+    <md-datepicker
+      v-model="selectedDate"
+      :md-disabled-dates="disabledDates"
+    />
   </div>
 </template>
 

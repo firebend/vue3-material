@@ -6,77 +6,136 @@
 <example src="./examples/Fixes.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.input.title')">
+  <page-container
+    centered
+    :title="$t('pages.input.title')"
+  >
     <div class="page-container-section">
       <p>Text fields allow users to input, edit and select text typically inside forms. But they can appear in other places as well like dialog boxes and search.</p>
       <p>Vue Material fields work with a <code>md-field</code> wrapped around an input component, that can be <code>md-input</code>, <code>md-textarea</code> or even a <code>md-select</code>.</p>
-      <note-block tip><code>md-select</code> has its own <router-link to="/components/select">documentation page</router-link>, dedicated to show better examples on how to use it.</note-block>
+      <note-block tip>
+        <code>md-select</code> has its own <router-link to="/components/select">
+          documentation page
+        </router-link>, dedicated to show better examples on how to use it.
+      </note-block>
     </div>
 
     <div class="page-container-section">
-      <h2 id="text-fields">Text Fields</h2>
+      <h2 id="text-fields">
+        Text Fields
+      </h2>
 
       <p>Fields mimic the HTML5 attributes to keep the same compatibility with native inputs, but has extra options. This allows Vue Material to accordingly setup the various <code>md-field</code> with its corresponding input options.</p>
       <p>You will be able to set the same properties of a regular <code>input</code> element on <code>md-input</code>. This is also valid for <code>textarea</code> and <code>select</code>. Take a look:</p>
-      <code-example title="Input and Textarea" :component="examples['text-fields']" />
+      <code-example
+        title="Input and Textarea"
+        :component="examples['text-fields']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="errors-messages">Errors and Messages</h2>
+      <h2 id="errors-messages">
+        Errors and Messages
+      </h2>
 
       <p>Vue Material has validation states to show error messages. You can use it along with other 3rd party Vue validation libraries, like Vuelidate or Vee-Validate:</p>
-      <code-example title="Validation" :component="examples['errors-messages']" />
+      <code-example
+        title="Validation"
+        :component="examples['errors-messages']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="character-count">Character count</h2>
+      <h2 id="character-count">
+        Character count
+      </h2>
 
       <p>You can use character counters where you need to limit the user input, like on Twitter's 280 character tweet:</p>
-      <code-example title="Counter" :component="examples['counters']" />
+      <code-example
+        title="Counter"
+        :component="examples['counters']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="icons">Icons</h2>
+      <h2 id="icons">
+        Icons
+      </h2>
 
       <p>Sometimes we may want to differentiate our inputs based on it content value:</p>
-      <code-example title="Outside and inline icons" :component="examples['field-icons']" />
+      <code-example
+        title="Outside and inline icons"
+        :component="examples['field-icons']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="inline-actions">Inline Actions</h2>
+      <h2 id="inline-actions">
+        Inline Actions
+      </h2>
 
       <p>Fields can have a clearable feature to make it easier for users to clear the value. To use passwords better we can show a toggle button to reveal the password. This is really useful for mobile applications:</p>
-      <code-example title="Clear and password" :component="examples['inline-actions']" />
+      <code-example
+        title="Clear and password"
+        :component="examples['inline-actions']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="prefixes-suffixes">Prefixes & suffixes</h2>
+      <h2 id="prefixes-suffixes">
+        Prefixes & suffixes
+      </h2>
 
       <p>Prefixes and suffixes can be used to clarify units or to add input in advance. Prefixes are left justified in the text field whereas suffixes are right justified. Text fields can have both prefixes and suffixes.</p>
-      <code-example title="Prefixes & suffixes" :component="examples['fixes']" />
+      <code-example
+        title="Prefixes & suffixes"
+        :component="examples['fixes']"
+      />
     </div>
 
     <div class="page-container-section">
       <api-item title="API - md-field">
         <p>The following options can be applied to any field:</p>
 
-        <api-table :headings="field.props.headings" :props="field.props.props" slot="props" />
-        <api-table :headings="field.events.headings" :props="field.events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="field.props.headings"
+            :props="field.props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="field.events.headings"
+            :props="field.events.props"
+          />
+        </template>
       </api-item>
 
       <api-item title="API - md-input">
         <p>The following options can be applied to any input:</p>
 
-        <api-table :headings="input.headings" :props="input.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="input.headings"
+            :props="input.props"
+          />
+        </template>
       </api-item>
 
       <api-item title="API - md-textarea">
         <p>The following options can be applied to any textarea:</p>
 
-        <api-table :headings="textarea.headings" :props="textarea.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="textarea.headings"
+            :props="textarea.props"
+          />
+        </template>
       </api-item>
 
-      <note-block tip>Any <code>input</code> or <code>textarea</code> attributes can be used on <code>md-input</code>/<code>md-textarea</code> respectively.</note-block>
+      <note-block tip>
+        Any <code>input</code> or <code>textarea</code> attributes can be used on <code>md-input</code>/<code>md-textarea</code> respectively.
+      </note-block>
     </div>
   </page-container>
 </template>

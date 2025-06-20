@@ -1,22 +1,44 @@
 <template>
   <div>
-    <md-table v-model="users.mdData" md-card>
+    <md-table
+      v-model="users.mdData"
+      md-card
+    >
       <md-table-toolbar>
-        <h1 class="md-title">Users</h1>
+        <h1 class="md-title">
+          Users
+        </h1>
       </md-table-toolbar>
 
-      <md-table-row slot="md-table-row" slot-scope="{ item }">
-        <md-table-cell md-label="ID" md-numeric>{{ item.id }}</md-table-cell>
-        <md-table-cell class="avatar" md-label="Avatar"><img :src="item.avatar"></md-table-cell>
-        <md-table-cell md-label="Name">{{ item.first_name }}</md-table-cell>
-        <md-table-cell md-label="Last name">{{ item.last_name }}</md-table-cell>
-      </md-table-row>
+      <template #md-table-row="{ item }">
+        <md-table-row>
+          <md-table-cell
+            md-label="ID"
+            md-numeric
+          >
+            {{ item.id }}
+          </md-table-cell>
+          <md-table-cell
+            class="avatar"
+            md-label="Avatar"
+          >
+            <img :src="item.avatar">
+          </md-table-cell>
+          <md-table-cell md-label="Name">
+            {{ item.first_name }}
+          </md-table-cell>
+          <md-table-cell md-label="Last name">
+            {{ item.last_name }}
+          </md-table-cell>
+        </md-table-row>
+      </template>
 
       <md-table-pagination
+        v-model:md-data="users"
         :md-page-size="rowsPerPage"
         :md-page-options="[3, 5, 10, 15]"
         :md-update="updatePagination"
-        :md-data.sync="users" />
+      />
     </md-table>
   </div>
 </template>

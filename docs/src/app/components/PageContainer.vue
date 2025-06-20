@@ -1,6 +1,12 @@
 <template>
-  <transition name="page-container" appear>
-    <div class="page-container main-container" :class="{ centered }">
+  <transition
+    name="page-container"
+    appear
+  >
+    <div
+      class="page-container main-container"
+      :class="{ centered }"
+    >
       <ad-manager />
 
       <slot />
@@ -40,8 +46,8 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
-  @import "vue-material/theme/engine";
+  @use "vue-material/components/MdAnimation/variables";
+  @use "vue-material/theme/palette";
 
   $ad-responsive-big: 1690px;
 
@@ -49,7 +55,7 @@
     max-width: 1100px;
     margin: 0 auto;
     padding: 16px;
-    transition: .4s $md-transition-default-timing;
+    transition: .4s variables.$md-transition-default-timing;
     transition-property: width;
   }
 
@@ -95,7 +101,7 @@
       code {
         padding: 0 4px;
         display: inline-block;
-        color: md-get-palette-color(red, A200);
+        color: palette.md-get-palette-color(red, A200);
         background: rgba(#000, .07);
         border-radius: 2px;
         line-height: 1.45em;

@@ -6,14 +6,29 @@
 <example src="./examples/Overlap.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.app.title')">
+  <page-container
+    centered
+    :title="$t('pages.app.title')"
+  >
     <div class="page-container-section">
-      <i18n path="pages.app.intro.desc1" tag="p" />
-      <i18n path="pages.app.intro.desc2" tag="p">
+      <i18n
+        path="pages.app.intro.desc1"
+        tag="p"
+      />
+      <i18n
+        path="pages.app.intro.desc2"
+        tag="p"
+      >
         <code>md-app</code>
       </i18n>
-      <i18n path="pages.app.intro.desc3" tag="p" />
-      <i18n path="pages.app.intro.desc4" tag="p">
+      <i18n
+        path="pages.app.intro.desc3"
+        tag="p"
+      />
+      <i18n
+        path="pages.app.intro.desc4"
+        tag="p"
+      >
         <code>md-app</code>
         <code>md-app-toolbar</code>
         <code>md-app-drawer</code>
@@ -25,48 +40,82 @@
     </div>
 
     <div class="page-container-section">
-      <h2 id="regular">{{ $t('pages.app.regular.title') }}</h2>
+      <h2 id="regular">
+        {{ $t('pages.app.regular.title') }}
+      </h2>
 
       <p>{{ $t('pages.app.regular.desc1') }}</p>
-      <i18n tag="note-block" tip path="pages.app.regular.desc2">
+      <i18n
+        tag="note-block"
+        tip
+        path="pages.app.regular.desc2"
+      >
         <code>md-app</code>
       </i18n>
-      <code-example :title="$t('pages.app.regular.default')" :component="examples['normal']" />
+      <code-example
+        :title="$t('pages.app.regular.default')"
+        :component="examples['normal']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="fixed">{{ $t('pages.app.fixed.title') }}</h2>
+      <h2 id="fixed">
+        {{ $t('pages.app.fixed.title') }}
+      </h2>
 
       <p>{{ $t('pages.app.fixed.desc') }}</p>
-      <code-example :title="$t('pages.app.fixed.fixedWaterfall')" :component="examples['waterfall']" />
+      <code-example
+        :title="$t('pages.app.fixed.fixedWaterfall')"
+        :component="examples['waterfall']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="reveal">{{ $t('pages.app.reveal.title') }}</h2>
+      <h2 id="reveal">
+        {{ $t('pages.app.reveal.title') }}
+      </h2>
 
       <p>{{ $t('pages.app.reveal.desc') }}</p>
-      <code-example :title="$t('pages.app.reveal.reveal')" :component="examples['reveal']" />
+      <code-example
+        :title="$t('pages.app.reveal.reveal')"
+        :component="examples['reveal']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="flexible">{{ $t('pages.app.flexible.title') }}</h2>
+      <h2 id="flexible">
+        {{ $t('pages.app.flexible.title') }}
+      </h2>
 
       <p>{{ $t('pages.app.flexible.desc') }}</p>
-      <code-example :title="$t('pages.app.flexible.flexible')" :component="examples['flexible']" />
+      <code-example
+        :title="$t('pages.app.flexible.flexible')"
+        :component="examples['flexible']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="lastRow">{{ $t('pages.app.lastRow.title') }}</h2>
+      <h2 id="lastRow">
+        {{ $t('pages.app.lastRow.title') }}
+      </h2>
 
       <p>{{ $t('pages.app.lastRow.desc') }}</p>
-      <code-example :title="$t('pages.app.lastRow.fixed')" :component="examples['last-row-fixed']" />
+      <code-example
+        :title="$t('pages.app.lastRow.fixed')"
+        :component="examples['last-row-fixed']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="overlap">{{ $t('pages.app.overlap.title') }}</h2>
+      <h2 id="overlap">
+        {{ $t('pages.app.overlap.title') }}
+      </h2>
 
       <p>{{ $t('pages.app.overlap.desc') }}</p>
-      <code-example :title="$t('pages.app.overlap.content')" :component="examples['overlap']" />
+      <code-example
+        :title="$t('pages.app.overlap.content')"
+        :component="examples['overlap']"
+      />
     </div>
 
     <div class="page-container-section">
@@ -78,37 +127,59 @@
           <li><code>md-app-content</code>: {{ $t('pages.app.apiApp.content') }}</li>
         </ul>
 
-        <note-block alert>{{ $t('pages.app.apiApp.alert') }}</note-block>
+        <note-block alert>
+          {{ $t('pages.app.apiApp.alert') }}
+        </note-block>
 
         <p>{{ $t('pages.app.apiApp.propsDesc') }}:</p>
 
-        <api-table :headings="api.props.headings" :props="api.props.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="api.props.headings"
+            :props="api.props.props"
+          />
+        </template>
       </api-item>
     </div>
 
     <div class="page-container-section">
       <api-item title="API - md-app-toolbar">
-        <i18n path="pages.app.apiToolbar.desc" tag="p">
+        <i18n
+          path="pages.app.apiToolbar.desc"
+          tag="p"
+        >
           <code>md-toolbar</code>
-          <router-link to="/components/toolbar">{{ $t('pages.app.apiToolbar.page') }}</router-link>
+          <router-link to="/components/toolbar">
+            {{ $t('pages.app.apiToolbar.page') }}
+          </router-link>
         </i18n>
       </api-item>
     </div>
 
     <div class="page-container-section">
       <api-item title="API - md-app-drawer">
-        <i18n path="pages.app.apiDrawer.desc" tag="p">
+        <i18n
+          path="pages.app.apiDrawer.desc"
+          tag="p"
+        >
           <code>md-drawer</code>
-          <router-link to="/components/drawer">{{ $t('pages.app.apiDrawer.page') }}</router-link>
+          <router-link to="/components/drawer">
+            {{ $t('pages.app.apiDrawer.page') }}
+          </router-link>
         </i18n>
       </api-item>
     </div>
 
     <div class="page-container-section">
       <api-item title="API - md-app-content">
-        <i18n path="pages.app.apiContent.desc" tag="p">
+        <i18n
+          path="pages.app.apiContent.desc"
+          tag="p"
+        >
           <code>md-content</code>
-          <router-link to="/components/content">{{ $t('pages.app.apiContent.page') }}</router-link>
+          <router-link to="/components/content">
+            {{ $t('pages.app.apiContent.page') }}
+          </router-link>
         </i18n>
       </api-item>
     </div>
@@ -116,7 +187,7 @@
 </template>
 
 <script>
-import examples from 'docs-mixins/docsExample'
+import examples from '../../../mixins/docsExample'
 
 export default {
   name: 'DocApp',

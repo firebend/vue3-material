@@ -5,65 +5,125 @@
 <example src="./examples/ButtonRouter.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.button.title')">
+  <page-container
+    centered
+    :title="$t('pages.button.title')"
+  >
     <div class="page-container-section">
       <p>Buttons communicate the action that will occur when the user touches them. They can be <strong>Flat</strong>, <strong>Raised</strong> or <strong>Floating</strong>. Flat and raised buttons accepts only text (by default) but with an special class the button can place an icon. Floating Buttons only accept icons. They can also be smaller than usual with a <strong>Dense</strong> class.</p>
     </div>
 
     <div class="page-container-section">
-      <h2 id="flat">Flat and Raised</h2>
+      <h2 id="flat">
+        Flat and Raised
+      </h2>
       <p>The flat button is the default one. No classes or properties needs to be attached to it to make it flat. The raised button can be achieved with the <code>md-raised</code> class.</p>
 
-      <code-example title="Regular Button" :component="examples['regular-buttons']" />
+      <code-example
+        title="Regular Button"
+        :component="examples['regular-buttons']"
+      />
 
       <api-item title="API - md-button">
         <p>The following options can be applied to all buttons, even FAB ones:</p>
 
-        <api-table :headings="api.regular.props.headings" :props="api.regular.props.props" slot="props" />
-        <api-table :headings="api.regular.classes.headings" :props="api.regular.classes.props" slot="classes" />
-        <api-table :headings="api.regular.events.headings" :props="api.regular.events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="api.regular.props.headings"
+            :props="api.regular.props.props"
+          />
+        </template>
+        <template #classes>
+          <api-table
+            :headings="api.regular.classes.headings"
+            :props="api.regular.classes.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="api.regular.events.headings"
+            :props="api.regular.events.props"
+          />
+        </template>
       </api-item>
     </div>
 
     <div class="page-container-section">
-      <h2 id="icons">Icons</h2>
+      <h2 id="icons">
+        Icons
+      </h2>
       <p>To display icons inside buttons you only need to add a class and you're good to go. And you can also combine it with the raised class.</p>
 
-      <code-example title="Buttons with Icons" :component="examples['icon-buttons']" />
+      <code-example
+        title="Buttons with Icons"
+        :component="examples['icon-buttons']"
+      />
 
       <api-item title="API">
         <p>The following class will turn a button into a icon button:</p>
 
-        <api-table :headings="api.icons.classes.headings" :props="api.icons.classes.props" slot="classes" />
+        <template #classes>
+          <api-table
+            :headings="api.icons.classes.headings"
+            :props="api.icons.classes.props"
+          />
+        </template>
       </api-item>
     </div>
 
     <div class="page-container-section">
-      <h2 id="floating">Floating Action Buttons</h2>
+      <h2 id="floating">
+        Floating Action Buttons
+      </h2>
       <p>A Floating Action Button represents the primary action in an application and is used for a promoted action. FAB buttons can be regular sized or mini, with an accent color by default. This type of buttons can only have icons, so it should be used along with <code>&lt;md-icon&gt;</code>.</p>
-      <note-block tip>Use only one FAB per page and only if the purpose of the button is to fire the main action of the screen. Otherwise use <code>md-icon-button</code>.</note-block>
+      <note-block tip>
+        Use only one FAB per page and only if the purpose of the button is to fire the main action of the screen. Otherwise use <code>md-icon-button</code>.
+      </note-block>
 
-      <code-example title="FAB" :component="examples['floating-buttons']" />
+      <code-example
+        title="FAB"
+        :component="examples['floating-buttons']"
+      />
 
       <api-item title="API">
         <p>The following classes can be used to turn a button into a FAB:</p>
 
-        <api-table :headings="api.fab.classes.headings" :props="api.fab.classes.props" slot="classes" />
+        <template #classes>
+          <api-table
+            :headings="api.fab.classes.headings"
+            :props="api.fab.classes.props"
+          />
+        </template>
       </api-item>
     </div>
 
     <div class="page-container-section">
-      <h2 id="linkVSButtons">Link Vs Buttons</h2>
+      <h2 id="linkVSButtons">
+        Link Vs Buttons
+      </h2>
       <p>All buttons by default will output a <code>button</code> tag. If you want to change it to a <code>a</code> tag, just pass it a href:</p>
 
-      <code-example title="Links and Buttons" :component="examples['button-vs-link']" />
+      <code-example
+        title="Links and Buttons"
+        :component="examples['button-vs-link']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="vueRouter">Vue Router</h2>
-      <p><code>md-button</code> also supports Vue Router by default. All <a href="https://router.vuejs.org/en/api/router-link.html" target="_blank">options</a> of <code>router-link</code> could be simply used here.</p>
+      <h2 id="vueRouter">
+        Vue Router
+      </h2>
+      <p>
+        <code>md-button</code> also supports Vue Router by default. All <a
+          href="https://router.vuejs.org/en/api/router-link.html"
+          target="_blank"
+        >options</a> of <code>router-link</code> could be simply used here.
+      </p>
 
-      <code-example title="router-link" :component="examples['button-router']" />
+      <code-example
+        title="router-link"
+        :component="examples['button-router']"
+      />
     </div>
   </page-container>
 </template>

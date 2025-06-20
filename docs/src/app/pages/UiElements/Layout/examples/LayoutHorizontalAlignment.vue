@@ -4,10 +4,19 @@
       <div class="md-layout-item md-size-25">
         <md-field>
           <label for="vertical">Vertical</label>
-          <md-select id="vertical" v-model="vertical">
-            <md-option value="top">Top</md-option>
-            <md-option value="center">Center</md-option>
-            <md-option value="bottom">Bottom</md-option>
+          <md-select
+            id="vertical"
+            v-model="vertical"
+          >
+            <md-option value="top">
+              Top
+            </md-option>
+            <md-option value="center">
+              Center
+            </md-option>
+            <md-option value="bottom">
+              Bottom
+            </md-option>
           </md-select>
         </md-field>
       </div>
@@ -15,19 +24,35 @@
       <div class="md-layout-item md-size-25">
         <md-field>
           <label for="horizontal">Horizontal</label>
-          <md-select id="horizontal" v-model="horizontal">
-            <md-option value="left">Left</md-option>
-            <md-option value="center">Center</md-option>
-            <md-option value="right">Right</md-option>
-            <md-option value="space-around">Space Around</md-option>
-            <md-option value="space-between">Space Between</md-option>
+          <md-select
+            id="horizontal"
+            v-model="horizontal"
+          >
+            <md-option value="left">
+              Left
+            </md-option>
+            <md-option value="center">
+              Center
+            </md-option>
+            <md-option value="right">
+              Right
+            </md-option>
+            <md-option value="space-around">
+              Space Around
+            </md-option>
+            <md-option value="space-between">
+              Space Between
+            </md-option>
           </md-select>
         </md-field>
       </div>
     </div>
 
     <div class="example">
-      <div class="md-layout md-gutter" :class="`md-alignment-${vertical}-${horizontal}`">
+      <div
+        class="md-layout md-gutter"
+        :class="`md-alignment-${vertical}-${horizontal}`"
+      >
         <div class="md-layout-item md-size-25">
           <span>Lorem ipsum dolor sit amet.</span>
         </div>
@@ -71,7 +96,7 @@
       height: 100%;
       padding: 8px;
       display: block;
-      background: md-get-palette-color(blue, 200);
+      background: palette.md-get-palette-color(blue, 200);
     }
   }
 </style>

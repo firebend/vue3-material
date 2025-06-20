@@ -2,12 +2,19 @@
   <div class="card-expansion">
     <md-card>
       <md-card-media>
-        <img src="/assets/examples/card-image-1.jpg" alt="People">
+        <img
+          src="assets/examples/card-image-1.jpg"
+          alt="People"
+        >
       </md-card-media>
 
       <md-card-header>
-        <div class="md-title">Title goes here</div>
-        <div class="md-subhead">Subtitle here</div>
+        <div class="md-title">
+          Title goes here
+        </div>
+        <div class="md-subhead">
+          Subtitle here
+        </div>
       </md-card-header>
 
       <md-card-expand>
@@ -34,12 +41,19 @@
 
     <md-card>
       <md-card-media>
-        <img src="/assets/examples/card-image-1.jpg" alt="People">
+        <img
+          src="assets/examples/card-image-1.jpg"
+          alt="People"
+        >
       </md-card-media>
 
       <md-card-header>
-        <div class="md-title">Title goes here</div>
-        <div class="md-subhead">Subtitle here</div>
+        <div class="md-title">
+          Title goes here
+        </div>
+        <div class="md-subhead">
+          Subtitle here
+        </div>
       </md-card-header>
 
       <md-card-expand>

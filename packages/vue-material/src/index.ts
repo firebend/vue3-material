@@ -3,7 +3,7 @@ import {App} from "vue";
 import material from "./material";
 
 export default {
-  version: __VUE_MATERIAL_VERSION__,
+  // version: __VUE_MATERIAL_VERSION__,
   install: (app: App) => {
     material(app);
 

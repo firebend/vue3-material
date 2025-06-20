@@ -1,8 +1,9 @@
 @use "vue-material/theme/mixins";
+@use "vue-material/theme/functions";
 
 .note-block {
   @include mixins.md-theme-component() {
-    @if md-get-theme-mode() == light {
+    @if functions.md-get-theme-mode() == light {
       @include mixins.md-theme-property-by-hue(background-color, grey, 200, note-block, background);
 
       &.warning {

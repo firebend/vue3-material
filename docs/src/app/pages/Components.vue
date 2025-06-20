@@ -1,12 +1,17 @@
 <template>
-  <splash-container splash centered :title="$t('pages.components.title')">
+  <splash-container
+    splash
+    centered
+    :title="$t('pages.components.title')"
+  >
     <grid-layout>
       <grid-layout-item
         v-for="{ key, name } in components"
         :key="key"
         :icon="`icon-${key}`"
         :title="$t(`pages.${name}.title`)"
-        :href="`/components/${key}`">
+        :href="`/components/${key}`"
+      >
         {{ $t(`pages.${name}.description`) }}
       </grid-layout-item>
     </grid-layout>

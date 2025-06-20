@@ -5,47 +5,87 @@
 <example src="./examples/MultipleSelect.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.select.title')">
+  <page-container
+    centered
+    :title="$t('pages.select.title')"
+  >
     <div class="page-container-section">
       <p>A select picks between multiple options. The select displays the current state and a down arrow. They can have single selection or multiple.</p>
-      <note-block tip>Select component mimics the HTML5 <code>&lt;select&gt;</code> attributes. This means that you can add attributes like <code>required</code> and <code>multiple</code> and it will react to them to give the best experience.</note-block>
+      <note-block tip>
+        Select component mimics the HTML5 <code>&lt;select&gt;</code> attributes. This means that you can add attributes like <code>required</code> and <code>multiple</code> and it will react to them to give the best experience.
+      </note-block>
     </div>
 
     <div class="page-container-section">
       <h2>Select</h2>
 
       <p>Vue Material selects works along with <code>md-option</code> component to provide the possible selection options. You should use it inside the <code>md-field</code> component The selection is will always react to changes on the <code>v-model</code> prop:</p>
-      <code-example title="Single selection" :component="examples['basic-select']" />
+      <code-example
+        title="Single selection"
+        :component="examples['basic-select']"
+      />
 
       <p>Selects also work with multiple selection with a <code>v-model</code> as an <code>Array</code>. It is awesome:</p>
-      <code-example title="Multiple selection" :component="examples['multiple-select']" />
+      <code-example
+        title="Multiple selection"
+        :component="examples['multiple-select']"
+      />
 
       <p>There is also a dense layout to accommodate more items on the screen:</p>
-      <code-example title="Dense" :component="examples['dense-select']" />
+      <code-example
+        title="Dense"
+        :component="examples['dense-select']"
+      />
 
       <p>Selects can have groups to make easy to distinguish different data sets:</p>
-      <code-example title="Groups" :component="examples['optgroup-select']" />
+      <code-example
+        title="Groups"
+        :component="examples['optgroup-select']"
+      />
 
       <p>It is really easy to disable a select, option and even an optgroup. This will prevent them from being selected. Just pass a <code>disabled</code> prop to the desired component:</p>
-      <code-example title="Disabled" :component="examples['disabled-select']" />
+      <code-example
+        title="Disabled"
+        :component="examples['disabled-select']"
+      />
 
       <api-item title="API - md-select">
         <p>The following options can be applied to any select:</p>
 
-        <api-table :headings="select.props.headings" :props="select.props.props" slot="props" />
-        <api-table :headings="select.events.headings" :props="select.events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="select.props.headings"
+            :props="select.props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="select.events.headings"
+            :props="select.events.props"
+          />
+        </template>
       </api-item>
 
       <api-item title="API - md-option">
         <p>The following options can be applied to any option:</p>
 
-        <api-table :headings="option.headings" :props="option.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="option.headings"
+            :props="option.props"
+          />
+        </template>
       </api-item>
 
       <api-item title="API - md-optgroup">
         <p>The following options can be applied to any optgroup:</p>
 
-        <api-table :headings="optgroup.headings" :props="optgroup.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="optgroup.headings"
+            :props="optgroup.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

@@ -4,18 +4,30 @@
     <md-field>
       <label for="movie">First day of a week</label>
       <md-select v-model="firstDayOfAWeek">
-        <md-option value="0">Sunday</md-option>
-        <md-option value="1">Monday</md-option>
+        <md-option value="0">
+          Sunday
+        </md-option>
+        <md-option value="1">
+          Monday
+        </md-option>
       </md-select>
       <span class="md-helper-text">This config is global.</span>
     </md-field>
     <md-field>
       <label for="movie">Date format</label>
       <md-select v-model="dateFormat">
-        <md-option value="yyyy-MM-dd">default</md-option>
-        <md-option value="yyyy/MM/dd">yyyy/MM/dd</md-option>
-        <md-option value="dd/MM/yyyy">dd/MM/yyyy</md-option>
-        <md-option value="MM/dd/yyyy">MM/dd/yyyy</md-option>
+        <md-option value="yyyy-MM-dd">
+          default
+        </md-option>
+        <md-option value="yyyy/MM/dd">
+          yyyy/MM/dd
+        </md-option>
+        <md-option value="dd/MM/yyyy">
+          dd/MM/yyyy
+        </md-option>
+        <md-option value="MM/dd/yyyy">
+          MM/dd/yyyy
+        </md-option>
       </md-select>
       <span class="md-helper-text">This config is global.</span>
     </md-field>

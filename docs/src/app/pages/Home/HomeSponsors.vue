@@ -1,5 +1,8 @@
 <template>
-  <md-content md-tag="section" class="home-sponsors">
+  <md-content
+    md-tag="section"
+    class="home-sponsors"
+  >
     <div class="page-wrapper">
       <h2 class="home-title md-headline">
         <md-icon>group</md-icon>
@@ -9,43 +12,81 @@
 
       <div class="home-sponsors-description">
         <h3><md-icon>person</md-icon> {{ $t('pages.home.contributorsTitle') }}</h3>
-        <a class="contributors-image" href="https://github.com/vuematerial/vue-material/contributors"><img src="https://opencollective.com/vue-material/contributors.svg?width=1500&button=false" /></a>
+        <a
+          class="contributors-image"
+          href="https://github.com/vuematerial/vue-material/contributors"
+        ><img src="https://opencollective.com/vue-material/contributors.svg?width=1500&button=false"></a>
         <br><br>
-        <h3><md-icon>monetization_on</md-icon>
-        {{ $t('pages.home.sponsors') }} &amp; {{ $t('pages.home.backers') }}</h3>
+        <h3>
+          <md-icon>monetization_on</md-icon>
+          {{ $t('pages.home.sponsors') }} &amp; {{ $t('pages.home.backers') }}
+        </h3>
 
         <div class="backers-button">
           <h3>OpenCollective Sponsors</h3>
-          <object type="image/svg+xml" data="https://opencollective.com/vue-material/tiers/backer.svg?avatarHeight=100&width=600"></object>
+          <object
+            type="image/svg+xml"
+            data="https://opencollective.com/vue-material/tiers/backer.svg?avatarHeight=100&width=600"
+          />
         </div>
 
 
-        <h3><md-icon>favorite</md-icon>
-        {{ $t('pages.home.backersTitle') }}</h3>
+        <h3>
+          <md-icon>favorite</md-icon>
+          {{ $t('pages.home.backersTitle') }}
+        </h3>
 
 
-        <i18n path="pages.home.sponsorsDescription" tag="p">
-          <a href="https://www.github.com/marcosmoura" target="_blank">Marcos Moura</a>
+        <i18n
+          path="pages.home.sponsorsDescription"
+          tag="p"
+        >
+          <a
+            href="https://www.github.com/marcosmoura"
+            target="_blank"
+          >Marcos Moura</a>
         </i18n>
 
         <ul>
-          <li><a href="https://github.com/elviskang" target="_blank">elviskang</a> for donating the npm package name!</li>
-          <li><a href="https://github.com/brunocastro" target="_blank">Bruno Castro</a> for the awesome Vue Material Logo. <logo-vue-material animated /></li>
+          <li>
+            <a
+              href="https://github.com/elviskang"
+              target="_blank"
+            >elviskang</a> for donating the npm package name!
+          </li>
+          <li>
+            <a
+              href="https://github.com/brunocastro"
+              target="_blank"
+            >Bruno Castro</a> for the awesome Vue Material Logo. <logo-vue-material animated />
+          </li>
         </ul>
 
         <div class="d-flex align-items-center">
-          <a href="https://www.codeinwp.com/?ref=vuematerial.io" target="_blank">
-            <img src="/assets/sponsors/codeinwp-logo.svg" class="home-sponsors-open-1">
+          <a
+            href="https://www.codeinwp.com/?ref=vuematerial.io"
+            target="_blank"
+          >
+            <img
+              src="../../assets/sponsors/codeinwp-logo.svg"
+              class="home-sponsors-open-1"
+            >
           </a>
-          <a href="https://www.creative-tim.com/?ref=vuematerial.io" target="_blank">
-            <img src="/assets/sponsors/creative-tim.png" class="home-sponsors-open-1 logo-2">
+          <a
+            href="https://www.creative-tim.com/?ref=vuematerial.io"
+            target="_blank"
+          >
+            <img
+              src="../../assets/sponsors/creative-tim.png"
+              class="home-sponsors-open-1 logo-2"
+            >
           </a>
         </div>
         <!-- <p>{{ $t('pages.home.beACollective') }}:</p> -->
-<!--
+        <!--
         <a href="" target="_blank" class="home-sponsors-open">
           <md-ripple>
-            <img src="/assets/sponsors/opencollective.svg">
+            <img src="assets/sponsors/opencollective.svg">
           </md-ripple>
         </a> -->
 
@@ -59,14 +100,13 @@
           <a href="https://github.com/vuematerial/vue-material/contribuitors"><img src="https://opencollective.com/vuematerial/contributors.svg?width=890&button=false" /></a>
 
         </div> -->
-
       </div>
     </div>
   </md-content>
 </template>
 
 <script>
-  import MdSvgLoader from 'vue-material/components/MdSvgLoader/MdSvgLoader'
+  import MdSvgLoader from 'vue-material/components/MdSvgLoader/MdSvgLoader.vue'
 
   export default {
     name: 'HomeSponsors',

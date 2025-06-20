@@ -7,13 +7,19 @@
         </md-button>
       </md-badge>
 
-      <md-badge class="md-primary" md-content="1">
+      <md-badge
+        class="md-primary"
+        md-content="1"
+      >
         <md-button class="md-icon-button">
           <md-icon>home</md-icon>
         </md-button>
       </md-badge>
 
-      <md-badge md-position="bottom" md-content="2">
+      <md-badge
+        md-position="bottom"
+        md-content="2"
+      >
         <md-button class="md-icon-button">
           <md-icon>home</md-icon>
         </md-button>
@@ -21,15 +27,25 @@
     </div>
 
     <div>
-      <md-badge class="md-primary" md-content="12">
+      <md-badge
+        class="md-primary"
+        md-content="12"
+      >
         <md-avatar>
-          <img src="/assets/examples/avatar.png" alt="Avatar">
+          <img
+            src="assets/examples/avatar.png"
+            alt="Avatar"
+          >
         </md-avatar>
       </md-badge>
     </div>
 
     <div>
-      <md-badge class="md-primary md-square" md-position="bottom" md-content="12">
+      <md-badge
+        class="md-primary md-square"
+        md-position="bottom"
+        md-content="12"
+      >
         <md-button>
           Button with
         </md-button>

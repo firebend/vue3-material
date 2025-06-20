@@ -1,21 +1,39 @@
 <template>
   <div>
-    <md-menu md-size="big" md-direction="top-start" :md-active.sync="toggleCard">
-      <md-button class="md-icon-button" md-menu-trigger>
+    <md-menu
+      v-model:md-active="toggleCard"
+      md-size="big"
+      md-direction="top-start"
+    >
+      <md-button
+        class="md-icon-button"
+        md-menu-trigger
+      >
         <md-icon>contacts</md-icon>
       </md-button>
 
       <md-menu-content>
         <div class="author-card">
           <md-avatar class="md-large">
-            <img src="/assets/examples/avatar.jpg" alt="Marcos Moura">
+            <img
+              src="assets/examples/avatar.jpg"
+              alt="Marcos Moura"
+            >
           </md-avatar>
 
           <div class="author-card-info">
             <span>Marcos Moura</span>
             <div class="author-card-links">
-              <a href="https://linkedin.com/in/marcosvmmoura" target="_blank" rel="noopener">Linkedin</a>
-              <a href="https://github.com/marcosmoura" target="_blank" rel="noopener">GitHub</a>
+              <a
+                href="https://linkedin.com/in/marcosvmmoura"
+                target="_blank"
+                rel="noopener"
+              >Linkedin</a>
+              <a
+                href="https://github.com/marcosmoura"
+                target="_blank"
+                rel="noopener"
+              >GitHub</a>
             </div>
           </div>
         </div>
@@ -23,7 +41,10 @@
     </md-menu>
 
     <md-menu>
-      <md-button class="md-icon-button" md-menu-trigger>
+      <md-button
+        class="md-icon-button"
+        md-menu-trigger
+      >
         <md-icon>phone</md-icon>
       </md-button>
 
@@ -45,8 +66,14 @@
       </md-menu-content>
     </md-menu>
 
-    <md-menu md-size="big" md-direction="bottom-end">
-      <md-button class="md-icon-button" md-menu-trigger>
+    <md-menu
+      md-size="big"
+      md-direction="bottom-end"
+    >
+      <md-button
+        class="md-icon-button"
+        md-menu-trigger
+      >
         <md-icon>near_me</md-icon>
       </md-button>
 
@@ -63,7 +90,12 @@
       </md-menu-content>
     </md-menu>
 
-    <md-button class="md-primary md-raised toggle" @click="toggle">Toggle Contact</md-button>
+    <md-button
+      class="md-primary md-raised toggle"
+      @click="toggle"
+    >
+      Toggle Contact
+    </md-button>
   </div>
 </template>
 

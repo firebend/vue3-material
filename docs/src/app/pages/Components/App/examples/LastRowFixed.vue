@@ -1,10 +1,27 @@
+<script setup lang="ts">
+  import {ref} from 'vue';
+
+  const menuVisible = ref(false);
+
+  const toggleMenu = () => {
+    menuVisible.value = !menuVisible.value;
+  }
+
+</script>
+
 <template>
   <div class="page-container">
-    <md-app md-waterfall md-mode="fixed-last">
+    <md-app
+      md-waterfall
+      md-mode="fixed-last"
+    >
       <md-app-toolbar class="md-large md-dense md-primary">
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
-            <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+            <md-button
+              class="md-icon-button"
+              @click="toggleMenu"
+            >
               <md-icon>menu</md-icon>
             </md-button>
 
@@ -20,16 +37,33 @@
 
         <div class="md-toolbar-row">
           <md-tabs class="md-primary">
-            <md-tab id="tab-home" md-label="Home"></md-tab>
-            <md-tab id="tab-pages" md-label="Pages"></md-tab>
-            <md-tab id="tab-posts" md-label="Posts"></md-tab>
-            <md-tab id="tab-favorites" md-label="Favorites"></md-tab>
+            <md-tab
+              id="tab-home"
+              md-label="Home"
+            />
+            <md-tab
+              id="tab-pages"
+              md-label="Pages"
+            />
+            <md-tab
+              id="tab-posts"
+              md-label="Posts"
+            />
+            <md-tab
+              id="tab-favorites"
+              md-label="Favorites"
+            />
           </md-tabs>
         </div>
       </md-app-toolbar>
 
-      <md-app-drawer :md-active.sync="menuVisible">
-        <md-toolbar class="md-transparent" md-elevation="0">Navigation</md-toolbar>
+      <md-app-drawer v-model:md-active="menuVisible">
+        <md-toolbar
+          class="md-transparent"
+          md-elevation="0"
+        >
+          Navigation
+        </md-toolbar>
 
         <md-list>
           <md-list-item>
@@ -81,18 +115,8 @@
     border: 1px solid rgba(#000, .12);
   }
 
-   // Demo purposes only
   .md-drawer {
     width: 230px;
     max-width: calc(100vw - 125px);
   }
 </style>
-
-<script>
-export default {
-  name: 'LastRowFixed',
-  data: () => ({
-    menuVisible: false
-  })
-}
-</script>

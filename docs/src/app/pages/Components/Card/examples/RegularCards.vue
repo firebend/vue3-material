@@ -2,7 +2,9 @@
   <div>
     <md-card>
       <md-card-header>
-        <div class="md-title">Card without hover effect</div>
+        <div class="md-title">
+          Card without hover effect
+        </div>
       </md-card-header>
 
       <md-card-content>
@@ -18,8 +20,12 @@
     <md-card md-with-hover>
       <md-ripple>
         <md-card-header>
-          <div class="md-title">Card with hover effect</div>
-          <div class="md-subhead">It also have a ripple</div>
+          <div class="md-title">
+            Card with hover effect
+          </div>
+          <div class="md-subhead">
+            It also have a ripple
+          </div>
         </md-card-header>
 
         <md-card-content>
@@ -35,6 +41,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'RegularCards'
+}
+</script>
+
 <style lang="scss" scoped>
   .md-card {
     width: 320px;
@@ -43,9 +55,3 @@
     vertical-align: top;
   }
 </style>
-
-<script>
-export default {
-  name: 'RegularCards'
-}
-</script>

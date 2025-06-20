@@ -1,7 +1,10 @@
 <template>
   <div>
-    <md-progress-bar md-mode="indeterminate"></md-progress-bar>
-    <md-progress-bar class="md-accent" md-mode="indeterminate"></md-progress-bar>
+    <md-progress-bar md-mode="indeterminate" />
+    <md-progress-bar
+      class="md-accent"
+      md-mode="indeterminate"
+    />
   </div>
 </template>
 

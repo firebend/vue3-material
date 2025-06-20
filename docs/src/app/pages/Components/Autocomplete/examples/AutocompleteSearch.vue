@@ -1,27 +1,38 @@
 <template>
   <div>
     <strong>Fuzzy Search:</strong>
-    <md-autocomplete v-model="selectedEmployee" :md-options="employees">
+    <md-autocomplete
+      v-model="selectedEmployee"
+      :md-options="employees"
+    >
       <label>Manager</label>
 
-      <template slot="md-autocomplete-item" slot-scope="{ item, term }">
-        <md-highlight-text :md-term="term">{{ item }}</md-highlight-text>
+      <template #md-autocomplete-item="{ item, term }">
+        <md-highlight-text :md-term="term">
+          {{ item }}
+        </md-highlight-text>
       </template>
 
-      <template slot="md-autocomplete-empty" slot-scope="{ term }">
+      <template #md-autocomplete-empty="{ term }">
         No employees matching "{{ term }}" were found. <a @click="noop()">Create a new</a> one!
       </template>
     </md-autocomplete>
 
     <strong>Normal Search:</strong>
-    <md-autocomplete v-model="selectedCountry" :md-options="countries" :md-fuzzy-search="false">
+    <md-autocomplete
+      v-model="selectedCountry"
+      :md-options="countries"
+      :md-fuzzy-search="false"
+    >
       <label>Country</label>
 
-      <template slot="md-autocomplete-item" slot-scope="{ item, term }">
-        <md-highlight-text :md-term="term">{{ item }}</md-highlight-text>
+      <template #md-autocomplete-item="{ item, term }">
+        <md-highlight-text :md-term="term">
+          {{ item }}
+        </md-highlight-text>
       </template>
 
-      <template slot="md-autocomplete-empty" slot-scope="{ term }">
+      <template #md-autocomplete-empty="{ term }">
         No countries matching "{{ term }}" were found. <a @click="noop()">Create a new</a> one!
       </template>
     </md-autocomplete>

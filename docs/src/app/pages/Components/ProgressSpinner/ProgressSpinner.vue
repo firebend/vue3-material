@@ -3,7 +3,10 @@
 <example src="./examples/ProgressSpinnerSizes.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.progressSpinner.title')">
+  <page-container
+    centered
+    :title="$t('pages.progressSpinner.title')"
+  >
     <div class="page-container-section">
       <p>Progress indicators are visual indications of an app loading content.</p>
       <p>Progress spinners have 2 types for each operation that your application may need: Determinate or Indeterminate.</p>
@@ -13,22 +16,36 @@
       <h2>Progress Spinner</h2>
 
       <p>When indicators are determinate they indicate how long an operation will take when the percentage complete is detectable.</p>
-      <code-example title="Determinate" :component="examples['progress-spinner-determinate']" />
+      <code-example
+        title="Determinate"
+        :component="examples['progress-spinner-determinate']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>When indicators are indeterminate they request that the user wait while something finishes when it’s not necessary to indicate how long it will take.</p>
-      <code-example title="Indeterminate" :component="examples['progress-spinner-indeterminate']" />
+      <code-example
+        title="Indeterminate"
+        :component="examples['progress-spinner-indeterminate']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>You can always change the sizes and stroke with of a spinner to suit your needs:</p>
-      <code-example title="Sizes" :component="examples['progress-spinner-sizes']" />
+      <code-example
+        title="Sizes"
+        :component="examples['progress-spinner-sizes']"
+      />
 
       <api-item title="API - md-progress-spinner">
         <p>The following options can be applied to all progress spinners:</p>
 
-        <api-table :headings="props.headings" :props="props.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="props.headings"
+            :props="props.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

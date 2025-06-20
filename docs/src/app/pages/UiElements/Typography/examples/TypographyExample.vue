@@ -10,7 +10,9 @@
     <span class="md-body-2">Body 2</span>
     <span class="md-body-1">Body 1</span>
     <span class="md-caption">Caption</span>
-    <router-link to="/ui-elements/typography">Links</router-link>
+    <router-link to="/ui-elements/typography">
+      Links
+    </router-link>
     <md-button>Buttons</md-button>
   </div>
 </template>

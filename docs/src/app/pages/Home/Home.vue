@@ -1,6 +1,12 @@
 <template>
-  <splash-container splash class="home-page">
-    <div id="splash" class="home-splash">
+  <splash-container
+    splash
+    class="home-page"
+  >
+    <div
+      id="splash"
+      class="home-splash"
+    >
       <home-header />
       <ad-manager />
       <home-features />
@@ -13,12 +19,12 @@
 </template>
 
 <script>
-  import HomeHeader from './HomeHeader'
-  import HomeFeatures from './HomeFeatures'
-  import HomeEcosystem from './HomeEcosystem'
-  import HomePremium from './HomePremium'
-  import HomeSponsors from './HomeSponsors'
-  import AdManager from '../../components/AdManager'
+  import HomeHeader from './HomeHeader.vue'
+  import HomeFeatures from './HomeFeatures.vue'
+  import HomeEcosystem from './HomeEcosystem.vue'
+  import HomePremium from './HomePremium.vue'
+  import HomeSponsors from './HomeSponsors.vue'
+  import AdManager from '../../components/AdManager.vue'
 
   export default {
     name: 'Home',
@@ -31,14 +37,6 @@
       HomeSponsors,
       AdManager
     },
-    methods: {
-      scrollDown (target) {
-        window.scroll({
-          ...target,
-          behavior: 'smooth'
-        })
-      }
-    },
     mounted () {
       if (this.$route.hash === '#premium') {
         const premiumEl = document.querySelector('#premium')
@@ -49,6 +47,14 @@
             left: 0
           })
         }, 100)
+      }
+    },
+    methods: {
+      scrollDown (target) {
+        window.scroll({
+          ...target,
+          behavior: 'smooth'
+        })
       }
     }
   }

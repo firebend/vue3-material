@@ -1,83 +1,119 @@
- <template>
-   <page-container centered>
-     <section class="page-container-section" centered>
-       <div class="md-header">
-         <h2 class="md-headline">Premium Themes</h2>
-         <h3>Creative Tim</h3>
-         <p>With the examples below built by our partners from
-            <a href="https://www.creative-tim.com/?ref=vuematerial.io" target="_blank">Creative Tim</a> you can see how a real world application
-            is built, the technology stack behind it and how most
-            of the concepts you've learned so far apply in a real
-            world application.
-         </p>
-       </div>
+<template>
+  <page-container centered>
+    <section
+      class="page-container-section"
+      centered
+    >
+      <div class="md-header">
+        <h2 class="md-headline">
+          Premium Themes
+        </h2>
+        <h3>Creative Tim</h3>
+        <p>
+          With the examples below built by our partners from
+          <a
+            href="https://www.creative-tim.com/?ref=vuematerial.io"
+            target="_blank"
+          >Creative Tim</a> you can see how a real world application
+          is built, the technology stack behind it and how most
+          of the concepts you've learned so far apply in a real
+          world application.
+        </p>
+      </div>
 
-         <md-card>
-           <md-card-media>
-             <a href="https://www.creative-tim.com/product/vue-material-dashboard?ref=vuematerial.io" target="_blank">
-               <img src="https://s3.amazonaws.com/creativetim_bucket/products/81/original/opt_md_vue_thumbnail.jpg?1534938464">
-             </a>
-           </md-card-media>
-           <md-card-content>
-             <h3 class="d-flex">Vue Material Dashboard
-               <md-badge class="md-square" md-content="Free" />
-             </h3>
-             Free Vue.js Admin Template
-           </md-card-content>
-         </md-card>
+      <md-card>
+        <md-card-media>
+          <a
+            href="https://www.creative-tim.com/product/vue-material-dashboard?ref=vuematerial.io"
+            target="_blank"
+          >
+            <img src="https://s3.amazonaws.com/creativetim_bucket/products/81/original/opt_md_vue_thumbnail.jpg?1534938464">
+          </a>
+        </md-card-media>
+        <md-card-content>
+          <h3 class="d-flex">
+            Vue Material Dashboard
+            <md-badge
+              class="md-square"
+              md-content="Free"
+            />
+          </h3>
+          Free Vue.js Admin Template
+        </md-card-content>
+      </md-card>
 
-         <md-card>
-           <md-card-media>
-             <a href="https://www.creative-tim.com/product/vue-material-dashboard-pro?ref=vuematerial.io" target="_blank">
-               <img src="https://s3.amazonaws.com/creativetim_bucket/products/87/original/opt_mdp_vue_thumbnail.jpg?1534938492">
-             </a>
-           </md-card-media>
-           <md-card-content>
-             <h3>Vue Material Dashboard PRO
-               <div class="pull-right">
-                 $59
-               </div>
-             </h3>
-             Premium Vue.js Admin Template
-           </md-card-content>
-         </md-card>
+      <md-card>
+        <md-card-media>
+          <a
+            href="https://www.creative-tim.com/product/vue-material-dashboard-pro?ref=vuematerial.io"
+            target="_blank"
+          >
+            <img src="https://s3.amazonaws.com/creativetim_bucket/products/87/original/opt_mdp_vue_thumbnail.jpg?1534938492">
+          </a>
+        </md-card-media>
+        <md-card-content>
+          <h3>
+            Vue Material Dashboard PRO
+            <div class="pull-right">
+              $59
+            </div>
+          </h3>
+          Premium Vue.js Admin Template
+        </md-card-content>
+      </md-card>
 
-         <md-card>
-           <md-card-media>
-             <a href="https://www.creative-tim.com/product/vue-material-kit?ref=vuematerial.io" target="_blank">
-               <img src="https://s3.amazonaws.com/creativetim_bucket/products/97/original/vue-material-kit-2.jpg">
-             </a>
-           </md-card-media>
-           <md-card-content>
-             <h3 class="d-flex">Vue Material Kit
-               <md-badge class="md-square" md-content="Free" />
-             </h3>
-             Free Vue.js UI Kit
-           </md-card-content>
-         </md-card>
+      <md-card>
+        <md-card-media>
+          <a
+            href="https://www.creative-tim.com/product/vue-material-kit?ref=vuematerial.io"
+            target="_blank"
+          >
+            <img src="https://s3.amazonaws.com/creativetim_bucket/products/97/original/vue-material-kit-2.jpg">
+          </a>
+        </md-card-media>
+        <md-card-content>
+          <h3 class="d-flex">
+            Vue Material Kit
+            <md-badge
+              class="md-square"
+              md-content="Free"
+            />
+          </h3>
+          Free Vue.js UI Kit
+        </md-card-content>
+      </md-card>
 
-         <md-card>
-           <md-card-media>
-             <a href="https://www.creative-tim.com/product/vue-material-kit-pro?ref=vuematerial.io" target="_blank">
-               <img src="https://s3.amazonaws.com/creativetim_bucket/products/139/original/vue-material-kit-2-pro.jpg">
-             </a>
-           </md-card-media>
-           <md-card-content>
-             <h3>Vue Material Kit PRO
-               <div class="pull-right">
-                 $89
-               </div>
-             </h3>
-             Premium Vue.js UI Kit
-           </md-card-content>
-         </md-card>
+      <md-card>
+        <md-card-media>
+          <a
+            href="https://www.creative-tim.com/product/vue-material-kit-pro?ref=vuematerial.io"
+            target="_blank"
+          >
+            <img src="https://s3.amazonaws.com/creativetim_bucket/products/139/original/vue-material-kit-2-pro.jpg">
+          </a>
+        </md-card-media>
+        <md-card-content>
+          <h3>
+            Vue Material Kit PRO
+            <div class="pull-right">
+              $89
+            </div>
+          </h3>
+          Premium Vue.js UI Kit
+        </md-card-content>
+      </md-card>
     </section>
     <div class="align-center">
-       <md-button class="md-button-spaced md-primary md-raised" href="https://www.creative-tim.com/?ref=vuematerial.io" target="_blank">See More Themes from Creative Tim</md-button>
-     </div>
-   </page-container>
-
- </template>
+      <md-button
+        class="md-button-spaced md-primary md-raised"
+        href="https://www.creative-tim.com/?ref=vuematerial.io"
+        target="_blank"
+      >
+        See More Themes from Creative Tim
+      </md-button>
+    </div>
+  </page-container>
+</template>
  <script>
  </script>
  <style lang="scss" scoped>

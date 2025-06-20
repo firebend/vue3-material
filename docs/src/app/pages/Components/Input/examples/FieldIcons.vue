@@ -3,25 +3,27 @@
     <md-field>
       <md-icon>event</md-icon>
       <label>Date</label>
-      <md-input v-model="date"></md-input>
+      <md-input v-model="date" />
     </md-field>
 
     <md-field>
       <label>Voice</label>
-      <md-input v-model="voice"></md-input>
+      <md-input v-model="voice" />
       <md-icon>keyboard_voice</md-icon>
     </md-field>
 
     <md-field>
       <label>Description</label>
-      <md-textarea v-model="description"></md-textarea>
+      <md-textarea v-model="description" />
       <md-icon>description</md-icon>
     </md-field>
 
     <md-field>
-      <md-icon class="md-accent">warning</md-icon>
+      <md-icon class="md-accent">
+        warning
+      </md-icon>
       <label>Transfer Money</label>
-      <md-input v-model="money"></md-input>
+      <md-input v-model="money" />
       <md-icon>attach_money</md-icon>
     </md-field>
   </div>

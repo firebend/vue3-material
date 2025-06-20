@@ -6,47 +6,88 @@
 <example src="./examples/DisabledDatesDatepicker.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.datepicker.title')">
+  <page-container
+    centered
+    :title="$t('pages.datepicker.title')"
+  >
     <div class="page-container-section">
       <p>Datepickers use a dialog window and provide a simple way to select a single value from a pre-determined set. The component can have disabled dates and it's really easy to use.</p>
     </div>
 
     <div class="page-container-section">
-      <h2 id="datepicker">Datepicker</h2>
+      <h2 id="datepicker">
+        Datepicker
+      </h2>
 
-      <code-example title="Basic Example" :component="examples['basic-datepicker']" />
+      <code-example
+        title="Basic Example"
+        :component="examples['basic-datepicker']"
+      />
 
-      <code-example title="Labeled Example" :component="examples['labeled-datepicker']" />
+      <code-example
+        title="Labeled Example"
+        :component="examples['labeled-datepicker']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="datepickerModel">Model Types</h2>
+      <h2 id="datepickerModel">
+        Model Types
+      </h2>
       <p>Vue Material datepicker supports multiple types of <code>v-model</code>, whiches default is <code>Date</code>. If you want to communicate with other services without timezone problems, you could use <code>String</code> to avoid them:</p>
-      <code-example title="With different type binding" :component="examples['multi-types-datepicker']" />
+      <code-example
+        title="With different type binding"
+        :component="examples['multi-types-datepicker']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="cancelOpen">Cancel open on focus</h2>
+      <h2 id="cancelOpen">
+        Cancel open on focus
+      </h2>
       <p>By default Datepicker component open on focus to it's input. This will make the input useless and the user will not be able to type the date manually. You can disable this behavior:</p>
-      <code-example title="With initial date selected" :component="examples['cancel-open-datepicker']" />
+      <code-example
+        title="With initial date selected"
+        :component="examples['cancel-open-datepicker']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="immediatelySelection">Immediately selection</h2>
+      <h2 id="immediatelySelection">
+        Immediately selection
+      </h2>
       <p>The Datepicker dialog can be made to close instantly after a date is selected. The date will be selected immediately without any additional confirmation or user action:</p>
-      <code-example title="Close dialog on select" :component="examples['close-on-select-datepicker']" />
+      <code-example
+        title="Close dialog on select"
+        :component="examples['close-on-select-datepicker']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="disabledDates">Disabled dates</h2>
+      <h2 id="disabledDates">
+        Disabled dates
+      </h2>
       <p>Sometimes you may need to disable certain dates from being selected. Let's suppose that you want to let the user select only week days:</p>
-      <code-example title="No weekends available" :component="examples['disabled-dates-datepicker']" />
+      <code-example
+        title="No weekends available"
+        :component="examples['disabled-dates-datepicker']"
+      />
 
       <api-item title="API - md-datepicker">
         <p>All the following options can be applied to the md-datepicker component:</p>
 
-        <api-table :headings="props.headings" :props="props.props" slot="props" />
-        <api-table :headings="events.headings" :props="events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="props.headings"
+            :props="props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="events.headings"
+            :props="events.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

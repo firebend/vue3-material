@@ -4,7 +4,10 @@
 <example src="./examples/MorphingIcon.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.speedDial.title')">
+  <page-container
+    centered
+    :title="$t('pages.speedDial.title')"
+  >
     <div class="page-container-section">
       <p>Floating Action Buttons can show related actions upon hovering or pressing. The button should remain on screen after the menu is invoked.</p>
       <p>Speed dial component is pretty flexible and have many options to make it easy to suit all your needs. You can apply different positions, work with a couple of events to trigger the content and also have a awesome morph effect on your main action.</p>
@@ -12,37 +15,71 @@
     </div>
 
     <div class="page-container-section">
-      <h2 id="speedpositions">Speed Dial positions</h2>
+      <h2 id="speedpositions">
+        Speed Dial positions
+      </h2>
       <p>You can specify any position that you want for you Speed Dial component. They can be top and bottom, and combined with left, center or right:</p>
 
-      <code-example title="Positions and directions" :component="examples['position-direction']" />
-      <note-block tip>Prefer the FAB on bottom left position for your main action on scrollable contents. Always use a <code>md-direction</code> equals to <code>bottom</code> when using top position.</note-block>
+      <code-example
+        title="Positions and directions"
+        :component="examples['position-direction']"
+      />
+      <note-block tip>
+        Prefer the FAB on bottom left position for your main action on scrollable contents. Always use a <code>md-direction</code> equals to <code>bottom</code> when using top position.
+      </note-block>
     </div>
 
     <div class="page-container-section">
-      <h2 id="effects">Effects</h2>
+      <h2 id="effects">
+        Effects
+      </h2>
       <p>The component can be displayed different animations for each scenario that you might want:</p>
-      <code-example title="Animations types" :component="examples['animation-types']" />
+      <code-example
+        title="Animations types"
+        :component="examples['animation-types']"
+      />
     </div>
 
     <div class="page-container-section">
-      <h2 id="triggers">Triggers</h2>
+      <h2 id="triggers">
+        Triggers
+      </h2>
       <p>You can trigger the speed dial content using hover or click. Using this allows you to have a open/close feature or to hold a main action:</p>
-      <code-example title="Event triggers" :component="examples['event-triggers']" />
-      <note-block tip>For desktop environments it's better to have a hover effect. On mobile you can toggle the property to use click instead.</note-block>
+      <code-example
+        title="Event triggers"
+        :component="examples['event-triggers']"
+      />
+      <note-block tip>
+        For desktop environments it's better to have a hover effect. On mobile you can toggle the property to use click instead.
+      </note-block>
 
       <api-item title="API - md-speed-dial">
-        <api-table :headings="props.headings" :props="props.props" slot="props" />
-        <api-table :headings="classes.headings" :props="classes.props" slot="classes" />
+        <template #props>
+          <api-table
+            :headings="props.headings"
+            :props="props.props"
+          />
+        </template>
+        <template #classes>
+          <api-table
+            :headings="classes.headings"
+            :props="classes.props"
+          />
+        </template>
       </api-item>
     </div>
 
     <div class="page-container-section">
-      <h2 id="iconMorph">Icon Morph</h2>
+      <h2 id="iconMorph">
+        Icon Morph
+      </h2>
 
       <p>Sometimes you want the speed dial to have a cross icon to represent your close action after showing the content. This can be easily achieved with the morph icons.</p>
       <p>To create that, create two <code>md-icon</code> components inside the trigger and add a <code>md-morph-initial</code> in the one you would like it to be the initial state (or an open state) and a <code>md-morph-final</code> on the close state:</p>
-      <code-example title="Morphing Icons" :component="examples['morphing-icon']" />
+      <code-example
+        title="Morphing Icons"
+        :component="examples['morphing-icon']"
+      />
     </div>
 
     <div class="page-container-section">
@@ -53,7 +90,11 @@
       </api-item>
 
       <api-item title="API - md-speed-dial-trigger">
-        <p>This component is just an alias of <code>md-button</code> with <code>md-fab</code> class. So every option of <router-link to="/components/button">Buttons</router-link> can be applied here, even the Vue Router options...</p>
+        <p>
+          This component is just an alias of <code>md-button</code> with <code>md-fab</code> class. So every option of <router-link to="/components/button">
+            Buttons
+          </router-link> can be applied here, even the Vue Router options...
+        </p>
       </api-item>
     </div>
   </page-container>

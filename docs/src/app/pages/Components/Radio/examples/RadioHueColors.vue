@@ -1,7 +1,18 @@
 <template>
   <div>
-    <md-radio v-model="radio" value="accent">Accent <small>(Default)</small></md-radio>
-    <md-radio v-model="radio" value="Primary" class="md-primary">Primary</md-radio>
+    <md-radio
+      v-model="radio"
+      value="accent"
+    >
+      Accent <small>(Default)</small>
+    </md-radio>
+    <md-radio
+      v-model="radio"
+      value="Primary"
+      class="md-primary"
+    >
+      Primary
+    </md-radio>
   </div>
 </template>
 

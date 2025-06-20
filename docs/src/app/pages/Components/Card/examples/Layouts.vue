@@ -2,12 +2,19 @@
   <div>
     <md-card>
       <md-card-media>
-        <img src="/assets/examples/card-image-1.jpg" alt="People">
+        <img
+          src="assets/examples/card-image-1.jpg"
+          alt="People"
+        >
       </md-card-media>
 
       <md-card-header>
-        <div class="md-title">Title goes here</div>
-        <div class="md-subhead">Subtitle here</div>
+        <div class="md-title">
+          Title goes here
+        </div>
+        <div class="md-subhead">
+          Subtitle here
+        </div>
       </md-card-header>
 
       <md-card-actions>
@@ -23,15 +30,25 @@
     <md-card>
       <md-card-header>
         <md-avatar>
-          <img src="/assets/examples/avatar.png" alt="Avatar">
+          <img
+            src="assets/examples/avatar.png"
+            alt="Avatar"
+          >
         </md-avatar>
 
-        <div class="md-title">Title goes here</div>
-        <div class="md-subhead">Subtitle here</div>
+        <div class="md-title">
+          Title goes here
+        </div>
+        <div class="md-subhead">
+          Subtitle here
+        </div>
       </md-card-header>
 
       <md-card-media>
-        <img src="/assets/examples/card-image-1.jpg" alt="People">
+        <img
+          src="assets/examples/card-image-1.jpg"
+          alt="People"
+        >
       </md-card-media>
 
       <md-card-content>
@@ -47,11 +64,16 @@
     <md-card class="md-card-example">
       <md-card-area md-inset>
         <md-card-media md-ratio="16:9">
-          <img src="/assets/examples/card-example.jpg" alt="Coffee House">
+          <img
+            src="assets/examples/card-example.jpg"
+            alt="Coffee House"
+          >
         </md-card-media>
 
         <md-card-header>
-          <h2 class="md-title">Coffee House</h2>
+          <h2 class="md-title">
+            Coffee House
+          </h2>
           <div class="md-subhead">
             <md-icon>location_on</md-icon>
             <span>2 miles</span>
@@ -64,7 +86,9 @@
       </md-card-area>
 
       <md-card-content>
-        <h3 class="md-subheading">Today's availability</h3>
+        <h3 class="md-subheading">
+          Today's availability
+        </h3>
         <div class="card-reservation">
           <md-icon>access_time</md-icon>
           <div class="md-button-group">
@@ -76,19 +100,28 @@
       </md-card-content>
 
       <md-card-actions>
-        <md-button class="md-primary">Reserve</md-button>
+        <md-button class="md-primary">
+          Reserve
+        </md-button>
       </md-card-actions>
     </md-card>
 
     <md-card>
       <md-card-area>
         <md-card-media>
-          <img src="/assets/examples/card-image-1.jpg" alt="People">
+          <img
+            src="assets/examples/card-image-1.jpg"
+            alt="People"
+          >
         </md-card-media>
 
         <md-card-header>
-          <div class="md-title">Actions left aligned</div>
-          <div class="md-subhead">Subtitle here</div>
+          <div class="md-title">
+            Actions left aligned
+          </div>
+          <div class="md-subhead">
+            Subtitle here
+          </div>
         </md-card-header>
 
         <md-card-content>
@@ -105,7 +138,10 @@
     <md-card>
       <md-card-media>
         <md-ripple>
-          <img src="/assets/examples/card-image-1.jpg" alt="People">
+          <img
+            src="assets/examples/card-image-1.jpg"
+            alt="People"
+          >
         </md-ripple>
       </md-card-media>
 
@@ -126,7 +162,10 @@
 
     <md-card>
       <md-card-media>
-        <img src="/assets/examples/card-image-2.jpg" alt="People">
+        <img
+          src="assets/examples/card-image-2.jpg"
+          alt="People"
+        >
       </md-card-media>
 
       <md-card-content>
@@ -137,12 +176,22 @@
     <md-card>
       <md-card-header>
         <md-card-header-text>
-          <div class="md-title">Actions left aligned</div>
-          <div class="md-subhead">Subtitle here</div>
+          <div class="md-title">
+            Actions left aligned
+          </div>
+          <div class="md-subhead">
+            Subtitle here
+          </div>
         </md-card-header-text>
 
-        <md-menu md-size="big" md-direction="bottom-end">
-          <md-button class="md-icon-button" md-menu-trigger>
+        <md-menu
+          md-size="big"
+          md-direction="bottom-end"
+        >
+          <md-button
+            class="md-icon-button"
+            md-menu-trigger
+          >
             <md-icon>more_vert</md-icon>
           </md-button>
 

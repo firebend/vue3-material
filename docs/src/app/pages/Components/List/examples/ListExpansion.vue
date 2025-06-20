@@ -2,38 +2,67 @@
   <div class="full-control">
     <div class="list">
       <md-list :md-expand-single="expandSingle">
-        <md-list-item md-expand :md-expanded.sync="expandNews">
+        <md-list-item
+          v-model:md-expanded="expandNews"
+          md-expand
+        >
           <md-icon>whatshot</md-icon>
           <span class="md-list-item-text">News</span>
 
-          <md-list slot="md-expand">
-            <md-list-item class="md-inset">World</md-list-item>
-            <md-list-item class="md-inset">Europe</md-list-item>
-            <md-list-item class="md-inset">South America</md-list-item>
-          </md-list>
+          <template #md-expand>
+            <md-list>
+              <md-list-item class="md-inset">
+                World
+              </md-list-item>
+              <md-list-item class="md-inset">
+                Europe
+              </md-list-item>
+              <md-list-item class="md-inset">
+                South America
+              </md-list-item>
+            </md-list>
+          </template>
         </md-list-item>
 
         <md-list-item md-expand>
           <md-icon>videogame_asset</md-icon>
           <span class="md-list-item-text">Games</span>
 
-          <md-list slot="md-expand">
-            <md-list-item class="md-inset">Console</md-list-item>
-            <md-list-item class="md-inset">PC</md-list-item>
-            <md-list-item class="md-inset">Phone</md-list-item>
-          </md-list>
+          <template #md-expand>
+            <md-list>
+              <md-list-item class="md-inset">
+                Console
+              </md-list-item>
+              <md-list-item class="md-inset">
+                PC
+              </md-list-item>
+              <md-list-item class="md-inset">
+                Phone
+              </md-list-item>
+            </md-list>
+          </template>
         </md-list-item>
 
         <md-list-item md-expand>
           <md-icon>video_library</md-icon>
           <span class="md-list-item-text">Video</span>
 
-          <md-list slot="md-expand">
-            <md-list-item class="md-inset">Humor</md-list-item>
-            <md-list-item class="md-inset">Music</md-list-item>
-            <md-list-item class="md-inset">Movies</md-list-item>
-            <md-list-item class="md-inset">TV Shows</md-list-item>
-          </md-list>
+          <template #md-expand>
+            <md-list>
+              <md-list-item class="md-inset">
+                Humor
+              </md-list-item>
+              <md-list-item class="md-inset">
+                Music
+              </md-list-item>
+              <md-list-item class="md-inset">
+                Movies
+              </md-list-item>
+              <md-list-item class="md-inset">
+                TV Shows
+              </md-list-item>
+            </md-list>
+          </template>
         </md-list-item>
 
         <md-list-item>
@@ -43,8 +72,12 @@
       </md-list>
     </div>
     <div class="control">
-      <md-switch v-model="expandSingle">Expand Only One</md-switch>
-      <md-checkbox v-model="expandNews">Expand News</md-checkbox>
+      <md-switch v-model="expandSingle">
+        Expand Only One
+      </md-switch>
+      <md-checkbox v-model="expandNews">
+        Expand News
+      </md-checkbox>
     </div>
   </div>
 </template>

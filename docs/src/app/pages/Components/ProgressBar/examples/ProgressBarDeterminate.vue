@@ -1,8 +1,18 @@
 <template>
   <div>
-    <md-progress-bar md-mode="determinate" :md-value="amount"></md-progress-bar>
-    <md-progress-bar class="md-accent" md-mode="determinate" :md-value="amount"></md-progress-bar>
-    <input type="range" v-model.number="amount"> {{ amount }}%
+    <md-progress-bar
+      md-mode="determinate"
+      :md-value="amount"
+    />
+    <md-progress-bar
+      class="md-accent"
+      md-mode="determinate"
+      :md-value="amount"
+    />
+    <input
+      v-model.number="amount"
+      type="range"
+    > {{ amount }}%
   </div>
 </template>
 

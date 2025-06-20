@@ -1,11 +1,35 @@
 <template>
   <div>
-    <md-switch v-model="array" value="1">Array</md-switch>
-    <md-switch v-model="array" value="2">Array</md-switch>
-    <md-switch v-model="boolean">Boolean</md-switch>
-    <md-switch v-model="string" value="my-switch">String</md-switch>
-    <md-switch v-model="novalue">No Value</md-switch>
-    <md-switch v-model="disabled" disabled>Disabled</md-switch>
+    <md-switch
+      v-model="array"
+      value="1"
+    >
+      Array
+    </md-switch>
+    <md-switch
+      v-model="array"
+      value="2"
+    >
+      Array
+    </md-switch>
+    <md-switch v-model="boolean">
+      Boolean
+    </md-switch>
+    <md-switch
+      v-model="string"
+      value="my-switch"
+    >
+      String
+    </md-switch>
+    <md-switch v-model="novalue">
+      No Value
+    </md-switch>
+    <md-switch
+      v-model="disabled"
+      disabled
+    >
+      Disabled
+    </md-switch>
 
     <table>
       <tr>

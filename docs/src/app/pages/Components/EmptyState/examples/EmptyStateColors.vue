@@ -4,16 +4,16 @@
       class="md-primary"
       md-icon="done"
       md-label="Nothing in Done"
-      md-description="Anything you mark done will be safely stored here.">
-    </md-empty-state>
+      md-description="Anything you mark done will be safely stored here."
+    />
 
     <md-empty-state
       class="md-accent"
       md-rounded
       md-icon="alarm_off"
       md-label="Nothing in Reminders"
-      md-description="Create a Reminder and it will show up here.">
-    </md-empty-state>
+      md-description="Create a Reminder and it will show up here."
+    />
   </div>
 </template>
 

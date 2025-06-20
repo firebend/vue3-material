@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // })
 
   // Register global component (vue-toc)
-  app.component('vue-toc', VueToc)
+  app.component('VueToc', VueToc)
 
   // Mount the app
   router.isReady().then(() => {

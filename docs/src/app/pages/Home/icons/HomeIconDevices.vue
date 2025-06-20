@@ -1,13 +1,13 @@
 <template>
   <home-icon class="home-icon-devices">
-    <div class="device"></div>
-    <div class="device"></div>
-    <div class="device"></div>
+    <div class="device" />
+    <div class="device" />
+    <div class="device" />
   </home-icon>
 </template>
 
 <script>
-  import HomeIcon from './HomeIcon'
+  import HomeIcon from './HomeIcon.vue'
 
   export default {
     name: 'HomeIconDevices',
@@ -18,8 +18,8 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
-  @import "vue-material/theme/engine";
+  @use "vue-material/components/MdAnimation/variables";
+  @use "vue-material/theme/palette";
 
   .home-icon-devices {
     width: 160px;
@@ -43,7 +43,7 @@
     width: auto;
     height: auto;
     position: absolute;
-    transition: $md-transition-default;
+    transition: variables.$md-transition-default;
     will-change: z-index, transform;
 
     &:after,
@@ -58,7 +58,7 @@
       right: 3px;
       bottom: 3px;
       border-radius: 50%;
-      background: md-get-palette-color(red, 500);
+      background: palette.md-get-palette-color(red, 500);
     }
 
     &:before {
@@ -74,10 +74,10 @@
       bottom: 10%;
       left: 0%;
       z-index: 1;
-      background: md-get-palette-color(blue, 500);
+      background: palette.md-get-palette-color(blue, 500);
 
       &:before {
-        background: md-get-palette-color(blue, 700);
+        background: palette.md-get-palette-color(blue, 700);
       }
     }
 
@@ -87,10 +87,10 @@
       bottom: 0;
       left: 30%;
       z-index: 2;
-      background: md-get-palette-color(cyan, 400);
+      background: palette.md-get-palette-color(cyan, 400);
 
       &:before {
-        background: md-get-palette-color(cyan, 600);
+        background: palette.md-get-palette-color(cyan, 600);
       }
     }
 
@@ -100,10 +100,10 @@
       bottom: -10%;
       left: 75%;
       z-index: 3;
-      background: md-get-palette-color(grey, 50);
+      background: palette.md-get-palette-color(grey, 50);
 
       &:before {
-        background: md-get-palette-color(grey, 200);
+        background: palette.md-get-palette-color(grey, 200);
       }
     }
   }

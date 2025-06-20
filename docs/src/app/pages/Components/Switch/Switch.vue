@@ -2,7 +2,10 @@
 <example src="./examples/SwitchHueColors.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.switch.title')">
+  <page-container
+    centered
+    :title="$t('pages.switch.title')"
+  >
     <div class="page-container-section">
       <p>On/off switches toggle the state of a single settings option. The option that the switch controls, as well as the state it’s in, should be made clear from the corresponding inline label. Vue material switches can work with multiple <code>v-model</code> types: <code>String</code>, <code>Number</code>, <code>Boolean</code> and <code>Array</code>.</p>
     </div>
@@ -10,17 +13,35 @@
     <div class="page-container-section">
       <h2>Switch</h2>
 
-      <code-example title="Switch" :component="examples['regular-switch']" />
-      <code-example title="Hue Colors" :component="examples['switch-hue-colors']" />
+      <code-example
+        title="Switch"
+        :component="examples['regular-switch']"
+      />
+      <code-example
+        title="Hue Colors"
+        :component="examples['switch-hue-colors']"
+      />
 
       <api-item title="API - md-switch">
         <p>The following options can be applied to all switches:</p>
 
-        <api-table :headings="props.headings" :props="props.props" slot="props" />
-        <api-table :headings="events.headings" :props="events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="props.headings"
+            :props="props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="events.headings"
+            :props="events.props"
+          />
+        </template>
       </api-item>
 
-      <note-block tip>All other <code>&lt;input type=&quot;checkbox&quot;&gt;</code> attributes, such as <strong>name</strong> and <strong>required</strong>, can be used on <code>md-switch</code>.</note-block>
+      <note-block tip>
+        All other <code>&lt;input type=&quot;checkbox&quot;&gt;</code> attributes, such as <strong>name</strong> and <strong>required</strong>, can be used on <code>md-switch</code>.
+      </note-block>
     </div>
   </page-container>
 </template>

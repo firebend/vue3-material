@@ -1,7 +1,20 @@
 <template>
   <div>
-    <md-chip class="md-primary" v-for="chip in primary" :key="chip">{{ chip }}</md-chip>
-    <md-chip class="md-accent" v-for="chip in accent" :key="chip" md-clickable>{{ chip }}</md-chip>
+    <md-chip
+      v-for="chip in primary"
+      :key="chip"
+      class="md-primary"
+    >
+      {{ chip }}
+    </md-chip>
+    <md-chip
+      v-for="chip in accent"
+      :key="chip"
+      class="md-accent"
+      md-clickable
+    >
+      {{ chip }}
+    </md-chip>
   </div>
 </template>
 

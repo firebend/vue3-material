@@ -1,13 +1,27 @@
 <template>
   <div>
-    <md-chips class="md-primary" v-model="clubs" md-placeholder="Add club..." :md-format="toUppercase">
+    <md-chips
+      v-model="clubs"
+      class="md-primary"
+      md-placeholder="Add club..."
+      :md-format="toUppercase"
+    >
       <label>La Liga Clubs</label>
-      <div class="md-helper-text">Three uppercase letters</div>
+      <div class="md-helper-text">
+        Three uppercase letters
+      </div>
     </md-chips>
     
-    <md-chips class="md-primary" v-model="artists" md-placeholder="Add artist..." :md-format="formatName">
+    <md-chips
+      v-model="artists"
+      class="md-primary"
+      md-placeholder="Add artist..."
+      :md-format="formatName"
+    >
       <label>Artists</label>
-      <div class="md-helper-text">Try inserting `Eugène Ysaÿe`. The formatter will remove diacritics.</div>
+      <div class="md-helper-text">
+        Try inserting `Eugène Ysaÿe`. The formatter will remove diacritics.
+      </div>
     </md-chips>
   </div>
 </template>

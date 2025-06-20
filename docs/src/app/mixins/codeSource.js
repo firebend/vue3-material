@@ -6,7 +6,7 @@ export const getIndentedSource = source => {
     lines.shift()
   }
 
-  let indentation = (matches = (/^[\s\t]+/).exec(lines[0])) !== null ? matches[0] : null
+  const indentation = (matches = (/^[\s\t]+/).exec(lines[0])) !== null ? matches[0] : null
 
   if (indentation) {
     lines = lines.map(line => {

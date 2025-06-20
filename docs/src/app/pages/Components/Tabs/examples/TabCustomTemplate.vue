@@ -1,14 +1,31 @@
 <template>
   <div>
     <md-tabs @md-changed="checkNewPosts">
-      <template slot="md-tab" slot-scope="{ tab }">
-        {{ tab.label }} <i class="badge" v-if="tab.data.badge">{{ tab.data.badge }}</i>
+      <template #md-tab="{ tab }">
+        {{ tab.label }} <i
+          v-if="tab.data.badge"
+          class="badge"
+        >{{ tab.data.badge }}</i>
       </template>
 
-      <md-tab id="tab-home" md-label="Home"></md-tab>
-      <md-tab id="tab-pages" md-label="Pages"></md-tab>
-      <md-tab id="tab-posts" md-label="Posts" :md-template-data="{ badge: newPosts }" @click="clearNewPosts"></md-tab>
-      <md-tab id="tab-favorites" md-label="Favorites"></md-tab>
+      <md-tab
+        id="tab-home"
+        md-label="Home"
+      />
+      <md-tab
+        id="tab-pages"
+        md-label="Pages"
+      />
+      <md-tab
+        id="tab-posts"
+        md-label="Posts"
+        :md-template-data="{ badge: newPosts }"
+        @click="clearNewPosts"
+      />
+      <md-tab
+        id="tab-favorites"
+        md-label="Favorites"
+      />
     </md-tabs>
   </div>
 </template>
@@ -20,6 +37,9 @@
       newPosts: 0,
       checkInterval: null
     }),
+    mounted () {
+      this.checkNewPosts()
+    },
     methods: {
       clearCheckPosts () {
         window.clearInterval(this.checkInterval)
@@ -41,9 +61,6 @@
           }, 1000)
         }
       }
-    },
-    mounted () {
-      this.checkNewPosts()
     }
   }
 </script>

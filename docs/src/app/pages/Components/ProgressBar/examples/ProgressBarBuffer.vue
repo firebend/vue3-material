@@ -1,15 +1,30 @@
 <template>
   <div>
-    <md-progress-bar md-mode="buffer" :md-value="amount" :md-buffer="buffer"></md-progress-bar>
-    <md-progress-bar class="md-accent" md-mode="buffer" :md-value="amount" :md-buffer="buffer"></md-progress-bar>
+    <md-progress-bar
+      md-mode="buffer"
+      :md-value="amount"
+      :md-buffer="buffer"
+    />
+    <md-progress-bar
+      class="md-accent"
+      md-mode="buffer"
+      :md-value="amount"
+      :md-buffer="buffer"
+    />
     <div>
       Progress <br>
-      <input type="range" v-model.number="amount"> {{ amount }}%
+      <input
+        v-model.number="amount"
+        type="range"
+      > {{ amount }}%
     </div>
 
     <div>
       Buffer <br>
-      <input type="range" v-model.number="buffer"> {{ buffer }}%
+      <input
+        v-model.number="buffer"
+        type="range"
+      > {{ buffer }}%
     </div>
   </div>
 </template>

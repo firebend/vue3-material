@@ -1,8 +1,8 @@
 <template>
   <div class="md-layout md-gutter">
-    <div class="md-layout-item"></div>
-    <div class="md-layout-item"></div>
-    <div class="md-layout-item"></div>
+    <div class="md-layout-item" />
+    <div class="md-layout-item" />
+    <div class="md-layout-item" />
   </div>
 </template>
 
@@ -22,7 +22,7 @@
       width: 100%;
       height: 100%;
       display: block;
-      background: md-get-palette-color(red, 200);
+      background: palette.md-get-palette-color(red, 200);
       content: " ";
     }
   }

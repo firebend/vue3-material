@@ -4,7 +4,10 @@
 <example src="./examples/ProgressBarQuery.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.progressBar.title')">
+  <page-container
+    centered
+    :title="$t('pages.progressBar.title')"
+  >
     <div class="page-container-section">
       <p>Progress indicators are visual indications of an app loading content.</p>
       <p>Progress bars have 4 types for each operation that your application may need: Determinate, Indeterminate, Query or Buffer.</p>
@@ -14,27 +17,44 @@
       <h2>Progress Bar</h2>
 
       <p>When indicators are determinate they indicate how long an operation will take when the percentage complete is detectable.</p>
-      <code-example title="Determinate" :component="examples['progress-bar-determinate']" />
+      <code-example
+        title="Determinate"
+        :component="examples['progress-bar-determinate']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>When indicators are indeterminate they request that the user wait while something finishes when it’s not necessary to indicate how long it will take.</p>
-      <code-example title="Indeterminate" :component="examples['progress-bar-indeterminate']" />
+      <code-example
+        title="Indeterminate"
+        :component="examples['progress-bar-indeterminate']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>When dealing with media content like streaming videos we can use progress bars to show the buffering progress indicator on a video.</p>
-      <code-example title="Buffer" :component="examples['progress-bar-buffer']" />
+      <code-example
+        title="Buffer"
+        :component="examples['progress-bar-buffer']"
+      />
     </div>
 
     <div class="page-container-section">
       <p>When searching or filtering a large amount of data, we can show a query progress bar. This will tell the user that some content is being retrieved.</p>
-      <code-example title="Query" :component="examples['progress-bar-query']" />
+      <code-example
+        title="Query"
+        :component="examples['progress-bar-query']"
+      />
 
       <api-item title="API - md-progress-bar">
         <p>The following options can be applied to all progress bars:</p>
 
-        <api-table :headings="props.headings" :props="props.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="props.headings"
+            :props="props.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

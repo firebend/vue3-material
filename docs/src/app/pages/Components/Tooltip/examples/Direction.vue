@@ -1,23 +1,43 @@
 <template>
   <div>
     <md-avatar>
-      <img src="/assets/examples/avatar.png" alt="Avatar">
-      <md-tooltip md-direction="top">Top</md-tooltip>
+      <img
+        src="assets/examples/avatar.png"
+        alt="Avatar"
+      >
+      <md-tooltip md-direction="top">
+        Top
+      </md-tooltip>
     </md-avatar>
 
     <md-avatar>
-      <img src="/assets/examples/avatar.png" alt="Avatar">
-      <md-tooltip md-direction="right">Right</md-tooltip>
+      <img
+        src="assets/examples/avatar.png"
+        alt="Avatar"
+      >
+      <md-tooltip md-direction="right">
+        Right
+      </md-tooltip>
     </md-avatar>
 
     <md-avatar>
-      <img src="/assets/examples/avatar.png" alt="Avatar">
-      <md-tooltip md-direction="bottom">Bottom</md-tooltip>
+      <img
+        src="assets/examples/avatar.png"
+        alt="Avatar"
+      >
+      <md-tooltip md-direction="bottom">
+        Bottom
+      </md-tooltip>
     </md-avatar>
 
     <md-avatar>
-      <img src="/assets/examples/avatar.png" alt="Avatar">
-      <md-tooltip md-direction="left">Left</md-tooltip>
+      <img
+        src="assets/examples/avatar.png"
+        alt="Avatar"
+      >
+      <md-tooltip md-direction="left">
+        Left
+      </md-tooltip>
     </md-avatar>
   </div>
 </template>

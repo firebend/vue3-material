@@ -1,15 +1,27 @@
 <template>
   <div>
     <div class="separator">
-      <md-avatar class="md-avatar-icon">A</md-avatar>
-      <md-avatar class="md-avatar-icon md-primary">A</md-avatar>
-      <md-avatar class="md-avatar-icon md-accent">A</md-avatar>
+      <md-avatar class="md-avatar-icon">
+        A
+      </md-avatar>
+      <md-avatar class="md-avatar-icon md-primary">
+        A
+      </md-avatar>
+      <md-avatar class="md-avatar-icon md-accent">
+        A
+      </md-avatar>
     </div>
 
     <div class="separator">
-      <md-avatar class="md-avatar-icon md-small">B</md-avatar>
-      <md-avatar class="md-avatar-icon md-small md-primary">B</md-avatar>
-      <md-avatar class="md-avatar-icon md-small md-accent">B</md-avatar>
+      <md-avatar class="md-avatar-icon md-small">
+        B
+      </md-avatar>
+      <md-avatar class="md-avatar-icon md-small md-primary">
+        B
+      </md-avatar>
+      <md-avatar class="md-avatar-icon md-small md-accent">
+        B
+      </md-avatar>
     </div>
 
     <div class="separator">

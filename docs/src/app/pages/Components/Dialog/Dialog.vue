@@ -4,63 +4,122 @@
 <example src="./examples/DialogPrompt.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.dialog.title')">
+  <page-container
+    centered
+    :title="$t('pages.dialog.title')"
+  >
     <div class="page-container-section">
       <p>Dialogs informs users about a specific task and may contain critical information, require decisions, or involve multiple tasks. The dialog component works with any plain html content. You can have tabs inside, all form components and many more.</p>
       <p>The component can be used with a custom markup, using the auxiliary components or with presets made by Vue Material. Those presets emulates the default Dialogs from Javascript, like confirm, alert and prompt.</p>
 
-      <note-block tip>To allow scrolling in content of modal you need to wrap your content in <code>md-dialog-content</code> component.</note-block>
-
+      <note-block tip>
+        To allow scrolling in content of modal you need to wrap your content in <code>md-dialog-content</code> component.
+      </note-block>
     </div>
     <div class="page-container-section">
-      <h2 id="dialog">Dialog</h2>
+      <h2 id="dialog">
+        Dialog
+      </h2>
 
       <p>The Dialog component can have any HTML markup inside. This allows you to create rich dialog content, like the details of a table row, for example:</p>
-      <code-example title="Custom Dialog Markup" :component="examples['dialog-custom']" />
+      <code-example
+        title="Custom Dialog Markup"
+        :component="examples['dialog-custom']"
+      />
 
       <api-item title="API - md-dialog">
         <p>The following options can be applied to any dialog, even on presets:</p>
 
-        <api-table :headings="dialog.props.headings" :props="dialog.props.props" slot="props" />
-        <api-table :headings="dialog.events.headings" :props="dialog.events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="dialog.props.headings"
+            :props="dialog.props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="dialog.events.headings"
+            :props="dialog.events.props"
+          />
+        </template>
       </api-item>
     </div>
 
     <div class="page-container-section">
-      <h2 id="alerts">Alerts</h2>
+      <h2 id="alerts">
+        Alerts
+      </h2>
 
-      <code-example title="Accepts custom HTML too!" :component="examples['dialog-alert']" />
+      <code-example
+        title="Accepts custom HTML too!"
+        :component="examples['dialog-alert']"
+      />
 
       <api-item title="API - md-dialog-alert">
         <p>The following props can be applied to alerts:</p>
 
-        <api-table :headings="alert.props.headings" :props="alert.props.props" slot="props" />
+        <template #props>
+          <api-table
+            :headings="alert.props.headings"
+            :props="alert.props.props"
+          />
+        </template>
       </api-item>
     </div>
 
     <div class="page-container-section">
-      <h2 id="confirms">Confirms</h2>
+      <h2 id="confirms">
+        Confirms
+      </h2>
 
-      <code-example title="Accepts custom HTML too!" :component="examples['dialog-confirm']" />
+      <code-example
+        title="Accepts custom HTML too!"
+        :component="examples['dialog-confirm']"
+      />
 
       <api-item title="API - md-dialog-confirm">
         <p>The following options can be applied to confirms:</p>
 
-        <api-table :headings="confirm.props.headings" :props="confirm.props.props" slot="props" />
-        <api-table :headings="confirm.events.headings" :props="confirm.events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="confirm.props.headings"
+            :props="confirm.props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="confirm.events.headings"
+            :props="confirm.events.props"
+          />
+        </template>
       </api-item>
     </div>
 
     <div class="page-container-section">
-      <h2 id="prompts">Prompts</h2>
+      <h2 id="prompts">
+        Prompts
+      </h2>
 
-      <code-example title="Look at the character count!" :component="examples['dialog-prompt']" />
+      <code-example
+        title="Look at the character count!"
+        :component="examples['dialog-prompt']"
+      />
 
       <api-item title="API - md-dialog-prompt">
         <p>The following options can be applied to prompts:</p>
 
-        <api-table :headings="prompt.props.headings" :props="prompt.props.props" slot="props" />
-        <api-table :headings="prompt.events.headings" :props="prompt.events.props" slot="events" />
+        <template #props>
+          <api-table
+            :headings="prompt.props.headings"
+            :props="prompt.props.props"
+          />
+        </template>
+        <template #events>
+          <api-table
+            :headings="prompt.events.headings"
+            :props="prompt.events.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

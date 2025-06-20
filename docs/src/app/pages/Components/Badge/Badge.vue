@@ -3,25 +3,46 @@
 <example src="./examples/Dense.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.badge.title')">
+  <page-container
+    centered
+    :title="$t('pages.badge.title')"
+  >
     <div class="page-container-section">
       <p>Small status descriptors for UI elements.</p>
     </div>
 
     <div class="page-container-section">
-
       <p>Some components like <b>button, avatar</b> needs to be wrapped with <code>md-badge</code> component.</p>
-      <code-example title="Example with buttons" :component="examples['buttons']" />
+      <code-example
+        title="Example with buttons"
+        :component="examples['buttons']"
+      />
 
-      <code-example title="Example with lists" :component="examples['lists']" />
+      <code-example
+        title="Example with lists"
+        :component="examples['lists']"
+      />
 
-      <code-example title="Dense" :component="examples['dense']" />
+      <code-example
+        title="Dense"
+        :component="examples['dense']"
+      />
 
       <api-item title="API - md-badge">
         <p>The following option can be applied to any badge:</p>
 
-        <api-table :headings="props.headings" :props="props.props" slot="props" />
-        <api-table :headings="classes.headings" :props="classes.props" slot="classes" />
+        <template #props>
+          <api-table
+            :headings="props.headings"
+            :props="props.props"
+          />
+        </template>
+        <template #classes>
+          <api-table
+            :headings="classes.headings"
+            :props="classes.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

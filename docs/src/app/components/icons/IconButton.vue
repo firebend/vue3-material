@@ -1,13 +1,22 @@
 <template>
-  <div class="icon-button" v-once>
-    <div class="square"></div>
-    <div class="circle"></div>
+  <div
+    v-once
+    class="icon-button"
+  >
+    <div class="square" />
+    <div class="circle" />
   </div>
 </template>
 
+<script>
+export default {
+  name: 'IconButton'
+}
+</script>
+
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
-  @import "vue-material/theme/engine";
+  @use "vue-material/components/MdAnimation/variables";
+  @use "vue-material/theme/palette";
 
   .icon-button {
     position: relative;
@@ -20,7 +29,7 @@
     top: 0;
     left: 0;
     border-radius: 2px;
-    border: 2px solid md-get-palette-color(blue, A200);
+    border: 2px solid palette.md-get-palette-color(blue, A200);
   }
 
   .circle {
@@ -30,8 +39,8 @@
     top: 45%;
     right: 0;
     border-radius: 50%;
-    border: 2px solid md-get-palette-color(lightgreen, A200);
-    transition: $md-transition-stand;
+    border: 2px solid palette.md-get-palette-color(lightgreen, A200);
+    transition: variables.$md-transition-stand;
     transform: translateZ(0);
 
     &:hover {
@@ -59,9 +68,3 @@
     }
   }
 </style>
-
-<script>
-export default {
-  name: 'IconButton'
-}
-</script>

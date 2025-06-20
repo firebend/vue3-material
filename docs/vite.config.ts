@@ -1,8 +1,8 @@
 /// <reference types='vitest' />
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
+import {defineConfig} from 'vite';
+import createVuePlugin from '@vitejs/plugin-vue';
+import {nxViteTsPaths} from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import {nxCopyAssetsPlugin} from '@nx/vite/plugins/nx-copy-assets.plugin';
 import path = require('path');
 
 export default defineConfig(() => ({
@@ -22,7 +22,19 @@ export default defineConfig(() => ({
       'vue-material': path.resolve(__dirname, '../packages/vue-material/src'),
     },
   },
-  plugins: [vue(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
+  plugins: [
+    createVuePlugin({
+      template: {
+        compilerOptions: {
+          compatConfig: {
+            MODE: 2
+          }
+        }
+      }
+    }),
+    nxViteTsPaths(),
+    nxCopyAssetsPlugin(['*.md'])
+  ],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],

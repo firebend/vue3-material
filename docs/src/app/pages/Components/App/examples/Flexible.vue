@@ -1,10 +1,16 @@
 <template>
   <div class="page-container">
-    <md-app md-waterfall md-mode="flexible">
+    <md-app
+      md-waterfall
+      md-mode="flexible"
+    >
       <md-app-toolbar class="md-large md-primary">
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
-            <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+            <md-button
+              class="md-icon-button"
+              @click="menuVisible = !menuVisible"
+            >
               <md-icon>menu</md-icon>
             </md-button>
           </div>
@@ -21,8 +27,13 @@
         </div>
       </md-app-toolbar>
 
-      <md-app-drawer :md-active.sync="menuVisible">
-        <md-toolbar class="md-transparent" md-elevation="0">Navigation</md-toolbar>
+      <md-app-drawer v-model:md-active="menuVisible">
+        <md-toolbar
+          class="md-transparent"
+          md-elevation="0"
+        >
+          Navigation
+        </md-toolbar>
 
         <md-list>
           <md-list-item>
@@ -68,6 +79,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'Flexible',
+  data: () => ({
+    menuVisible: false
+  })
+}
+</script>
+
 <style lang="scss" scoped>
   .md-app {
     max-height: 400px;
@@ -84,12 +104,3 @@
     max-width: calc(100vw - 125px);
   }
 </style>
-
-<script>
-export default {
-  name: 'Flexible',
-  data: () => ({
-    menuVisible: false
-  })
-}
-</script>

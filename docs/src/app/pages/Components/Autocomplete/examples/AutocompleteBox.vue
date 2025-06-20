@@ -4,7 +4,8 @@
       v-model="selectedEmployee"
       :md-options="employees"
       md-layout="box"
-      md-dense>
+      md-dense
+    >
       <label>Employees</label>
     </md-autocomplete>
 
@@ -17,10 +18,11 @@
         </div>
 
         <md-autocomplete
-          class="search"
           v-model="selectedEmployee"
+          class="search"
           :md-options="employees"
-          md-layout="box">
+          md-layout="box"
+        >
           <label>Search...</label>
         </md-autocomplete>
 

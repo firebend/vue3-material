@@ -1,16 +1,20 @@
 <template>
-  <md-content md-tag="section" md-theme="black" class="home-premium" id="premium">
+  <md-content
+    id="premium"
+    md-tag="section"
+    md-theme="black"
+    class="home-premium"
+  >
     <div class="page-wrapper">
-
       <div class="md-layout md-gutter md-alignment-top-left">
         <div class="md-layout-item md-small-size-100">
           <md-card class="md-accent">
-
-
             <md-card-header>
               <md-card-header-text>
                 <div class="md-title">
-                  <md-icon class="md-size-1x">system_update_alt</md-icon>
+                  <md-icon class="md-size-1x">
+                    system_update_alt
+                  </md-icon>
                   Installation
                 </div>
               </md-card-header-text>
@@ -18,19 +22,30 @@
 
             <md-card-content>
               You can install Vue Material through NPM or Yarn:
-              <code-example label="Shell" lang="shell">
+              <code-example
+                label="Shell"
+                lang="shell"
+              >
                 $ npm install vue-material --save
                 $ yarn add vue-material
               </code-example>
               <p>It's optional, but to have the best experience possible, use Roboto and Google Icons from Google CDN:</p>
-              <code-example label="HTML" lang="html">
+              <code-example
+                label="HTML"
+                lang="html"
+              >
                 &lt;link rel=&quot;stylesheet&quot; href=&quot;//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons&quot;&gt;
               </code-example>
-              <hr />
+              <hr>
             </md-card-content>
 
             <md-card-actions md-alignment="space-between">
-              <md-button class="md-primary" to="/getting-started">Read installation</md-button>
+              <md-button
+                class="md-primary"
+                to="/getting-started"
+              >
+                Read installation
+              </md-button>
             </md-card-actions>
           </md-card>
         </div>
@@ -40,7 +55,9 @@
             <md-card-header>
               <md-card-header-text>
                 <div class="md-title">
-                  <md-icon class="md-size-1x">pan_tool</md-icon>
+                  <md-icon class="md-size-1x">
+                    pan_tool
+                  </md-icon>
                   Usage
                 </div>
               </md-card-header-text>
@@ -59,23 +76,28 @@
                 Vue.use(MdContent)
                 Vue.use(MdTabs)
               </code-example>
-            <hr />
+              <hr>
             </md-card-content>
 
             <md-card-actions md-alignment="space-between">
-              <md-button class="md-primary" to="/getting-started">Explore the docs</md-button>
+              <md-button
+                class="md-primary"
+                to="/getting-started"
+              >
+                Explore the docs
+              </md-button>
             </md-card-actions>
           </md-card>
         </div>
 
         <div class="md-layout-item md-small-size-100">
           <md-card class="md-accent">
-
-
             <md-card-header>
               <md-card-header-text>
                 <div class="md-title">
-                  <md-icon class="md-size-1x">build</md-icon>
+                  <md-icon class="md-size-1x">
+                    build
+                  </md-icon>
                   Premium themes
                 </div>
               </md-card-header-text>
@@ -84,15 +106,23 @@
             <md-card-content>
               Take Vue Material to the next level with premium themes from Creative Tim.
               <a href="/premium-themes">
-                <img src="/assets/premium/premium-themes.png" class="themes" alt="Vue Material Dashboard PRO">
+                <img
+                  src="../../assets/premium/premium-themes.png"
+                  class="themes"
+                  alt="Vue Material Dashboard PRO"
+                >
               </a>
-              <hr />
-
+              <hr>
             </md-card-content>
 
 
             <md-card-actions md-alignment="space-between">
-              <md-button class="md-primary" to="/premium-themes">Browse Themes</md-button>
+              <md-button
+                class="md-primary"
+                to="/premium-themes"
+              >
+                Browse Themes
+              </md-button>
             </md-card-actions>
           </md-card>
         </div>
@@ -160,7 +190,7 @@
     font-size: 12px;
     line-height: 26px;
 
-    /deep/ .md-ripple {
+    :deep(.md-ripple) {
       padding: 0 10px !important;
     }
   }

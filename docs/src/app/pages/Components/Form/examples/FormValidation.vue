@@ -1,9 +1,15 @@
 <template>
   <div>
-    <form novalidate class="md-layout" @submit.prevent="validateUser">
+    <form
+      novalidate
+      class="md-layout"
+      @submit.prevent="validateUser"
+    >
       <md-card class="md-layout-item md-size-50 md-small-size-100">
         <md-card-header>
-          <div class="md-title">Users</div>
+          <div class="md-title">
+            Users
+          </div>
         </md-card-header>
 
         <md-card-content>
@@ -11,18 +17,42 @@
             <div class="md-layout-item md-small-size-100">
               <md-field :class="getValidationClass('firstName')">
                 <label for="first-name">First Name</label>
-                <md-input name="first-name" id="first-name" autocomplete="given-name" v-model="form.firstName" :disabled="sending" />
-                <span class="md-error" v-if="!$v.form.firstName.required">The first name is required</span>
-                <span class="md-error" v-else-if="!$v.form.firstName.minlength">Invalid first name</span>
+                <md-input
+                  id="first-name"
+                  v-model="form.firstName"
+                  name="first-name"
+                  autocomplete="given-name"
+                  :disabled="sending"
+                />
+                <span
+                  v-if="!$v.form.firstName.required"
+                  class="md-error"
+                >The first name is required</span>
+                <span
+                  v-else-if="!$v.form.firstName.minlength"
+                  class="md-error"
+                >Invalid first name</span>
               </md-field>
             </div>
 
             <div class="md-layout-item md-small-size-100">
               <md-field :class="getValidationClass('lastName')">
                 <label for="last-name">Last Name</label>
-                <md-input name="last-name" id="last-name" autocomplete="family-name" v-model="form.lastName" :disabled="sending" />
-                <span class="md-error" v-if="!$v.form.lastName.required">The last name is required</span>
-                <span class="md-error" v-else-if="!$v.form.lastName.minlength">Invalid last name</span>
+                <md-input
+                  id="last-name"
+                  v-model="form.lastName"
+                  name="last-name"
+                  autocomplete="family-name"
+                  :disabled="sending"
+                />
+                <span
+                  v-if="!$v.form.lastName.required"
+                  class="md-error"
+                >The last name is required</span>
+                <span
+                  v-else-if="!$v.form.lastName.minlength"
+                  class="md-error"
+                >Invalid last name</span>
               </md-field>
             </div>
           </div>
@@ -31,10 +61,20 @@
             <div class="md-layout-item md-small-size-100">
               <md-field :class="getValidationClass('gender')">
                 <label for="gender">Gender</label>
-                <md-select name="gender" id="gender" v-model="form.gender" md-dense :disabled="sending">
-                  <md-option></md-option>
-                  <md-option value="M">M</md-option>
-                  <md-option value="F">F</md-option>
+                <md-select
+                  id="gender"
+                  v-model="form.gender"
+                  name="gender"
+                  md-dense
+                  :disabled="sending"
+                >
+                  <md-option />
+                  <md-option value="M">
+                    M
+                  </md-option>
+                  <md-option value="F">
+                    F
+                  </md-option>
                 </md-select>
                 <span class="md-error">The gender is required</span>
               </md-field>
@@ -43,29 +83,66 @@
             <div class="md-layout-item md-small-size-100">
               <md-field :class="getValidationClass('age')">
                 <label for="age">Age</label>
-                <md-input type="number" id="age" name="age" autocomplete="age" v-model="form.age" :disabled="sending" />
-                <span class="md-error" v-if="!$v.form.age.required">The age is required</span>
-                <span class="md-error" v-else-if="!$v.form.age.maxlength">Invalid age</span>
+                <md-input
+                  id="age"
+                  v-model="form.age"
+                  type="number"
+                  name="age"
+                  autocomplete="age"
+                  :disabled="sending"
+                />
+                <span
+                  v-if="!$v.form.age.required"
+                  class="md-error"
+                >The age is required</span>
+                <span
+                  v-else-if="!$v.form.age.maxlength"
+                  class="md-error"
+                >Invalid age</span>
               </md-field>
             </div>
           </div>
 
           <md-field :class="getValidationClass('email')">
             <label for="email">Email</label>
-            <md-input type="email" name="email" id="email" autocomplete="email" v-model="form.email" :disabled="sending" />
-            <span class="md-error" v-if="!$v.form.email.required">The email is required</span>
-            <span class="md-error" v-else-if="!$v.form.email.email">Invalid email</span>
+            <md-input
+              id="email"
+              v-model="form.email"
+              type="email"
+              name="email"
+              autocomplete="email"
+              :disabled="sending"
+            />
+            <span
+              v-if="!$v.form.email.required"
+              class="md-error"
+            >The email is required</span>
+            <span
+              v-else-if="!$v.form.email.email"
+              class="md-error"
+            >Invalid email</span>
           </md-field>
         </md-card-content>
 
-        <md-progress-bar md-mode="indeterminate" v-if="sending" />
+        <md-progress-bar
+          v-if="sending"
+          md-mode="indeterminate"
+        />
 
         <md-card-actions>
-          <md-button type="submit" class="md-primary" :disabled="sending">Create user</md-button>
+          <md-button
+            type="submit"
+            class="md-primary"
+            :disabled="sending"
+          >
+            Create user
+          </md-button>
         </md-card-actions>
       </md-card>
 
-      <md-snackbar :md-active.sync="userSaved">The user {{ lastUser }} was saved with success!</md-snackbar>
+      <md-snackbar v-model:md-active="userSaved">
+        The user {{ lastUser }} was saved with success!
+      </md-snackbar>
     </form>
   </div>
 </template>

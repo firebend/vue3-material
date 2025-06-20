@@ -2,23 +2,31 @@
   <div>
     <md-field>
       <label>No error</label>
-      <md-input v-model="noError"></md-input>
+      <md-input v-model="noError" />
     </md-field>
 
     <md-field :class="messageClass">
       <label>Required Field</label>
-      <md-input v-model="required" required></md-input>
+      <md-input
+        v-model="required"
+        required
+      />
       <span class="md-error">There is an error</span>
     </md-field>
 
     <md-field :class="messageClass">
       <label>Textarea</label>
-      <md-textarea v-model="textarea" required></md-textarea>
+      <md-textarea
+        v-model="textarea"
+        required
+      />
       <span class="md-helper-text">Helper text</span>
       <span class="md-error">There is an error</span>
     </md-field>
 
-    <md-switch v-model="hasMessages">{{ !hasMessages ? 'Show' : 'Hide' }} Errors</md-switch>
+    <md-switch v-model="hasMessages">
+      {{ !hasMessages ? 'Show' : 'Hide' }} Errors
+    </md-switch>
   </div>
 </template>
 

@@ -9,15 +9,19 @@
         v-for="slot in slots"
         :key="slot"
         :class="{ 'md-primary': currentSlot === slot }"
-        @click="currentSlot = slot">
-        {{ slot | capitalize | dashToSpace }}
+        @click="currentSlot = slot"
+      >
+        {{ capitalize(dashToSpace(slot)) }}
       </md-button>
     </div>
 
-    <div class="api-item-content" v-for="slot in filteredSlots" :key="slot">
+    <div
+      v-for="slot in filteredSlots"
+      :key="slot"
+      class="api-item-content"
+    >
       <slot :name="slot" />
     </div>
-
   </div>
 </template>
 
@@ -26,14 +30,6 @@
     name: 'ApiItem',
     props: {
       title: String
-    },
-    filters: {
-      capitalize (input) {
-        return input.replace(/(?:^|\s)\S/g, transformed => transformed.toUpperCase())
-      },
-      dashToSpace (input) {
-        return input.replace(/-/g, ' ')
-      }
     },
     data: () => ({
       currentSlot: null
@@ -48,6 +44,14 @@
     },
     created () {
       this.currentSlot = this.slots[0]
+    },
+    methods: {
+      capitalize (input) {
+        return input.replace(/(?:^|\s)\S/g, transformed => transformed.toUpperCase())
+      },
+      dashToSpace (input) {
+        return input.replace(/-/g, ' ')
+      }
     }
   }
 </script>

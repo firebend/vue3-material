@@ -3,37 +3,83 @@
     <div class="block">
       <h3>Date</h3>
       <md-datepicker v-model="date" />
-      <div class="value">value: {{date}}</div>
+      <div class="value">
+        value: {{ date }}
+      </div>
     </div>
     <md-divider />
     <div class="block">
       <h3>String</h3>
       <md-datepicker v-model="string" />
-      <div class="value">value: {{string}}</div>
+      <div class="value">
+        value: {{ string }}
+      </div>
     </div>
     <md-divider />
     <div class="block">
       <h3>Number</h3>
       <md-datepicker v-model="number" />
-      <div class="value">value: {{number}}</div>
+      <div class="value">
+        value: {{ number }}
+      </div>
     </div>
     <md-divider />
     <div class="block">
       <h3>Dynamic By Model</h3>
-      <md-radio :model="type" value="date" @change="toDate">Date</md-radio>
-      <md-radio :model="type" value="string" @change="toString">String</md-radio>
-      <md-radio :model="type" value="number" @change="toNumber">Number</md-radio>
+      <md-radio
+        :model="type"
+        value="date"
+        @change="toDate"
+      >
+        Date
+      </md-radio>
+      <md-radio
+        :model="type"
+        value="string"
+        @change="toString"
+      >
+        String
+      </md-radio>
+      <md-radio
+        :model="type"
+        value="number"
+        @change="toNumber"
+      >
+        Number
+      </md-radio>
       <md-datepicker v-model="dynamicByModel" />
-      <div class="value">value: {{dynamicByModel}}</div>
+      <div class="value">
+        value: {{ dynamicByModel }}
+      </div>
     </div>
     <md-divider />
     <div class="block">
       <h3>Dynamic By <code>:md-model-type</code></h3>
-      <md-radio v-model="mdTypeValue" value="date">Date</md-radio>
-      <md-radio v-model="mdTypeValue" value="string">String</md-radio>
-      <md-radio v-model="mdTypeValue" value="number">Number</md-radio>
-      <md-datepicker v-model="dynamicByMdType" :md-model-type="mdType" />
-      <div class="value">value: {{dynamicByMdType}}</div>
+      <md-radio
+        v-model="mdTypeValue"
+        value="date"
+      >
+        Date
+      </md-radio>
+      <md-radio
+        v-model="mdTypeValue"
+        value="string"
+      >
+        String
+      </md-radio>
+      <md-radio
+        v-model="mdTypeValue"
+        value="number"
+      >
+        Number
+      </md-radio>
+      <md-datepicker
+        v-model="dynamicByMdType"
+        :md-model-type="mdType"
+      />
+      <div class="value">
+        value: {{ dynamicByMdType }}
+      </div>
     </div>
   </div>
 </template>
@@ -67,7 +113,7 @@
           this.$material.locale.firstDayOfAWeek = val
         }
       },
-      // eslint-disable-next-line
+       
       type () {
         if (typeof this.dynamicByModel === 'object' && this.dynamicByModel instanceof Date && isValid(this.dynamicByModel)) {
           return 'date'

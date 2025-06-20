@@ -45,7 +45,7 @@
       height: 100%;
       padding: 8px;
       display: block;
-      background: md-get-palette-color(teal, 200);
+      background: palette.md-get-palette-color(teal, 200);
     }
   }
 </style>

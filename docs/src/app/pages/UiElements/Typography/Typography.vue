@@ -1,29 +1,58 @@
 <example src="./examples/TypographyExample.vue" />
 
 <template>
-  <page-container centered :title="$t('pages.typography.title')">
+  <page-container
+    centered
+    :title="$t('pages.typography.title')"
+  >
     <div class="page-container-section">
-      <h2 id="typeface">Typeface</h2>
-      <p>Roboto has been refined extensively to work across the wider set of supported platforms. It is slightly wider and rounder, giving it greater clarity and making it more optimistic. Vue Material use Roboto by default, with Noto Sans as a fallback. To get up and running with Roboto font, just install it from <a href="https://fonts.google.com/specimen/Roboto" target="_blank">Google Fonts</a>. Or install it from the following snippet:</p>
-      <code-example title="Roboto Font" label="HTML" lang="xml">
+      <h2 id="typeface">
+        Typeface
+      </h2>
+      <p>
+        Roboto has been refined extensively to work across the wider set of supported platforms. It is slightly wider and rounder, giving it greater clarity and making it more optimistic. Vue Material use Roboto by default, with Noto Sans as a fallback. To get up and running with Roboto font, just install it from <a
+          href="https://fonts.google.com/specimen/Roboto"
+          target="_blank"
+        >Google Fonts</a>. Or install it from the following snippet:
+      </p>
+      <code-example
+        title="Roboto Font"
+        label="HTML"
+        lang="xml"
+      >
         &lt;link rel=&quot;stylesheet&quot; href=&quot;//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic&quot;&gt;
       </code-example>
     </div>
 
     <div class="page-container-section">
-      <h2 id="styles">Styles</h2>
+      <h2 id="styles">
+        Styles
+      </h2>
       <p>Too many type sizes and styles at once can wreck any layout. A typographic scale has a limited set of type sizes that work well together along with the layout grid.</p>
-      <p>The <a href="https://material.io/guidelines/style/typography.html#typography-styles" target="_blank">sizes and styles</a> balance content density and reading comfort under typical usage conditions. They are all based on simple classes that gives the styles and works fine with dark themes. Look:</p>
+      <p>
+        The <a
+          href="https://material.io/guidelines/style/typography.html#typography-styles"
+          target="_blank"
+        >sizes and styles</a> balance content density and reading comfort under typical usage conditions. They are all based on simple classes that gives the styles and works fine with dark themes. Look:
+      </p>
       <note-block>The <code>a</code> tag create a link style and is the only that is affected globally. It will be automatically themed using the accent color.</note-block>
     </div>
 
     <div class="page-container-section">
-      <code-example title="Typography" :component="examples['typography-example']" />
+      <code-example
+        title="Typography"
+        :component="examples['typography-example']"
+      />
 
       <api-item title="API">
         <p>The following classes can be applied to any HTML element:</p>
 
-        <api-table :headings="classes.headings" :props="classes.props" slot="classes" />
+        <template #classes>
+          <api-table
+            :headings="classes.headings"
+            :props="classes.props"
+          />
+        </template>
       </api-item>
     </div>
   </page-container>

@@ -28,14 +28,14 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-  small {
-    display: block;
-  }
-</style>
-
 <script>
 export default {
   name: 'FloatingButtons'
 }
 </script>
+
+<style lang="scss" scoped>
+  small {
+    display: block;
+  }
+</style>
