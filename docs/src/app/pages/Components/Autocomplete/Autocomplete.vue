@@ -33,7 +33,7 @@
         Trigger
       </h2>
 
-      <p>By default the suggestions will appear along with a focus trigger. If you want something less intrusive, you can disable this behaviour by canceling the focus event. If this, the suggestions will appear right after a keystroke:</p>
+      <p>By default, the suggestions will appear along with a focus trigger. If you want something less intrusive, you can disable this behaviour by canceling the focus event. If this, the suggestions will appear right after a keystroke:</p>
       <code-example
         title="Focus vs Input"
         :component="examples['autocomplete-trigger']"

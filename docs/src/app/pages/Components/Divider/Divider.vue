@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import examples from 'docs-mixins/docsExample'
+import examples from '../../../mixins/docsExample'
 
 export default {
   name: 'DocDivider',

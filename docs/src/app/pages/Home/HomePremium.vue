@@ -143,12 +143,12 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
-  @import "vue-material/components/MdLayout/mixins";
+  @use "vue-material/components/MdAnimation/variables";
+  @use "vue-material/components/MdLayout/mixins";
 
-  @import "vue-material/theme/engine";
+  @use "vue-material/theme/engine";
 
-  @include md-register-theme("premium", (
+  @include engine.md-register-theme("premium", (
     primary: #448aff,
     accent: #fff
   ));
@@ -162,7 +162,7 @@
     width: calc(100% + 32px);
 
     .md-layout-item {
-      @include md-layout-small {
+      @include mixins.md-layout-small {
         margin-top: 16px;
       }
     }
@@ -219,7 +219,7 @@
       }
     }
 
-    >>>.code-block code{
+    :deep(.code-block) code{
       font-size: 12px;
     }
 

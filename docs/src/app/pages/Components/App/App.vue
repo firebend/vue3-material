@@ -11,22 +11,22 @@
     :title="$t('pages.app.title')"
   >
     <div class="page-container-section">
-      <i18n
-        path="pages.app.intro.desc1"
+      <i18n-t
+        keypath="pages.app.intro.desc1"
         tag="p"
       />
-      <i18n
-        path="pages.app.intro.desc2"
+      <i18n-t
+        keypath="pages.app.intro.desc2"
         tag="p"
       >
         <code>md-app</code>
-      </i18n>
-      <i18n
-        path="pages.app.intro.desc3"
+      </i18n-t>
+      <i18n-t
+        keypath="pages.app.intro.desc3"
         tag="p"
       />
-      <i18n
-        path="pages.app.intro.desc4"
+      <i18n-t
+        keypath="pages.app.intro.desc4"
         tag="p"
       >
         <code>md-app</code>
@@ -36,7 +36,7 @@
         <code>md-toolbar</code>
         <code>md-drawer</code>
         <code>md-content</code>
-      </i18n>
+      </i18n-t>
     </div>
 
     <div class="page-container-section">
@@ -45,13 +45,13 @@
       </h2>
 
       <p>{{ $t('pages.app.regular.desc1') }}</p>
-      <i18n
+      <i18n-t
         tag="note-block"
         tip
-        path="pages.app.regular.desc2"
+        keypath="pages.app.regular.desc2"
       >
         <code>md-app</code>
-      </i18n>
+      </i18n-t>
       <code-example
         :title="$t('pages.app.regular.default')"
         :component="examples['normal']"
@@ -144,43 +144,43 @@
 
     <div class="page-container-section">
       <api-item title="API - md-app-toolbar">
-        <i18n
-          path="pages.app.apiToolbar.desc"
+        <i18n-t
+          keypath="pages.app.apiToolbar.desc"
           tag="p"
         >
           <code>md-toolbar</code>
           <router-link to="/components/toolbar">
             {{ $t('pages.app.apiToolbar.page') }}
           </router-link>
-        </i18n>
+        </i18n-t>
       </api-item>
     </div>
 
     <div class="page-container-section">
       <api-item title="API - md-app-drawer">
-        <i18n
-          path="pages.app.apiDrawer.desc"
+        <i18n-t
+          keypath="pages.app.apiDrawer.desc"
           tag="p"
         >
           <code>md-drawer</code>
           <router-link to="/components/drawer">
             {{ $t('pages.app.apiDrawer.page') }}
           </router-link>
-        </i18n>
+        </i18n-t>
       </api-item>
     </div>
 
     <div class="page-container-section">
       <api-item title="API - md-app-content">
-        <i18n
-          path="pages.app.apiContent.desc"
+        <i18n-t
+          keypath="pages.app.apiContent.desc"
           tag="p"
         >
           <code>md-content</code>
           <router-link to="/components/content">
             {{ $t('pages.app.apiContent.page') }}
           </router-link>
-        </i18n>
+        </i18n-t>
       </api-item>
     </div>
   </page-container>

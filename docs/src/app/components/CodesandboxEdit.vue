@@ -11,12 +11,12 @@
     >
       <md-icon>launch</md-icon>
       <md-tooltip md-theme="default">
-        Open in sandbox
+        {{ $t('components.code.openInSandbox') }}
       </md-tooltip>
     </md-button>
 
     <input
-      v-model="parameters"
+      :value="parameters"
       type="hidden"
       name="parameters"
     >
@@ -28,105 +28,108 @@
   </form>
 </template>
 
-<script>
-const html = `
-  <!DOCTYPE html>
-  <html>
+<script setup>
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { getParameters } from 'codesandbox/lib/api/define';
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
-    <title>CodeSandbox Vue Material</title>
-  </head>
+const { t } = useI18n();
 
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
-
-  </html>
-  `
-const index = `
-  import Vue from 'vue'
-  import App from './App'
-  
-  
-  //... Add Vue-Material Specs
-
-  import VueMaterial from 'vue-material'
-  import 'vue-material/dist/vue-material.min.css'
-  import 'vue-material/dist/theme/default.css'
-
-  Vue.config.productionTip = false
-  Vue.use(VueMaterial)
-
-  new Vue({
-    el: '#app',
-    components: { App },
-    template: '<App/>'
-  })
-  `
-const vueConfig = `module.exports = {
-      runtimeCompiler: true
-  };
-  `
-
-import { getParameters } from "codesandbox/lib/api/define"
-
-export default {
-  name: "CodesandboxEdit",
-  props: {
-    component: Object,
-    title: String
+const props = defineProps({
+  component: {
+    type: Object,
+    required: true
   },
-  computed: {
-    source () {
-      return this.component.source.replace(
-        /src="\/assets/g,
-        'src="https://vuematerial.io/assets'
-      )
-    },
-    parameters () {
-      return getParameters({
-        files: {
-          "package.json": {
-            content: {
-              name: `Vue Material - ${this.title}`,
-              keywords: ["vue-material", "material-design", "vue"],
-              version: "0.0.1",
-              private: true,
-              scripts: {
-                serve: "vue-cli-service serve",
-                build: "vue-cli-service build",
-                lint: "vue-cli-service lint"
-              },
-              dependencies: {
-                vue: "^2.6.11",
-                "vue-material": "1.0.0-beta-15"
-              },
-              devDependencies: {
-                "@vue/cli-service": "~4.5.0"
-              }
-            }
+  title: {
+    type: String,
+    default: 'Vue Material Example'
+  }
+});
+
+const html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
+  <title>CodeSandbox Vue Material</title>
+</head>
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+</html>`;
+
+const index = `
+import { createApp } from 'vue';
+import App from './App.vue';
+import VueMaterial from 'vue-material';
+import 'vue-material/dist/vue-material.min.css';
+import 'vue-material/dist/theme/default.css';
+
+const app = createApp(App);
+app.use(VueMaterial);
+app.mount('#app');
+`;
+
+const vueConfig = `module.exports = {
+  runtimeCompiler: true
+};
+`;
+
+const processedSource = computed(() => {
+  if (!props.component?.source) return '';
+  return props.component.source
+  //   .replace(
+  //   /src="\/assets/g,
+  //   'src="https://vuematerial.io/assets'
+  // );
+});
+
+const parameters = computed(() => {
+  return getParameters({
+    files: {
+      'package.json': {
+        content: {
+          name: `Vue Material - ${props.title}`,
+          version: '1.0.0',
+          private: true,
+          scripts: {
+            serve: 'vite',
+            build: 'vite build',
+            preview: 'vite preview',
+            lint: 'eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore'
           },
-          "/src/main.js": {
-            content: index
+          dependencies: {
+            'vue': '^3.3.0',
+            'vue-material': 'latest',
+            'core-js': '^3.8.3'
           },
-          "/public/index.html": {
-            content: html
-          },
-          "/src/App.vue": {
-            content: this.source
-          },
-          "vue.config.js": {
-            content: vueConfig
+          devDependencies: {
+            '@vitejs/plugin-vue': '^4.0.0',
+            '@vue/compiler-sfc': '^3.3.0',
+            'eslint': '^8.22.0',
+            'eslint-plugin-vue': '^9.0.0',
+            'vite': '^4.0.0'
           }
         }
-      })
+      },
+      'index.html': {
+        content: html.trim()
+      },
+      'src/App.vue': {
+        content: processedSource.value
+      },
+      'src/main.js': {
+        content: index.trim()
+      },
+      'vite.config.js': {
+        content: vueConfig.trim()
+      }
     }
-  }
-}
+  });
+});
 </script>
 
 <style lang="scss" scoped>

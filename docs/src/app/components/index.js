@@ -13,15 +13,17 @@ import ApiItem from './ApiItem.vue'
 import ApiTable from './ApiTable/ApiTable.vue'
 import NoteBlock from './NoteBlock/NoteBlock.vue'
 
-Vue.component(PageContainer.name, PageContainer)
-Vue.component(SplashContainer.name, SplashContainer)
-Vue.component(LogoVueMaterial.name, LogoVueMaterial)
-Vue.component(CodeLoading.name, CodeLoading)
-Vue.component(CodeBlock.name, CodeBlock)
-Vue.component(CodeExample.name, CodeExample)
-Vue.component(CodesandboxEdit.name, CodesandboxEdit)
-Vue.component(GridLayout.name, GridLayout)
-Vue.component(GridLayoutItem.name, GridLayoutItem)
-Vue.component(ApiItem.name, ApiItem)
-Vue.component(ApiTable.name, ApiTable)
-Vue.component(NoteBlock.name, NoteBlock)
+export function install(app) {
+  app.component(PageContainer.name, PageContainer)
+  app.component(SplashContainer.name, SplashContainer)
+  app.component(LogoVueMaterial.name, LogoVueMaterial)
+  app.component(CodeLoading.name, CodeLoading)
+  app.component("code-block", CodeBlock)
+  app.component("code-example", CodeExample)
+  app.component(CodesandboxEdit.name, CodesandboxEdit)
+  app.component(GridLayout.name, GridLayout)
+  app.component(GridLayoutItem.name, GridLayoutItem)
+  app.component(ApiItem.name, ApiItem)
+  app.component(ApiTable.name, ApiTable)
+  app.component(NoteBlock.name, NoteBlock)
+}

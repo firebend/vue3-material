@@ -42,8 +42,8 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
-  @import "vue-material/components/MdLayout/mixins";
+  @use "vue-material/components/MdAnimation/variables";
+  @use "vue-material/components/MdLayout/mixins";
 
   .home-features {
     margin-top: 60px;
@@ -54,7 +54,7 @@
       margin-top: 120px;
     }
 
-    @include md-layout-xsmall {
+    @include mixins.md-layout-xsmall {
       margin-top: 60px;
     }
   }
@@ -62,7 +62,7 @@
   .home-feature {
     margin-bottom: 16px;
 
-    @include md-layout-xsmall {
+    @include mixins.md-layout-xsmall {
       text-align: center;
     }
 

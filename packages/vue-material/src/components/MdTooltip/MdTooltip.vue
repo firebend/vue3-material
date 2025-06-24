@@ -71,7 +71,7 @@
     mounted () {
       this.$nextTick().then(() => {
         this.shouldRender = this.mdActive
-        this.targetEl = this._vnode.componentInstance.originalParentEl
+        this.targetEl = this._vnode?.componentInstance?.originalParentEl
 
         if (this.targetEl) {
           this.targetEl.addEventListener('mouseenter', this.show, false)

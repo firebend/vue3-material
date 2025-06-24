@@ -14,7 +14,7 @@
       >
         <md-icon>code</md-icon>
         <md-tooltip md-theme="default">
-          Code
+          {{ t('components.code.code') }}
         </md-tooltip>
       </md-button>
       <codesandbox-edit
@@ -30,7 +30,7 @@
         :label="label"
         :lang="lang"
       >
-        <slot>{{ component.source }}</slot>
+        {{ component.source }}
       </code-block>
 
       <md-content
@@ -49,7 +49,7 @@
         >
           <md-icon>invert_colors</md-icon>
           <md-tooltip md-direction="top">
-            Invert Colors
+            {{ t('components.code.invertColors') }}
           </md-tooltip>
         </md-button>
       </md-content>
@@ -57,56 +57,59 @@
   </div>
 </template>
 
-<script>
-  import { mapState } from 'vuex'
+<script setup>
+import { ref, computed, watch } from 'vue';
+import { useStore } from 'vuex';
+import { useI18n } from 'vue-i18n';
+import CodeBlock from "./CodeBlock.vue";
+import CodesandboxEdit from "./CodesandboxEdit.vue";
 
-  export default {
-    name: 'CodeExample',
-    props: {
-      component: {
-        type: Object,
-        default: () => ({})
-      },
-      title: String,
-      label: {
-        type: String,
-        default: 'Vue'
-      },
-      lang: String
-    },
-    data: () => ({
-      showCode: false,
-      isThemeDark: false
-    }),
-    computed: {
-      ...mapState({
-        currentTheme: 'theme'
-      }),
-      theme () {
-        if (this.isThemeDark) {
-          return this.getThemeName('dark')
-        }
-
-        return this.getThemeName('light')
-      }
-    },
-    watch: {
-      currentTheme (theme) {
-        this.isThemeDark = this.currentTheme.includes('dark')
-      }
-    },
-    methods: {
-      getThemeName (baseName) {
-        return `demo-${baseName}`
-      },
-      toggleCode () {
-        this.showCode = !this.showCode
-      },
-      toggleTheme () {
-        this.isThemeDark = !this.isThemeDark
-      }
-    }
+const props = defineProps({
+  component: {
+    type: Object,
+    default: () => ({})
+  },
+  title: {
+    type: String,
+    default: ''
+  },
+  label: {
+    type: String,
+    default: 'Vue'
+  },
+  lang: {
+    type: String,
+    default: 'vue'
   }
+});
+
+const { t } = useI18n();
+const store = useStore();
+const showCode = ref(false);
+const isThemeDark = ref(false);
+
+// Computed
+const currentTheme = computed(() => store.state.theme);
+
+const theme = computed(() => {
+  const baseName = isThemeDark.value ? 'dark' : 'light';
+  return `demo-${baseName}`;
+});
+
+// Watchers
+watch(currentTheme, (newTheme) => {
+  isThemeDark.value = newTheme.includes('dark');
+}, { immediate: true });
+
+// Methods
+const toggleCode = () => {
+  showCode.value = !showCode.value;
+  console.log(props.component?.source);
+};
+
+const toggleTheme = () => {
+  isThemeDark.value = !isThemeDark.value;
+};
 </script>
 
 <style lang="scss" scoped>

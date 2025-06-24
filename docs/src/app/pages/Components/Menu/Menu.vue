@@ -104,7 +104,7 @@
 </template>
 
 <script>
-  import examples from 'docs-mixins/docsExample'
+  import examples from '../../../mixins/docsExample'
   import MdInteractionEvents from '../../core/utils/MdInteractionEvents'
 
   function getEventNames () {

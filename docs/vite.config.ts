@@ -1,9 +1,10 @@
 /// <reference types='vitest' />
 import {defineConfig} from 'vite';
-import createVuePlugin from '@vitejs/plugin-vue';
+import vue from '@vitejs/plugin-vue';
 import {nxViteTsPaths} from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import {nxCopyAssetsPlugin} from '@nx/vite/plugins/nx-copy-assets.plugin';
 import path = require('path');
+import componentExamplePlugin from './plugins/component-example-plugin';
 
 export default defineConfig(() => ({
   root: __dirname,
@@ -20,18 +21,20 @@ export default defineConfig(() => ({
     alias: {
       vue: '@vue/compat',
       'vue-material': path.resolve(__dirname, '../packages/vue-material/src'),
+      '@': path.resolve(__dirname, 'src/app'),
     },
   },
   plugins: [
-    createVuePlugin({
+    vue({
       template: {
         compilerOptions: {
           compatConfig: {
             MODE: 2
           }
         }
-      }
+      },
     }),
+    componentExamplePlugin,
     nxViteTsPaths(),
     nxCopyAssetsPlugin(['*.md'])
   ],
@@ -45,6 +48,14 @@ export default defineConfig(() => ({
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // TODO fix deprecations
+        silenceDeprecations: ['legacy-js-api', 'new-global', 'import', 'bogus-combinators'],
+      },
     },
   },
 }));

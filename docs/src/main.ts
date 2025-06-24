@@ -13,7 +13,7 @@ import App from './app/App.vue'
 import { i18n, router } from './app/config'
 import store from './app/store'
 import './app/banner'
-import './app/components'
+import {install as installComponents} from './app/components'
 
 import { sync } from 'vuex-router-sync'
 
@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Register global component (vue-toc)
   app.component('VueToc', VueToc)
+  installComponents(app)
 
   // Mount the app
   router.isReady().then(() => {

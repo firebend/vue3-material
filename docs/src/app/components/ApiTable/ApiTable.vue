@@ -80,9 +80,10 @@
 <style lang="scss" scoped>
   @use "vue-material/components/MdAnimation/variables";
   @use "vue-material/theme/palette";
+  @use "sass:color";
 
   $bg-color: palette.md-get-palette-color(grey, 200);
-  $border-color: darken($bg-color, 3%);
+  $border-color: color.adjust($bg-color, $lightness: -3%);
 
   .api-table {
     padding-bottom: 16px;
@@ -148,14 +149,14 @@
     color: palette.md-get-palette-color(red, A200);
     font-family: 'Roboto Mono', monospace;
 
-    >>> span {
+    :deep(span) {
       color: palette.md-get-palette-color(blue, A200);
     }
   }
 
   .description,
   .prop-name {
-    >>> code {
+    :deep(code) {
       color: palette.md-get-palette-color(red, A200);
       font-family: 'Roboto Mono', monospace;
     }

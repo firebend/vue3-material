@@ -147,7 +147,7 @@
 </template>
 
 <script>
-  import examples from 'docs-mixins/docsExample'
+  import examples from '../../../mixins/docsExample'
 
   const TAB_ID_TYPE = 'String|Number'
 

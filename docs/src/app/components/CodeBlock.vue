@@ -7,10 +7,14 @@
       class="code-block-wrapper md-scrollbar md-theme-dark"
       :style="{ 'max-height': height }"
     >
-      <pre><code
-ref="block"
-                 :class="lang"
-><slot v-pre /></code></pre>
+      <pre>
+        <code
+          ref="codeBlock"
+          :class="lang"
+        >
+          <slot></slot>
+        </code>
+      </pre>
 
       <span
         class="copy-message"
@@ -19,72 +23,77 @@ ref="block"
     </div>
 
     <md-button
-      ref="copy"
+      ref="copyButton"
       class="md-raised md-accent md-dense"
+      @click="copyToClipboard"
     >
       {{ $t('components.code.copy') }}
     </md-button>
   </div>
 </template>
 
-<script>
-import highlight from 'highlight.js'
-import highlightSCSS from 'highlight.js/lib/languages/scss'
-import highlightXML from 'highlight.js/lib/languages/xml'
-import highlightJavascript from 'highlight.js/lib/languages/javascript'
-import highlightShell from 'highlight.js/lib/languages/shell'
-import Clipboard from 'clipboard'
-import codeSource from '../mixins/codeSource'
+<script setup>
+import {ref, onMounted, nextTick, useTemplateRef} from 'vue';
+import {useI18n} from 'vue-i18n';
+import highlight from 'highlight.js';
+import highlightSCSS from 'highlight.js/lib/languages/scss';
+import highlightXML from 'highlight.js/lib/languages/xml';
+import highlightJavascript from 'highlight.js/lib/languages/javascript';
+import highlightShell from 'highlight.js/lib/languages/shell';
+import codeSource from '../mixins/codeSource';
 
-highlight.registerLanguage('scss', highlightSCSS)
-highlight.registerLanguage('xml', highlightXML)
-highlight.registerLanguage('javascript', highlightJavascript)
-highlight.registerLanguage('shell', highlightShell)
+// Register highlight.js languages
+highlight.registerLanguage('scss', highlightSCSS);
+highlight.registerLanguage('xml', highlightXML);
+highlight.registerLanguage('javascript', highlightJavascript);
+highlight.registerLanguage('shell', highlightShell);
 
-export default {
-  name: 'CodeBlock',
-  mixins: [codeSource],
-  props: {
-    lang: String,
-    label: String,
-    height: {
-      type: [Number, String],
-      default: '450px'
-    }
+const props = defineProps({
+  lang: {
+    type: String,
+    default: ''
   },
-  data: () => ({
-    showMessage: false
-  }),
-  mounted() {
-    this.$nextTick().then(() => {
-      this.reindentSource()
-      this.enableCopy()
-
-      highlight.highlightBlock(this.$refs.block)
-    })
+  label: {
+    type: String,
+    default: ''
   },
-  methods: {
-    reindentSource: codeSource.reindentSource,
-    enableCopy() {
-      if (this.$refs.copy) {
-        const clipboard = new Clipboard(this.$refs.copy.$el, {
-          target: () => this.$refs.block
-        })
-        let timer = null
-
-        clipboard.on('success', (event) => {
-          event.clearSelection()
-          this.showMessage = true
-
-          window.clearTimeout(timer)
-          timer = window.setTimeout(() => {
-            this.showMessage = false
-          }, 2000)
-        })
-      }
-    }
+  height: {
+    type: [Number, String],
+    default: '450px'
   }
-}
+});
+
+const {t} = useI18n();
+const codeBlock = useTemplateRef('codeBlock');
+const copyButton = useTemplateRef('copyButton');
+const showMessage = ref(false);
+
+// Copy to clipboard function
+const copyToClipboard = async () => {
+  if (!codeBlock.value) return;
+
+  try {
+    await navigator.clipboard.writeText(codeBlock.value.textContent);
+    showMessage.value = true;
+
+    const timer = setTimeout(() => {
+      showMessage.value = false;
+      clearTimeout(timer);
+    }, 2000);
+  } catch (err) {
+    console.error('Failed to copy text: ', err);
+  }
+};
+
+// Initialize component
+onMounted(async () => {
+  await nextTick();
+
+  if (codeBlock.value) {
+    codeSource.reindentSource(codeBlock.value);
+    highlight.highlightElement(codeBlock.value);
+  }
+});
 </script>
 
 <style lang="scss" scoped>

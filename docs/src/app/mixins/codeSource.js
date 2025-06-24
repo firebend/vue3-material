@@ -23,9 +23,8 @@ export const getIndentedSource = source => {
 
 export default {
   getIndentedSource,
-  reindentSource () {
-    const block = this.$refs.block
-
-    block.textContent = getIndentedSource(block.textContent)
+  reindentSource (sourceEl) {
+    // block.textContent = getIndentedSource(block.textContent)
+    sourceEl.textContent = getIndentedSource(sourceEl.textContent)
   }
 }

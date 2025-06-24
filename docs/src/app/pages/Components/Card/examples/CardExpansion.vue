@@ -3,7 +3,7 @@
     <md-card>
       <md-card-media>
         <img
-          src="assets/examples/card-image-1.jpg"
+          src="../../../../assets/examples/card-image-1.jpg"
           alt="People"
         >
       </md-card-media>
@@ -42,7 +42,7 @@
     <md-card>
       <md-card-media>
         <img
-          src="assets/examples/card-image-1.jpg"
+          src="../../../../assets/examples/card-image-1.jpg"
           alt="People"
         >
       </md-card-media>

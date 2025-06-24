@@ -117,8 +117,8 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
-  @import "vue-material/components/MdLayout/mixins";
+  @use "vue-material/components/MdAnimation/variables";
+  @use "vue-material/components/MdLayout/mixins";
 
   .logo-vue-material {
     width: 24px;
@@ -179,7 +179,7 @@
       width: 45px;
       margin-top: 10px;
     }
-    @include md-layout-xsmall {
+    @include mixins.md-layout-xsmall {
       &.logo-3{
         margin-top: 10px;
         margin-left: 0px;
@@ -208,8 +208,7 @@
       border-radius: 2px;
     }
 
-    img,
-    >>> svg,
+    img, :deep(svg),
     .md-svg-loader {
       max-width: 256px;
       max-height: 96px;

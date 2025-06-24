@@ -82,8 +82,8 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "vue-material/components/MdAnimation/variables";
-  @import "vue-material/components/MdLayout/mixins";
+  @use "vue-material/components/MdAnimation/variables";
+  @use "vue-material/components/MdLayout/mixins";
 
   .main-nav {
     width: 230px;
@@ -96,14 +96,14 @@
     top: 64px;
     bottom: 0;
     left: 0;
-    transition: .3s $md-transition-default-timing;
+    transition: .3s variables.$md-transition-default-timing;
     transition-property: top;
 
-    @include md-layout-small {
+    @include mixins.md-layout-small {
       top: 48px;
     }
 
-    @include md-layout-xsmall {
+    @include mixins.md-layout-xsmall {
       display: none;
     }
   }
@@ -115,7 +115,7 @@
   .nav-enter-active {
     opacity: 0;
     transform: translate3d(-100%, 0, 0);
-    transition: .4s $md-transition-default-timing;
+    transition: .4s variables.$md-transition-default-timing;
     transition-property: opacity, transform;
     will-change: opacity, transform;
   }
@@ -128,7 +128,7 @@
   .md-drawer {
     display: none;
 
-    @include md-layout-xsmall {
+    @include mixins.md-layout-xsmall {
       display: flex;
       flex-direction: column;
     }
@@ -176,7 +176,7 @@
       display: none;
     }
 
-    >>> ul {
+    :deep(ul) {
       list-style: none;
       padding-left: 20px;
       margin: 5px 0;
